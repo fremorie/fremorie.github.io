@@ -1,17 +1,17 @@
 # Site settings
 title: Coming soon...
 description: To ask the right question is harder than to answer it.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "fremorie.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+# baseurl: "/blog" # the subpath of your site, e.g. /blog
+# url: "fremorie.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: fremorie
-user_description: ML enthusiast 
-user_title: 
+user_description: per aspera ad astra
+user_title: ML enthusiast 
 email: anon@anon.com
-twitter_username:
+twitter_username: f
 github_username: fremorie
-gplus_username:
+gplus_username: f
 
 # Google-analytics
 google-analytics:
