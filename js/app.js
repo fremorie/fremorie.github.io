@@ -1,6 +1,7 @@
 
 // to shuffle images' numbers when the page is refreshed or game is restarted
 var cards = null;
+var openedCards = [];
 
 function shuffle(a) {
     var j, x, i;
@@ -63,14 +64,58 @@ function enableCards() {
 }
 
 function shuffleCards() {
+  openedCards = [];
   disableCards();
+  for (var i = 0, len = cards.length; i < len; i++) {
+    var elem = cards[i];
+    elem.classList.remove('matched');
+    elem.classList.remove('unmatched');
+  }
   closeAllCards();
   setTimeout(setImages, 500);
   setTimeout(enableCards, 500);
 }
 
+function matched() {
+  openedCards[0].classList.add('disabled');
+  openedCards[1].classList.add('disabled');
+  openedCards[0].classList.add('matched');
+  openedCards[1].classList.add('matched');
+  openedCards = [];
+}
+
+function unmatched() {
+  openedCards[0].classList.add('disabled');
+  openedCards[1].classList.add('disabled');
+  openedCards[0].classList.add('unmatched');
+  openedCards[1].classList.add('unmatched');
+}
+
 function flip(elem) {
+  elem.classList.add('disabled');
+  openedCards.push(elem);
+  if (openedCards.length == 2) {
+    var img1 = openedCards[0].querySelector('.back img').src;
+    var img2 = openedCards[1].querySelector('.back img').src;
+    if (img1 === img2) {
+      matched();
+    } else {
+      unmatched();
+    }
+  }
+  if (openedCards.length == 3) {
+    // close previous two cards
+    openedCards[0].classList.remove('disabled');
+    openedCards[1].classList.remove('disabled');
+    openedCards[0].classList.remove('unmatched');
+    openedCards[1].classList.remove('unmatched');
+    openedCards[0].classList.toggle('flip');
+    openedCards[1].classList.toggle('flip');
+    // reset openedCards
+    openedCards.splice(0, 2);
+  }
   elem.classList.toggle("flip");
+  console.log(openedCards.length);
 }
 
 

@@ -1,3 +1,16 @@
+@keyframes matched {
+  to {
+    border: 4px solid #587832;
+  }
+}
+
+@keyframes unmatched {
+  to {
+    border: 4px solid #d80d41;
+  }
+}
+
+
 body {
   text-align: center;
   background-color: #ebecf0;
@@ -86,10 +99,24 @@ header {
      -o-transform:rotateY(180deg);
 }
 
-.container.flip .card {
+/*.container.flip .card {
 	transform: rotateY(180deg);
-}
+}*/
 
 .disabled {
   pointer-events: none;
+}
+
+.matched {
+  animation-duration: 0.7s;
+  animation-name: matched;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+.unmatched {
+  animation-duration: 0.7s;
+  animation-name: unmatched;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
 }
