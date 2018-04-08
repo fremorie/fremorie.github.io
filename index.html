@@ -2,7 +2,6 @@
   <head>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
   </head>
@@ -11,6 +10,7 @@
     <header>
       <h1>Memory Game</h1>
       <button type="reset" id="shuffle" onclick="shuffleCards();">Shuffle</button>
+      <div id="timer">00:00:00</div>
     </header>
     <div class="container">
       <div class="card">
@@ -78,5 +78,15 @@
         <div class="front"><img></div>
       </div>
     </div>
+
+    <div id="win-popup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <p>WIN</p>
+        <p id="your-time"></p>
+        <button type="reset" id="play-again" onclick="shuffleCards();">Play again!</button>
+      </div>
+    </div>
+
   </body>
 </html>
