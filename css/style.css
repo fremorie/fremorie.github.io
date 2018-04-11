@@ -154,3 +154,7 @@ header {
     font-size: 28px;
     font-weight: bold;
 }
+
+.front {
+  transform: rotateX(0deg);
+}
