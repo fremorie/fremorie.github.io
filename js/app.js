@@ -59,7 +59,7 @@ function setSizes() {
   var images = document.querySelectorAll('img');
   if( isMobile.any() ) {
     swapDiv(document.getElementsByClassName('container')[0]);
-    var cardWidth = (totalWidth - 100)/4;
+    var cardWidth = (totalHeight - 100)/2/4;
     var answersBlockHeight = (totalHeight - cardWidth*4 - 200)/4;
     var columnWidth = (totalWidth - 200)/2;
   } else {
