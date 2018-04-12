@@ -13,31 +13,55 @@ var firsCardOpened = false;
 var currentTimer = null;
 var start = null;
 
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+
 function setSizes() {
   var totalWidth = window.innerWidth;
   var totalHeight = window.innerHeight;
-  console.log(totalWidth);
-  var columnWidth = (totalWidth - 200)/3;
-  var answersBlockHeight = (0.5*totalHeight)/4;
-  var cardWidth = columnWidth/4;
-  console.log(columnWidth);
   var answersDivs = document.getElementsByClassName('answers');
-  for (var i = 0, len = answersDivs.length; i < len; i++) {
-    answersDivs[i].style.width = columnWidth;
-  }
   var formulaDivs = document.getElementsByClassName('formula-box');
-  for (var i = 0, len = formulaDivs.length; i < len; i++) {
-    formulaDivs[i].style.height = answersBlockHeight;
-  }
   var cardDiv = document.getElementsByClassName('card');
-  for (var i = 0; i < cardDiv.length; i++) {
-    cardDiv[i].style.width = cardWidth;
-    cardDiv[i].style.height = cardWidth;
-  }
-  var images = document.querySelectorAll('img')
-  for (var i = 0; i < images.length; i++) {
-    images[i].style.width = cardWidth;
-    images[i].style.height = cardWidth;
+  var images = document.querySelectorAll('img');
+  if( isMobile.any() ) {
+    body.innerHTML = 'WOW!';
+  } else {
+    var columnWidth = (totalWidth - 200)/3;
+    var answersBlockHeight = (0.5*totalHeight)/4;
+    var cardWidth = columnWidth/4;
+    for (var i = 0, len = answersDivs.length; i < len; i++) {
+      answersDivs[i].style.width = columnWidth;
+    }
+    for (var i = 0, len = formulaDivs.length; i < len; i++) {
+      formulaDivs[i].style.height = answersBlockHeight;
+    }
+    for (var i = 0; i < cardDiv.length; i++) {
+      cardDiv[i].style.width = cardWidth;
+      cardDiv[i].style.height = cardWidth;
+    }
+    for (var i = 0; i < images.length; i++) {
+      images[i].style.width = cardWidth;
+      images[i].style.height = cardWidth;
+    }
   }
 }
 
