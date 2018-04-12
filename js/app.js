@@ -43,7 +43,7 @@ function setSizes() {
   var cardDiv = document.getElementsByClassName('card');
   var images = document.querySelectorAll('img');
   if( isMobile.any() ) {
-    body.innerHTML = 'WOW!';
+    document.getElementsByClassName('game')[0].innerHTML = 'WOW!';
   } else {
     var columnWidth = (totalWidth - 200)/3;
     var answersBlockHeight = (0.5*totalHeight)/4;
