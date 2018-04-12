@@ -60,7 +60,7 @@ function setSizes() {
   if( isMobile.any() ) {
     swapDiv(document.getElementsByClassName('container')[0]);
     var cardWidth = (totalHeight - 100)/2/4;
-    var answersBlockHeight = (totalHeight - cardWidth*4 - 200)/4;
+    var answersBlockHeight = (totalHeight - cardWidth*4 - 200)/8;
     var columnWidth = (totalWidth - 200)/2;
   } else {
     var columnWidth = (totalWidth - 200)/3;
