@@ -35,6 +35,21 @@ var isMobile = {
 };
 
 
+function swapDiv(elm) {
+    var previous = findPrevious(elm);
+    if (previous) {
+        elm.parentNode.insertBefore(elm, previous);
+    }
+}
+
+function findPrevious(elm) {
+   do {
+       elm = elm.previousSibling;
+   } while (elm && elm.nodeType != 1);
+   return elm;
+}
+
+
 function setSizes() {
   var totalWidth = window.innerWidth;
   var totalHeight = window.innerHeight;
@@ -43,25 +58,28 @@ function setSizes() {
   var cardDiv = document.getElementsByClassName('card');
   var images = document.querySelectorAll('img');
   if( isMobile.any() ) {
-    document.getElementsByClassName('game')[0].innerHTML = 'WOW!';
+    swapDiv(document.getElementsByClassName('container')[0]);
+    var cardWidth = (totalWidth - 100)/4;
+    var answersBlockHeight = (totalHeight - cardWidth*4 - 200)/4;
+    var columnWidth = (totalWidth - 200)/2;
   } else {
     var columnWidth = (totalWidth - 200)/3;
     var answersBlockHeight = (0.5*totalHeight)/4;
     var cardWidth = columnWidth/4;
-    for (var i = 0, len = answersDivs.length; i < len; i++) {
-      answersDivs[i].style.width = columnWidth;
-    }
-    for (var i = 0, len = formulaDivs.length; i < len; i++) {
-      formulaDivs[i].style.height = answersBlockHeight;
-    }
-    for (var i = 0; i < cardDiv.length; i++) {
-      cardDiv[i].style.width = cardWidth;
-      cardDiv[i].style.height = cardWidth;
-    }
-    for (var i = 0; i < images.length; i++) {
-      images[i].style.width = cardWidth;
-      images[i].style.height = cardWidth;
-    }
+  }
+  for (var i = 0, len = answersDivs.length; i < len; i++) {
+    answersDivs[i].style.width = columnWidth;
+  }
+  for (var i = 0, len = formulaDivs.length; i < len; i++) {
+    formulaDivs[i].style.height = answersBlockHeight;
+  }
+  for (var i = 0; i < cardDiv.length; i++) {
+    cardDiv[i].style.width = cardWidth;
+    cardDiv[i].style.height = cardWidth;
+  }
+  for (var i = 0; i < images.length; i++) {
+    images[i].style.width = cardWidth;
+    images[i].style.height = cardWidth;
   }
 }
 
