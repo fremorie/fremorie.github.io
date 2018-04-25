@@ -14,7 +14,7 @@
   to {
     border: 2px solid #587832;
     background-color: #8cead4;
-    z-index: 10;
+    z-index: 3;
     transform: scale(1.1) translateX(20px);
   }
 }
@@ -23,7 +23,7 @@
   to {
     border: 2px solid #587832;
     background-color: #8cead4;
-    z-index: 10;
+    z-index: 3;
     transform: scale(1.1) translateX(-20px);
   }
 }
@@ -240,6 +240,10 @@ button:active {
     font-size: 40px;
 }
 
+#name {
+  font-size: 20px;
+}
+
 /* The Close Button */
 .close {
     color: #aaaaaa;
@@ -264,4 +268,43 @@ button:active {
 
 .front {
   transform: rotateX(0deg);
+}
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: fixed;
+    left: 10px;
+    display: inline-block;
+    z-index: 5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 300px;
+    min-height: 500px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 2px solid #d2b3db;
+}
+
+.show {
+  display: block;
+}
+
+#leaderboard {
+  font-size: 0.8em;
 }

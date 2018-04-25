@@ -11,6 +11,16 @@
 
   <body>
     <header>
+      <div class="dropdown">
+        <button onclick="showLeaderboard()" class="dropbtn">Leaderboard</button>
+          <div id="leaderboard" class="dropdown-content">
+            <h2>Leaderboard</h2>
+            <pre>
+              <p></p>
+            </pre>
+          </div>
+      </div>
+
       <h1>PHYSICS MEMORIZER</h1>
       <button type="reset" id="shuffle" onclick="shuffleCards();">Shuffle</button>
       <div id="timer">00:00:00</div>
@@ -124,7 +134,11 @@
       <div class="popup-content">
         <span class="close">&times;</span>
         <p>WIN</p>
-        <p id="your-time"></p>
+        <p id="your-time"></p><br>
+        <p id="name">Enter your name:
+          <input id="username" type="text" name="name">
+          <button type="button" onclick="addNameToLeaderboard()">Submit</button>
+        </p>
         <button type="reset" id="play-again" onclick="shuffleCards();">Play again!</button>
       </div>
     </div>

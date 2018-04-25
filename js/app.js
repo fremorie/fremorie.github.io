@@ -81,6 +81,7 @@ function setSizes() {
     images[i].style.width = cardWidth;
     images[i].style.height = cardWidth;
   }
+
 }
 
 function shuffle(a) {
@@ -295,6 +296,32 @@ function stopTimer(t) {
   clearInterval(t);
 }
 
+
+var leaderboard = []
+
+function Comparator(a, b) {
+  if (a[1] < b[1]) return -1;
+  if (a[1] > b[1]) return 1;
+  return 0;
+}
+
+function addNameToLeaderboard() {
+  var username = document.getElementById("username").value;
+  var userTimeString = hours + ":" + minutes + ":" + seconds;
+  var userSeconds = seconds + minutes*60 + hours*3600;
+  leaderboard.push([username, userSeconds, userTimeString]);
+  leaderboard = leaderboard.sort(Comparator);
+  var leaderboardContent = '';
+  for (i = 1; i <= leaderboard.length; i++) {
+    leaderboardContent += i + ' &#9; ' + leaderboard[i-1][0] + ' &#9; ' + leaderboard[i-1][2] + '<br>';
+  }
+  console.log(leaderboardContent);
+  document.querySelector("#leaderboard p").innerHTML = leaderboardContent;
+}
+
+function showLeaderboard() {
+    document.getElementById("leaderboard").classList.toggle("show");
+}
 
 $(document).ready(function() {
   window.addEventListener("resize", setSizes);
