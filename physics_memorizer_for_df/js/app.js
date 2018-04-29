@@ -311,12 +311,26 @@ function addNameToLeaderboard() {
   var userSeconds = seconds + minutes*60 + hours*3600;
   leaderboard.push([username, userSeconds, userTimeString]);
   leaderboard = leaderboard.sort(Comparator);
-  var leaderboardContent = '';
+  var tableRef = document.querySelector("#leaderboard table").getElementsByTagName('tbody')[0];
+  tableRef.innerHTML = "";
   for (i = 1; i <= leaderboard.length; i++) {
-    leaderboardContent += i + ' &#9; ' + leaderboard[i-1][0] + ' &#9; ' + leaderboard[i-1][2] + '<br>';
+    var newRow = tableRef.insertRow(-1);
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+    var cell3 = newRow.insertCell(2);
+    cell1.innerHTML = i;
+    cell2.innerHTML = leaderboard[i-1][0]; // username
+    cell3.innerHTML = leaderboard[i-1][2]; // score
+    // var tr = document.createElement("tr");
+    // var td = document.createElement("td");
+    // var txt = document.createTextNode("some value");
+    //
+    //
+    // td.appendChild(txt);
+    // tr.appendChild(td);
+    // table.appendChild(tr);
+    // var row = '<tr><td>' + i + '</td>' + '<td>' + leaderboard[i-1][0] + '</td>' + '<td>' + leaderboard[i-1][2] + '</td></tr>';
   }
-  console.log(leaderboardContent);
-  document.querySelector("#leaderboard p").innerHTML = leaderboardContent;
 }
 
 function showLeaderboard() {
