@@ -1,0 +1,275 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.switcher-display
+{
+    display: none;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+    min-height: 100vh;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #000;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.page-wrapper
+{
+    width: 1150px;
+    margin: 3rem auto;
+}
+
+header h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 3em;
+}
+
+header > h1::first-letter {
+  color: red;
+}
+
+#murrket {
+  font-weight: normal;
+}
+
+
+.cat-image {
+  text-align: center;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 85%;
+}
+
+.main {
+    padding-right: 25px;
+    padding-bottom: 25px;
+    font-size: 0;
+}
+
+.cat {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.4rem;
+    width: 350px;
+    margin-left: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.cat:hover
+{
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
+}
+
+.cat-image img {
+    max-height: 500px;
+    max-width: 350px;
+    transition: transform .2s ease-in-out;
+}
+
+.cat-image img:hover {
+    transition: transform .5s ease-in-out;
+}
+
+.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2rem;
+    margin: .5rem 0;
+}
+
+.name a:hover {
+    color: #f00;
+}
+
+.name a:active {
+    color: #c90f0f;
+}
+
+.tags a {
+    color: grey;
+    font-size: 1.2rem;
+}
+
+.price
+{
+    font-size: 2rem;
+}
+
+@media(min-width: 1550px)
+{
+    .page-wrapper
+    {
+        width: 1525px;
+    }
+    #show-as-table:checked ~ .main > .cat > .cat-info > .name {
+        width: 500px;
+    }
+}
+
+.switcher-display__tiles,
+.switcher-display__table
+{
+    font-family: FontAwesome, sans-serif;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    margin: 10px 0 10px 25px;
+    display: inline-block;
+}
+
+.switcher-display__table
+{
+    margin-left: 10px;
+}
+
+.switcher-display__tiles:hover,
+.switcher-display__table:hover
+{
+    color: #999;
+}
+
+.switcher-display__tiles::before
+{
+    content: '\f009';
+}
+
+.switcher-display__table::before
+{
+    content: '\f00b';
+}
+
+#show-as-tiles:checked ~ label[for='show-as-tiles'],
+#show-as-table:checked ~ label[for='show-as-table']
+{
+    color: #000;
+}
+
+#show-as-table:checked ~ .main
+{
+    display: table;
+    border-collapse: collapse;
+    table-layout: fixed;
+    padding: 0;
+}
+
+#show-as-table:checked ~ .main > .cat {
+    display: table-row;
+}
+
+#show-as-table:checked ~ .main > .cat > .cat-image,
+#show-as-table:checked ~ .main > .cat > .cat-info,
+#show-as-table:checked ~ .main > .cat > .cat-info > .description {
+    display: table-cell;
+}
+
+#show-as-table:checked ~ .main > .cat > .cat-image
+{
+    width: 400px;
+    padding: 15px 0;
+    vertical-align: top;
+    text-align: center;
+    overflow: hidden;
+}
+
+#show-as-table:checked ~ .main > .cat > .cat-info
+{
+    overflow: hidden;
+    padding: 15px 10px;
+}
+
+#show-as-table:checked ~ .main > .cat > .cat-info > .name {
+    width: 400px;
+}
+
+#show-as-table:checked ~ .main > .cat > .cat-info > .description {
+    padding: 15px 10px;
+}
+
+#show-as-tiles:checked ~ .main > .cat > .cat-image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+#show-as-tiles:checked ~ .main > .cat > .cat-image img
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* star rating */
+
+.rating
+{
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.rating input
+{
+    display: none;
+}
+
+.rating label
+{
+    float: right;
+    font-family: FontAwesome;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.rating .full-star::before
+{
+    content: '\f005';
+    text-shadow: 0 0 3px #000;
+}
+
+.rating .half-star::before
+{
+    content: '\f089';
+    position: absolute;
+    z-index: 1;
+}
+
+.rating input:checked ~ label
+{
+    color: #fc0;
+}
+
+.rating label:hover,
+.rating label:hover ~ label
+{
+    color: #ffe685 !important;
+}
+
+.rating label:active::before,
+.rating label:active ~ label::before
+{
+    color: #ff8400;
+}
