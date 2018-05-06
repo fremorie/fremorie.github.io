@@ -111,7 +111,7 @@ button:active {
 
 
 .card .back {
-  background-color: #dacde5;
+  background-color: #f6eff7;
 }
 
 .card .back img {
@@ -268,4 +268,70 @@ button:active {
 
 .front {
   transform: rotateX(0deg);
+}
+
+.dropbtn {
+    padding: 16px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: fixed;
+    left: 10px;
+    display: inline-block;
+    z-index: 5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 50%;
+    min-height: 100px;
+    max-height: 30vh;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 2px solid #5b3665;
+}
+
+.show {
+  display: block;
+}
+
+#leaderboard {
+  font-size: 0.8em;
+  overflow-x: auto;
+  color: #5b3665;
+  overflow-y: scroll;
+}
+
+tr:hover {
+  background-color: #E8C6BF;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #d2b3db;
+    color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
