@@ -1,0 +1,121 @@
+body {
+  margin: auto;
+  width: 50%;
+  background-color: #eaf5eb;
+  font-family: Helvetica;
+}
+
+header {
+  text-align: center;
+  margin: 30px;
+  height: 150px;
+}
+
+header h1 {
+  font-size: 60px;
+  color: #6ebf74;
+  text-shadow: -1px 0 #31a439, 0 1px #31a439, 1px 0 #31a439, 0 -1px #31a439;
+  margin: 0px;
+  padding: 0px;
+}
+
+#timer {
+  font-size: 60px;
+}
+
+.pomodoro-body {
+  background-color: #A43931;
+  border-radius: 50%;
+  border: 10px solid #b6605a;
+  height: 400px;
+  width: 400px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.pomodoro-leaf {
+  clip-path: polygon(5% 74%, 39% 56%, 24% 96%, 46% 56%, 79% 89%, 51% 54%, 89% 60%, 43% 46%, 54% 5%, 47% 10%, 39% 48%);
+  width: 400px;
+  height: 200px;
+  background-color: #31a439;
+  transform: translateY(110px);
+  border: 10px solid #b6605a;
+}
+
+.pomodoro-leaf:before {
+  content: '';
+  width: 403px;
+  height: 203px;
+  clip-path: polygon(5% 74%, 39% 56%, 24% 96%, 46% 56%, 79% 89%, 51% 54%, 89% 60%, 43% 46%, 54% 5%, 47% 10%, 39% 48%);
+  background: #6ebf74;
+  position: absolute;
+}
+
+.tomato-container {
+  display: block;
+  margin: auto;
+  width: 400px;
+  vertical-align: middle;
+  /*transform: translateY(-100px);*/
+}
+
+.buttons {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+button {
+  background-color: #27832d;
+  color: white;
+  border: 2px solid #227227;
+  border-radius: 5px;
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+}
+
+button:hover {
+    background-color: #18521c;
+}
+
+.dropbtn {
+    background-color: #27832d;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid #227227;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: fixed;
+    left: 10px;
+    display: inline-block;
+    z-index: 5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #c1e3c3;
+    min-width: 300px;
+    min-height: 100px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 2px solid #83c888;
+    border-radius: 5px;
+}
+
+.show {
+  display: block;
+}
+
+#time-settings {
+  font-size: 0.8em;
+  overflow-x: auto;
+}
