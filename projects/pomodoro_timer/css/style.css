@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
   margin: auto;
   width: 50%;
@@ -40,8 +44,7 @@ header h1 {
   width: 400px;
   height: 200px;
   background-color: #31a439;
-  transform: translateY(110px);
-  border: 10px solid #b6605a;
+  transform: translateY(100px);
 }
 
 .pomodoro-leaf:before {

@@ -2,32 +2,33 @@
   <head>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/app.js"></script>
     <title>Daria Borisyak - Front-End Engineer</title>
   </head>
-  <body>
+  <body onload="showBlock()">
     <div class="header">
       <h1>Daria Borisyak</h1>
       <h2>Front-End Developer</h2>
     </div>
     <div class="content">
-      <div class="block experience">
-        <h3>Experience</h3>
-        <div class="block-content"></div>
-      </div>
-      <div class="block projects">
+      <div class="block" id="projects">
         <h3>My Projects</h3>
         <div class="block-content">
           <ul>
-            <li><a target="_blank" href="physics_memorizer/index.html">Physics Memorizer</a>
-            <li><a target="_blank" href="pomodoro_timer/index.html">Pomodoro Timer</a>
+            <li><a target="_blank" href="projects/physics_memorizer/index.html">Physics Memorizer</a>
+            <li><a target="_blank" href="projects/pomodoro_timer/index.html">Pomodoro Timer</a>
           </ul>
         </div>
       </div>
-      <div class="block education">
+      <div class="block" id="experience">
+        <h3>Experience</h3>
+        <div class="block-content"></div>
+      </div>
+      <div class="block" id="education">
         <h3>Education</h3>
         <div class="block-content"></div>
       </div>
-      <div class="block contacts">
+      <div class="block" id="contacts">
         <h3>Contacts</h3>
         <div class="block-content"></div>
       </div>
