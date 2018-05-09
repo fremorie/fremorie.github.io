@@ -36,6 +36,7 @@ header h1 {
   text-align: center;
   vertical-align: middle;
   color: white;
+  margin-bottom: 10vh;
 }
 
 .pomodoro-leaf {
@@ -43,7 +44,7 @@ header h1 {
   width: 40vh;
   height: 20vh;
   background-color: #31a439;
-  transform: translateY(10vh);
+  margin-bottom: -10vh;
 }
 
 .pomodoro-leaf:before {
@@ -53,32 +54,110 @@ header h1 {
   clip-path: polygon(5% 74%, 39% 56%, 24% 96%, 46% 56%, 79% 89%, 51% 54%, 89% 60%, 43% 46%, 54% 5%, 47% 10%, 39% 48%);
   background: #6ebf74;
   position: absolute;
+  z-index: 3;
 }
 
 .tomato-container {
   display: block;
   margin: auto;
   width: 40vh;
-  height: 80vh;
+  height: 50vh;
   vertical-align: middle;
 }
 
 .buttons {
   text-align: center;
   padding: 1vh;
-  margin: 1vh;
+  margin: 2vh;
+  height: 8vh;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1vh;
 }
 
 button {
   background-color: #27832d;
   color: white;
-  border: 2px solid #227227;
+  border: 0.2vh solid #227227;
   border-radius: 0.5vh;
   height: 5vh;
   width: 10vh;
   font-size: 2vh;
+  cursor: pointer;
 }
 
 button:hover {
     background-color: #18521c;
+}
+
+.tomato-buttons {
+  width: 13vh;
+  margin-top: 5vh;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2vh;
+  height: 25vh;
+}
+
+.control-button {
+  width: 5vh;
+}
+
+.material-icons {
+  font-size: 3vh !important;
+}
+
+.settings {
+  border-radius: 50%;
+}
+
+.slidecontainer {
+  width: 40vh;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 30vh;
+    height: 4px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#time-settings {
+  margin: 0 auto;
+  height: 40vh;
+  width: 50vh;
+  background-color: white;
+  z-index: 10;
+}
+
+.slidecontainer {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 5vh;
 }

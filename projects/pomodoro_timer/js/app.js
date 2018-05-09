@@ -3,6 +3,9 @@ var delta = 0;
 var currentTimer;
 var currentMinutes, currentSeconds;
 var work = true;
+var shortBreak = false;
+var longBreak = false;
+var timerIsRunning = false;
 
 function timer(seconds) {
   start = new Date().getTime();
@@ -36,6 +39,8 @@ function timeIsOut() {
 
 function startTimer() {
   counting = true;
+  timerIsRunning = true;
+  document.querySelector('#start-or-pause-timer i').innerHTML = "pause";
   var timeLeft = document.querySelector('#timer').innerHTML;
   var minutes = parseInt(timeLeft.substring(0,2));
   var seconds = parseInt(timeLeft.substring(3,5));
@@ -46,23 +51,24 @@ function showTimeSettings() {
     document.getElementById("time-settings").classList.toggle("show");
 }
 
-function addMinute() {
+function addOrSubMinute(operator) {
   var timeLeft = document.querySelector('#timer').innerHTML;
   var minutes = parseInt(timeLeft.substring(0,2));
   var seconds = parseInt(timeLeft.substring(3,5));
-  minutes ++;
+  if (operator > 0) {
+    minutes ++;
+  } else {
+    minutes --;
+  }
+  if (minutes < 1) {
+    document.getElementById("minus").disabled = true;
+  }
   if (seconds < 10) {seconds = '0' + seconds};
   if (minutes < 10) {minutes = '0' + minutes};
-  document.querySelector('#timer').innerHTML = minutes + ':' + seconds;
-}
-
-function subMinute() {
-  var timeLeft = document.querySelector('#timer').innerHTML;
-  var minutes = parseInt(timeLeft.substring(0,2));
-  var seconds = parseInt(timeLeft.substring(3,5));
-  minutes --;
-  if (seconds < 10) {seconds = '0' + seconds};
-  if (minutes < 10) {minutes = '0' + minutes};
+  if (counting) {
+    clearTimeout(currentTimer);
+    currentTimer = timer(minutes * 60 + seconds);
+  }
   document.querySelector('#timer').innerHTML = minutes + ':' + seconds;
 }
 
@@ -82,6 +88,8 @@ function cddisplay() {
 
 function stopTimer() {
   clearTimeout(currentTimer);
+  timerIsRunning = false;
+  document.querySelector('#start-or-pause-timer i').innerHTML = "play_arrow";
 };
 
 function resetTimer() {
@@ -93,14 +101,25 @@ function resetTimer() {
     newTime = "05:00";
   }
   document.querySelector("#timer").innerHTML = newTime;
+  document.getElementById("minus").disabled = false;
 };
 
-function setWorkTime() {
-  document.querySelector("#timer").innerHTML = "25:00";
+function toggleTimer() {
+  if (timerIsRunning) {
+    return stopTimer();
+  } else {
+    return startTimer();
+  }
 }
 
-function setBreakTime() {
-  console.log('break!');
-  document.querySelector("#timer").innerHTML = "05:00";
-  work = false;
+function setTime(numberOfMinutes, isWork) {
+  stopTimer();
+  if (numberOfMinutes < 10) numberOfMinutes = '0' + numberOfMinutes;
+  document.querySelector("#timer").innerHTML = numberOfMinutes + ":00";
+  if (isWork) {
+    work = true;
+  } else {
+    work = false;
+  }
+  document.getElementById("minus").disabled = false;
 }
