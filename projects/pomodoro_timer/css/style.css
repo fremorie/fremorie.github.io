@@ -11,7 +11,7 @@ body {
 header {
   text-align: center;
   margin: 1vh;
-  height: 18vh;
+  height: 22vh;
 }
 
 header h1 {
@@ -96,7 +96,7 @@ button:hover {
   display: block;
   margin: 0 auto;
   margin-top: 2vh;
-  height: 25vh;
+  height: 21vh;
 }
 
 .control-button {
@@ -148,16 +148,33 @@ button:hover {
     border-radius: 50%;
 }
 
-#time-settings {
-  margin: 0 auto;
-  height: 40vh;
-  width: 50vh;
-  background-color: white;
-  z-index: 10;
-}
-
 .slidecontainer {
     margin: 0 auto;
     text-align: center;
-    padding-top: 5vh;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    height: 45vh;
+    width: 50vh;
+    background-color: white;
+    z-index: 10;
+    text-align: center;
+    border: 0.2vh solid #227227;
+    border-radius: 0.5vh;
+    left: 0;
+    right: 0;
+    margin-top: 1vh;
+}
+
+.show {
+  display: block;
+}
+
+#set-time-periods-button {
+  margin-top: 3vh;
 }

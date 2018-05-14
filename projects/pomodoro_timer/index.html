@@ -11,21 +11,31 @@
   </head>
   <body>
     <header>
-      <!-- <div class="dropdown">
-          <button onclick="showTimeSettings()" class="dropbtn">Settings</button>
-            <div id="time-settings" class="dropdown-content">
-              <div></div>
-            </div>
-        </div> -->
       <h1>Pomodoro Timer</h1>
-      <div class="buttons">
-        <button type="button" onclick="setTime(25, true)">Work</button>
-        <button type="button" onclick="setTime(5, false)">Break</button>
-        <button class = "control-button settings" type="button" onclick="setBreakTime()"><i class="material-icons">settings</i></button>
+      <div class="dropdown">
+        <button onclick="showSettings()" class="control-button settings dropbtn"><i class="material-icons">settings</i></button>
+        <div id="time-settings" class="dropdown-content">
+          <div class="slidecontainer" id="work-slider">
+            <p>Work:</p>
+            <input type="range" min="1" max="25" value="25" step=1 class="slider" id="work-range">
+          </div>
+          <div class="slidecontainer" id="break-slider">
+            <p>Break:</p>
+            <input type="range" min="1" max="5" value="5" step=1 class="slider" id="break-range">
+          </div>
+          <div class="slidecontainer" id="long-break-slider">
+            <p>Long break:</p>
+            <input type="range" min="1" max="20" value="20" step=1 class="slider" id="long-break-range">
+          </div>
+          <button type="button" id="set-time-periods-button" onclick="setTimePeriods()">Set</button>
+        </div>
       </div>
-
+      <div class="buttons">
+        <button type="button" onclick="setTime(workTime, true)">Work</button>
+        <button type="button" onclick="setTime(breakTime, false)">Break</button>
+        <button type="button" onclick="setTime(longBreakTime, false)">Long Break</button>
+      </div>
     </header>
-
     <div class="tomato-container">
       <div class="pomodoro-leaf"></div>
       <div class="pomodoro-body">
@@ -38,29 +48,6 @@
     <div class="tomato-buttons buttons">
       <button class="control-button" type="button" id="start-or-pause-timer" onclick="toggleTimer()"><i class="material-icons">play_arrow</i></button>
       <button class="control-button" type="reset" id="reset-timer" onclick="resetTimer()"><i class="material-icons">replay</i></button>
-    </div>
-
-    <div id="time-settings">
-      <div class="slidecontainer">
-        <p>Work:</p>
-        <input type="range" min="1" max="25" value="25" step=1 class="slider" id="work-range">
-        <datalist class="steplist" id="work-steplist">
-          <option>0</option>
-          <option>5</option>
-          <option>10</option>
-          <option>15</option>
-          <option>20</option>
-          <option>25</option>
-        </datalist>
-      </div>
-      <div class="slidecontainer">
-        <p>Break:</p>
-        <input type="range" min="1" max="5" value="5" step=1 class="slider" id="work-range">
-      </div>
-      <div class="slidecontainer">
-        <p>Long break:</p>
-        <input type="range" min="1" max="20" value="20" step=1 class="slider" id="work-range">
-      </div>
     </div>
   </body>
 </html>

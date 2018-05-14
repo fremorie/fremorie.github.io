@@ -6,6 +6,46 @@ var work = true;
 var shortBreak = false;
 var longBreak = false;
 var timerIsRunning = false;
+var workTime=25, breakTime=5, longBreakTime=20;
+
+var step = 0;
+var oneTomato = ["work", "shortBreak"];
+var pomodoroCycle = oneTomato.concat(oneTomato, oneTomato, oneTomato[0], ["longBreak"]);
+console.log(pomodoroCycle);
+
+function currentState() {
+  return pomodoroCycle[step];
+}
+
+var pomodoroTimes = {
+  work: function() {return workTime},
+  shortBreak: function() {return breakTime},
+  longBreak: function() {return longBreakTime}
+}
+
+var pomodoroState = {
+  work: true,
+  shortBreak: false,
+  longBreak: false
+}
+
+function updatePomodoroState(state) {
+  if (state=="work") {
+    pomodoroState.work = true;
+    pomodoroState.shortBreak = false;
+    pomodoroState.longBreak = false;
+  } else if (state=="shortBreak") {
+    pomodoroState.work = false;
+    pomodoroState.shortBreak = true;
+    pomodoroState.longBreak = false;
+  } else if (state=="longBreak") {
+    pomodoroState.work = false;
+    pomodoroState.shortBreak = false;
+    pomodoroState.longBreak = true;
+  }
+}
+
+console.log(pomodoroTimes.work());
 
 function timer(seconds) {
   start = new Date().getTime();
@@ -29,12 +69,16 @@ function timer(seconds) {
 }
 
 function timeIsOut() {
-  alert('Time is out!');
   stopTimer();
-  if (work) {
-    work = !work;
+  step++;
+  if (step > pomodoroCycle.length) {
+    step = 0;
   }
+  // work --> break, etc
+  updatePomodoroState(currentState());
+  alert('Time is out! Now' + currentState());
   resetTimer();
+  console.log(step);
 }
 
 function startTimer() {
@@ -73,17 +117,7 @@ function addOrSubMinute(operator) {
 }
 
 function cddisplay() {
-  if (currentMinutes < 10) {
-    var cm = "0" + currentMinutes;
-  } else {
-    cm = currentMinutes;
-  }
-  if (currentSeconds < 10) {
-    var cs = "0" + currentSeconds;
-  } else {
-    cs = currentSeconds;
-  }
-  document.querySelector("#timer").innerHTML = cm + ":" + cs;
+  document.querySelector("#timer").innerHTML = timeToString(currentMinutes) + ":" + timeToString(currentSeconds);
 };
 
 function stopTimer() {
@@ -95,10 +129,12 @@ function stopTimer() {
 function resetTimer() {
   stopTimer();
   var newTime;
-  if (work) {
-    newTime = "25:00";
-  } else {
-    newTime = "05:00";
+  if (pomodoroState.work) {
+    newTime = timeToString(workTime) + ":00";
+  } else if (pomodoroState.shortBreak) {
+    newTime = timeToString(breakTime) + ":00";
+  } else if (pomodoroState.longBreak) {
+    newTime = timeToString(longBreakTime) + ":00";
   }
   document.querySelector("#timer").innerHTML = newTime;
   document.getElementById("minus").disabled = false;
@@ -114,12 +150,41 @@ function toggleTimer() {
 
 function setTime(numberOfMinutes, isWork) {
   stopTimer();
-  if (numberOfMinutes < 10) numberOfMinutes = '0' + numberOfMinutes;
+  numberOfMinutes = timeToString(numberOfMinutes);
   document.querySelector("#timer").innerHTML = numberOfMinutes + ":00";
   if (isWork) {
     work = true;
+    shortBreak = false;
+    longBreak = false;
   } else {
     work = false;
   }
   document.getElementById("minus").disabled = false;
+}
+
+function showSettings() {
+    document.getElementById("time-settings").classList.toggle("show");
+}
+
+function setTimePeriods() {
+  workTime = document.getElementById("work-range").value;
+  breakTime = document.getElementById("break-range").value;
+  longBreakTime = document.getElementById("long-break-range").value;
+  console.log(workTime, breakTime, longBreakTime);
+  if (timerIsRunning) {
+    resetTimer();
+  }
+  document.getElementById("time-settings").classList.toggle("show");
+
+  document.querySelector("#timer").innerHTML = timeToString(workTime) + ":00";
+  console.log(pomodoroTimes.work());
+  step = 0;
+}
+
+function timeToString(t) {
+  if (t<10) {
+    return "0" + t;
+  } else {
+    return t;
+  }
 }
