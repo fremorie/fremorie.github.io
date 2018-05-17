@@ -1,10 +1,29 @@
+Notification.requestPermission();
+
+function sendNotification(title, options) {
+  if (!("Notification" in window)) {
+    alert("Your browser doesn't support HTML Notifications.");
+  } else if (Notification.permission === "granted") {
+    var notification = new Notification(title, options);
+  } else if (Notification.permission !== 'denied') {
+  Notification.requestPermission(function (permission) {
+    if (permission === "granted") {
+      var notification = new Notification(title, options);
+    } else {
+      alert("You have permitted to show notifications."); // Юзер отклонил наш запрос на показ уведомлений
+    }
+  });
+  } else {
+    // user doesn't want to receive notifications
+  }
+}
+
+
 var counter, start, counting;
 var delta = 0;
 var currentTimer;
 var currentMinutes, currentSeconds;
-var work = true;
-var shortBreak = false;
-var longBreak = false;
+var work = true, shortBreak = false, longBreak = false;
 var timerIsRunning = false;
 var workTime=25, breakTime=5, longBreakTime=20;
 
@@ -27,6 +46,14 @@ var pomodoroState = {
   work: true,
   shortBreak: false,
   longBreak: false
+}
+
+function timeToString(t) {
+  if (t<10) {
+    return "0" + t;
+  } else {
+    return t;
+  }
 }
 
 function updatePomodoroState(state) {
@@ -71,12 +98,25 @@ function timer(seconds) {
 function timeIsOut() {
   stopTimer();
   step++;
-  if (step > pomodoroCycle.length) {
+  if (step == pomodoroCycle.length) {
     step = 0;
   }
   // work --> break, etc
   updatePomodoroState(currentState());
-  alert('Time is out! Now' + currentState());
+  alert('Time is out! Now ' + currentState());
+  // work
+  if ([0, 2, 4, 6].includes(step)) {
+    message = "Break has ended, now it's time to work!";
+  } else if ([1, 3, 5].includes(step)) {
+    message = "Work time has finished, let's have a break!";
+  } else if (step == 7) {
+    message = "You've done 4 pomodoros, let's have a long break!";
+  }
+  sendNotification('Time is out!', {
+    body: message,
+    icon: 'icon.png',
+    dir: 'auto'
+  });
   resetTimer();
   console.log(step);
 }
@@ -106,6 +146,7 @@ function addOrSubMinute(operator) {
   }
   if (minutes < 1) {
     document.getElementById("minus").disabled = true;
+    document.getElementById("minus").style.cursor = "not-allowed";
   }
   if (seconds < 10) {seconds = '0' + seconds};
   if (minutes < 10) {minutes = '0' + minutes};
@@ -124,6 +165,7 @@ function stopTimer() {
   clearTimeout(currentTimer);
   timerIsRunning = false;
   document.querySelector('#start-or-pause-timer i').innerHTML = "play_arrow";
+  counting = false;
 };
 
 function resetTimer() {
@@ -138,28 +180,43 @@ function resetTimer() {
   }
   document.querySelector("#timer").innerHTML = newTime;
   document.getElementById("minus").disabled = false;
+  document.getElementById("minus").style.cursor = "pointer";
+  counting = false;
 };
 
 function toggleTimer() {
   if (timerIsRunning) {
+    sendNotification();
     return stopTimer();
   } else {
     return startTimer();
   }
 }
 
-function setTime(numberOfMinutes, isWork) {
+function skipNext() {
   stopTimer();
-  numberOfMinutes = timeToString(numberOfMinutes);
-  document.querySelector("#timer").innerHTML = numberOfMinutes + ":00";
-  if (isWork) {
-    work = true;
-    shortBreak = false;
-    longBreak = false;
-  } else {
-    work = false;
+  step++;
+  if (step == pomodoroCycle.length) {
+    step = 0;
   }
-  document.getElementById("minus").disabled = false;
+  // work --> break, etc
+  updatePomodoroState(currentState());
+  resetTimer();
+  console.log("Step:", step);
+  console.log("state:", currentState());
+}
+
+function skipPrevious() {
+  stopTimer();
+  step--;
+  if (step < 0) {
+    step = 0;
+  }
+  // work --> break, etc
+  updatePomodoroState(currentState());
+  resetTimer();
+  console.log("Step:", step);
+  console.log("state:", currentState());
 }
 
 function showSettings() {
@@ -181,10 +238,6 @@ function setTimePeriods() {
   step = 0;
 }
 
-function timeToString(t) {
-  if (t<10) {
-    return "0" + t;
-  } else {
-    return t;
-  }
+function updateTextInput(val, spanId) {
+  document.getElementById(spanId).innerHTML = val;
 }
