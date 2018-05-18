@@ -18,6 +18,8 @@ function sendNotification(title, options) {
   }
 }
 
+// notification sound is taken from the free sounds library www.zapsplat.com
+var notificationSoundSrc = "notification.mp3"
 
 var counter, start, counting;
 var delta = 0;
@@ -26,6 +28,7 @@ var currentMinutes, currentSeconds;
 var work = true, shortBreak = false, longBreak = false;
 var timerIsRunning = false;
 var workTime=25, breakTime=5, longBreakTime=20;
+var pomodorosDone = 0;
 
 var step = 0;
 var oneTomato = ["work", "shortBreak"];
@@ -97,6 +100,10 @@ function timer(seconds) {
 
 function timeIsOut() {
   stopTimer();
+  playAudio();
+  if (currentState() == "work") {
+    addPomodoro();
+  }
   step++;
   if (step == pomodoroCycle.length) {
     step = 0;
@@ -109,7 +116,7 @@ function timeIsOut() {
   } else if ([1, 3, 5].includes(step)) { //break
     message = "Work time has finished, let's have a break!";
   } else if (step == 7) { // long break
-    message = "You've done 4 pomodoros, let's have a long break!";
+    message = "You've done 4 pomodoros in a row, let's have a deserved long break!";
   }
   sendNotification('Time is out!', {
     body: message,
@@ -139,22 +146,27 @@ function addOrSubMinute(operator) {
   var timeLeft = document.querySelector('#timer').innerHTML;
   var minutes = parseInt(timeLeft.substring(0,2));
   var seconds = parseInt(timeLeft.substring(3,5));
-  if (operator > 0) {
-    minutes ++;
-  } else {
-    minutes --;
-  }
   if (minutes < 1) {
     document.getElementById("minus").disabled = true;
     document.getElementById("minus").style.cursor = "not-allowed";
+  } else {
+    if (operator > 0) {
+      minutes ++;
+    } else {
+      minutes --;
+    }
+    if (minutes < 1) {
+      document.getElementById("minus").disabled = true;
+      document.getElementById("minus").style.cursor = "not-allowed";
+    }
+    if (seconds < 10) {seconds = '0' + seconds};
+    if (minutes < 10) {minutes = '0' + minutes};
+    if (counting) {
+      clearTimeout(currentTimer);
+      currentTimer = timer(minutes * 60 + seconds);
+    }
+    document.querySelector('#timer').innerHTML = minutes + ':' + seconds;
   }
-  if (seconds < 10) {seconds = '0' + seconds};
-  if (minutes < 10) {minutes = '0' + minutes};
-  if (counting) {
-    clearTimeout(currentTimer);
-    currentTimer = timer(minutes * 60 + seconds);
-  }
-  document.querySelector('#timer').innerHTML = minutes + ':' + seconds;
 }
 
 function cddisplay() {
@@ -274,4 +286,17 @@ function setTimePeriods() {
 
 function updateTextInput(val, spanId) {
   document.getElementById(spanId).innerHTML = val;
+}
+
+function addPomodoro() {
+  var container = document.querySelector('.pomodoros-done');
+  var newPomodoro = document.createElement("img");
+  newPomodoro.src = 'icon.png';
+  container.appendChild(newPomodoro);
+  pomodorosDone++;
+}
+
+function playAudio(){
+ var audio = document.getElementById("audio");
+ audio.play();
 }
