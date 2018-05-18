@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -65,7 +66,7 @@ header h1 {
   vertical-align: middle;
 }
 
-.buttons {
+.buttons, .steps {
   text-align: center;
   padding: 1vh;
   margin: 2vh;
@@ -87,7 +88,26 @@ button {
 }
 
 button:hover {
-    background-color: #18521c;
+  background-color: #18521c;
+}
+
+.step {
+  background-color: #6ebf74;
+  color: white;
+  border: 0.2vh solid #31a439;
+  border-radius: 0.5vh;
+  height: 5vh;
+  width: 10vh;
+  font-size: 2vh;
+}
+
+.current-step {
+  background-color: #27832d;
+  border: 0.2vh solid #227227;
+}
+
+.current-step::after {
+
 }
 
 .tomato-buttons {
@@ -177,4 +197,15 @@ button:hover {
 
 #set-time-periods-button {
   margin-top: 3vh;
+}
+
+.close {
+  color: white;
+  top: -10px;
+  right: -10px;
+  height: 3vh;
+  width: 3vh;
+  border-radius: 50%;
+  background-color: green;
+  position:absolute;
 }

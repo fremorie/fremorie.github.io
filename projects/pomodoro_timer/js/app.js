@@ -103,13 +103,12 @@ function timeIsOut() {
   }
   // work --> break, etc
   updatePomodoroState(currentState());
-  alert('Time is out! Now ' + currentState());
   // work
   if ([0, 2, 4, 6].includes(step)) {
     message = "Break has ended, now it's time to work!";
-  } else if ([1, 3, 5].includes(step)) {
+  } else if ([1, 3, 5].includes(step)) { //break
     message = "Work time has finished, let's have a break!";
-  } else if (step == 7) {
+  } else if (step == 7) { // long break
     message = "You've done 4 pomodoros, let's have a long break!";
   }
   sendNotification('Time is out!', {
@@ -119,6 +118,7 @@ function timeIsOut() {
   });
   resetTimer();
   console.log(step);
+  highlightCurrentStep();
 }
 
 function startTimer() {
@@ -182,11 +182,11 @@ function resetTimer() {
   document.getElementById("minus").disabled = false;
   document.getElementById("minus").style.cursor = "pointer";
   counting = false;
+  highlightCurrentStep();
 };
 
 function toggleTimer() {
   if (timerIsRunning) {
-    sendNotification();
     return stopTimer();
   } else {
     return startTimer();
@@ -204,6 +204,7 @@ function skipNext() {
   resetTimer();
   console.log("Step:", step);
   console.log("state:", currentState());
+  highlightCurrentStep();
 }
 
 function skipPrevious() {
@@ -217,6 +218,38 @@ function skipPrevious() {
   resetTimer();
   console.log("Step:", step);
   console.log("state:", currentState());
+  highlightCurrentStep();
+}
+
+function highlightCurrentStep() {
+  var steps = document.querySelectorAll(".step");
+  for (i=0; i<steps.length; i++) {
+    steps[i].classList.remove('current-step');
+  }
+  if (currentState() == "work") {
+    document.querySelector("#work").classList.add('current-step');
+  } else if (currentState() == "shortBreak") {
+    document.querySelector("#break").classList.add('current-step');
+  } else if (currentState() == "longBreak") {
+    document.querySelector("#long-break").classList.add('current-step');
+  }
+}
+
+function setTime(element, t, state) {
+  stopTimer();
+  var steps = document.querySelectorAll(".step");
+  for (i=0; i<steps.length; i++) {
+    steps[i].classList.remove('current-step');
+  }
+  element.classList.add('current-step');
+  if (state=="work") step = 0;
+  else if (state=="shortBreak") step = 1;
+  else if (state=="longBreak") step = 7;
+  updatePomodoroState(currentState());
+  resetTimer();
+  console.log("Step:", step);
+  console.log("state:", currentState());
+  highlightCurrentStep();
 }
 
 function showSettings() {
@@ -236,6 +269,7 @@ function setTimePeriods() {
   document.querySelector("#timer").innerHTML = timeToString(workTime) + ":00";
   console.log(pomodoroTimes.work());
   step = 0;
+  highlightCurrentStep();
 }
 
 function updateTextInput(val, spanId) {
