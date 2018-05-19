@@ -92,6 +92,13 @@ function timer(seconds) {
     }
     currentMinutes = Math.floor(currentSeconds/60);
     currentSeconds -= currentMinutes*60;
+    if (currentMinutes < 1  ) {
+      document.getElementById("minus").disabled = true;
+      document.getElementById("minus").style.cursor = "not-allowed";
+    } else {
+      document.getElementById("minus").disabled = false;
+      document.getElementById("minus").style.cursor = "pointer";
+    }
     if (counting) {
       cddisplay();
     }
@@ -146,21 +153,17 @@ function addOrSubMinute(operator) {
   var timeLeft = document.querySelector('#timer').innerHTML;
   var minutes = parseInt(timeLeft.substring(0,2));
   var seconds = parseInt(timeLeft.substring(3,5));
-  if (minutes < 1) {
+  if ((minutes < 1) && (operator <= 0)) {
     document.getElementById("minus").disabled = true;
     document.getElementById("minus").style.cursor = "not-allowed";
   } else {
     if (operator > 0) {
-      minutes ++;
+      minutes++;
     } else {
-      minutes --;
+      minutes--;
     }
-    if (minutes < 1) {
-      document.getElementById("minus").disabled = true;
-      document.getElementById("minus").style.cursor = "not-allowed";
-    }
-    if (seconds < 10) {seconds = '0' + seconds};
-    if (minutes < 10) {minutes = '0' + minutes};
+    seconds = timeToString(seconds);
+    minutes = timeToString(minutes);
     if (counting) {
       clearTimeout(currentTimer);
       currentTimer = timer(minutes * 60 + seconds);

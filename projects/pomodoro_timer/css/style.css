@@ -123,6 +123,7 @@ button:hover {
 
 .material-icons {
   font-size: 3vh !important;
+  vertical-align: middle !important;
 }
 
 .settings {
@@ -136,7 +137,7 @@ button:hover {
 .slider {
     -webkit-appearance: none;
     width: 30vh;
-    height: 4px;
+    height: 0.3vh;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
@@ -151,22 +152,23 @@ button:hover {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 2vh;
+    height: 2vh;
     background: #4CAF50;
     cursor: pointer;
     border-radius: 50%;
 }
 
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
+    width: 2vh;
+    height: 2vh;
     background: #4CAF50;
     cursor: pointer;
     border-radius: 50%;
 }
 
 .slidecontainer {
+  height: 10vh;
     margin: 0 auto;
     text-align: center;
     padding-top: 2.5vh;
@@ -199,13 +201,14 @@ button:hover {
 
 .close {
   color: white;
-  top: -10px;
-  right: -10px;
+  top: -1vh;
+  right: -1vh;
   height: 3vh;
   width: 3vh;
   border-radius: 50%;
   background-color: green;
-  position:absolute;
+  position: absolute;
+  text-align: center;
 }
 
 .pomodoros-done {
@@ -217,4 +220,11 @@ button:hover {
 .pomodoros-done img {
   height: 7vh;
   width: 6vh;
+}
+
+.dropdown-content .material-icons {
+  font-size: 2vh !important;
+  text-align: center !important;
+  float: left !important;
+
 }
