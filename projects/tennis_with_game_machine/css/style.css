@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Faster+One|Monofett|Wallpoet');
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#gameCanvas, #machineCanvas {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+#gameCanvas {
+  z-index: 10;
+  top: 220;
+  border: 10px solid #001019;
+}
