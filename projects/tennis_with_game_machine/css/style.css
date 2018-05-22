@@ -21,6 +21,6 @@ canvas {
 
 #gameCanvas {
   z-index: 10;
-  top: 220;
+  top: 220px;
   border: 10px solid #001019;
 }
