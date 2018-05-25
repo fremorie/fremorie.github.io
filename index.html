@@ -1,36 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lanf="en">
   <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daria Borisyak - Front-End Engineer</title>
   </head>
-  <body onload="showBlock()">
+  <body>
     <div class="header">
       <h1>Daria Borisyak</h1>
       <h2>Front-End Developer</h2>
     </div>
     <div class="content">
-      <div class="block" id="projects">
-        <h3>My Projects</h3>
+      <div class="block" id="about">
+        <div class="block-header">
+          <h3>About</h3>
+          <i class="material-icons">account_circle</i>
+        </div>
         <div class="block-content">
-          <ul>
-            <li><a target="_blank" href="projects/physics_memorizer/index.html">Physics Memorizer</a>
-            <li><a target="_blank" href="projects/pomodoro_timer/index.html">Pomodoro Timer</a>
-          </ul>
+        </div>
+      </div>
+      <div class="block" id="projects">
+        <div class="block-header">
+          <h3>My Projects</h3>
+          <i class="material-icons">build</i>
+        </div>
+        <div class="block-content">
+          <div class="project">
+            <a target="_blank" href="projects/pomodoro_timer/index.html">
+              <img src="images/pomodoro.png" alt="pomodoro timer screenshot">
+            </a><br>
+            <a target="_blank" href="projects/pomodoro_timer/index.html">Pomodoro Timer</a>
+          </div>
+          <div class="project">
+            <a target="_blank" href="projects/physics_memorizer/index.html">
+              <img src="images/physics_memorizer.png" alt="physics memorizer screenshot">
+            </a><br>
+            <a target="_blank" href="projects/physics_memorizer/index.html">Physics Memorizer</a>
+          </div>
+          <div class="project">
+            <a target="_blank" href="projects/classic_games/tennis_with_game_machine/index.html">
+              <img src="images/tennis.png" alt="tennis game screenshot">
+            </a><br>
+            <a target="_blank" href="projects/classic_games/tennis_with_game_machine/index.html">Tennis Game</a>
+          </div>
+          <!-- <div class="project">
+            <img src="images/brick_breaker.png" alt="brick breaker game screenshot"><br>
+            <a target="_blank" href="projects/classic_games/brick_breaker/index.html">Brick Breaker</a>
+          </div> -->
         </div>
       </div>
       <div class="block" id="experience">
-        <h3>Experience</h3>
-        <div class="block-content"></div>
+        <div class="block-header">
+          <h3>Experience</h3>
+          <i class="material-icons">business_center</i>
+        </div>
+        <div class="block-content">
+          <p>I have two years of experience as a Machine Learning Engineer. You can view my CV <a target="_blank" href="files/cv">here</a>.</p>
+        </div>
       </div>
       <div class="block" id="education">
-        <h3>Education</h3>
-        <div class="block-content"></div>
+        <div class="block-header">
+          <h3>Education</h3>
+          <i class="material-icons">school</i>
+        </div>
+        <div class="block-content">
+          <p>Moscow Institute of Physics and Technology<br>Department of Aerophysics and Space Research</p>
+          <p>Master's degree in System Analysis and Control, Bachelor's degree in Applied Physics and Mathematics</p>
+        </div>
       </div>
       <div class="block" id="contacts">
-        <h3>Contacts</h3>
-        <div class="block-content"></div>
+        <div class="block-header">
+          <h3>Contacts</h3>
+          <i class="material-icons">local_post_office</i>
+        </div>
+        <div class="block-content">
+        </div>
       </div>
     </div>
   </body>
