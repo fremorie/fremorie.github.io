@@ -6,6 +6,11 @@ body {
   font-family: 'Questrial', sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 56px;
+}
+
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
 }
 
 /*background image source: https://www.publicdomainpictures.net*/
@@ -14,69 +19,31 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
-  width: 100%;
   color: white;
 }
 
-.header h1 {
-  margin: 0 auto;
-  font-size: 60px;
-  transform: translateY(200px);
-  margin-left: 20px;
+#h1 {
+  height: 300px;
 }
 
-.header h2 {
-  margin: 0 auto;
-  font-size: 30px;
-  transform: translateY(210px);
-  margin-left: 20px;
+#h2 {
+  height: 100px;
 }
 
+#h1 h1 {
+  position:absolute;
+  bottom:0;
+}
 
 .content {
   border-collapse: collapse;
-  display: table;
-  width: 100%;
 }
 
 .block {
-  display: table-row;
-  border-bottom: 10px solid;
+  border-bottom: 5px solid;
   -webkit-border-image: url('../images/blue_waves.jpg') 50 round;
   border-image: url('../images/blue_waves.jpg') 50 round;
-  padding: 10px;
-  height: 400px;
   color: #1f2639;
-}
-
-.block h3 {
-
-}
-
-.block-header {
-  display: table-cell;
-  width: 20%;
-  padding-left: 20px;
-  vertical-align: top;
-}
-
-.block-header h3 {
-  font-size: 25px;
-  -webkit-margin-after: 3px;
-  margin-bottom: 20px;
-  text-overflow: ellipsis;
-}
-
-.material-icons {
-  margin-left: 10px !important;
-  font-size: 40px !important;
-
-}
-
-.block-content {
-  padding-left: 20px;
-  display: table-cell;
-  width: 80%;
 }
 
 /* links */
@@ -112,16 +79,10 @@ a img:active {
 /*projects images*/
 
 .project {
-  padding: 20px;
   text-align: center;
-  display: inline-block;
-  width: 40%;
 }
 
 .project img {
-  width: 100%;
-  border: 2px solid #1f2639;
-  border-radius: 10px;
   /*-webkit-filter: grayscale(100%) opacity(50%);*/
   filter: opacity(70%);
 }
