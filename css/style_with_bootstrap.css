@@ -43,7 +43,11 @@ body {
   border-bottom: 5px solid;
   -webkit-border-image: url('../images/blue_waves.jpg') 50 round;
   border-image: url('../images/blue_waves.jpg') 50 round;
-  color: #1f2639;
+  color: #354b60;
+}
+
+.navbar-custom {
+  background-color: #1a2a43 !important;
 }
 
 /* links */
@@ -85,8 +89,42 @@ a img:active {
 .project img {
   /*-webkit-filter: grayscale(100%) opacity(50%);*/
   filter: opacity(70%);
+  cursor: pointer;
 }
 
 .project img:hover {
   filter: none;
+}
+
+/*flag icons*/
+.flag {
+  height: 20px;
+  width: auto;
+}
+
+#flag-button {
+  background-color: #1a2a43;
+}
+
+/*modal*/
+.modal-body p {
+  text-align: left;
+}
+
+.modal-body img {
+  filter: none;
+  cursor: default;
+}
+
+.view-project {
+  background-color: #1a2a43;
+}
+
+.view-project:hover {
+  background-color: #284168;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
 }

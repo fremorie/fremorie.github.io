@@ -22,13 +22,13 @@
   </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div class="container-fluid">
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top navbar-custom">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
             </li>
@@ -45,6 +45,15 @@
               <a class="nav-link" href="#contacts">Contacts</a>
             </li>
           </ul>
+          <!-- <ul class="navbar-nav">
+            <li>
+              <button type="button" class="btn" id="flag-button">
+                <a href="#" data-toggle="tooltip" title="Switch Language">
+                  <img src="images/flags/ru.svg" class="flag" id="flag-image">
+                </a>
+              </button>
+            </li>
+          </ul> -->
         </div>
       </nav>
       <div class="row header">
@@ -71,25 +80,105 @@
           </div>
           <div class="col-sm-9 p-sm-4 block-content">
             <div class="row">
+              <!-- PHYSICS MEMORIZER-->
               <div class="col-sm-6 project">
-                <a target="_blank" href="projects/pomodoro_timer/index.html">
-                  <img src="images/pomodoro.png" alt="pomodoro timer screenshot" class="img-thumbnail">
-                </a><br>
-                <a target="_blank" href="projects/pomodoro_timer/index.html">Pomodoro Timer</a>
-              </div>
-              <div class="col-sm-6 project">
-                <a target="_blank" href="projects/physics_memorizer/index.html">
-                  <img src="images/physics_memorizer.png" alt="physics memorizer screenshot" class="img-thumbnail">
-                </a><br>
+                <img src="images/screenshots/physics_memorizer.png" alt="physics memorizer screenshot" class="img-thumbnail" data-toggle="modal" data-target="#pmModal">
                 <a target="_blank" href="projects/physics_memorizer/index.html">Physics Memorizer</a>
+                <!-- The Modal -->
+                <div class="modal fade" id="pmModal">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Physics Memorizer</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <p><img src="images/screenshots/physics_memorizer.png" alt="physics memorizer screenshot" class="img-thumbnail"></p>
+                        <p>This is a game I created for my younger brother to help him memorize physics formulas.</p>
+                        <p>The idea is based on the Memory card game (also called "Concentration"): all of the cards are laid face down on a surface and two cards are
+                          flipped face up over each turn. The object of the game is to turn over pairs of matching cards.</p>
+                        <p>In this version, each pair represents a formula:
+                          one card has a physical quantity on it, the other has a calculation formula for the physical quantity.</p>
+                        <div class="tags">
+                          <p><span class="badge badge-secondary">HTML</span> <span class="badge badge-secondary">CSS</span> <span class="badge badge-secondary">JavaScript</span></p>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <a target="_blank" href="projects/physics_memorizer/index.html" class="btn btn-secondary view-project">View Website</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- POMODORO TIMER-->
+              <div class="col-sm-6 project">
+                <img src="images/screenshots/pomodoro.png" alt="pomodoro timer screenshot" class="img-thumbnail" data-toggle="modal" data-target="#ptModal">
+                <a target="_blank" href="projects/pomodoro_timer/index.html">Pomodoro Timer</a>
+                <!-- The Modal -->
+                <div class="modal fade" id="ptModal">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Pomodoro Timer</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <p><img src="images/screenshots/pomodoro.png" alt="pomodoro timer screenshot" class="img-thumbnail"></p>
+                        <p>A simple, easy-to-use pomodoro timer.</p>
+                        <p>This website allows a user to set custom time intervals and sends notifications (if allowed) when an interval ends.
+                          When a pomodoro is "eaten" (a 25-minute interval of work has ended), a little tomato appears at the bottom of the screen.
+                          This allows you to see how many 25-minute sessions of work you have currently done.</p>
+                        <div class="tags">
+                          <p><span class="badge badge-secondary">HTML</span>
+                            <span class="badge badge-secondary">CSS</span>
+                            <span class="badge badge-secondary">Bootstrap 4</span>
+                            <span class="badge badge-secondary">JavaScript</span></p>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <a target="_blank" href="projects/pomodoro_timer/index.html" class="btn btn-secondary view-project">View Website</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row">
+              <!-- TENNIS -->
               <div class="col-sm-6 project">
-                <a target="_blank" href="projects/classic_games/tennis_with_game_machine/index.html">
-                  <img src="images/tennis.png" alt="tennis game screenshot" class="img-thumbnail">
-                </a><br>
+                <img src="images/screenshots/tennis.png" alt="tennis game screenshot" class="img-thumbnail" data-toggle="modal" data-target="#tgModal">
                 <a target="_blank" href="projects/classic_games/tennis_with_game_machine/index.html">Tennis Game</a>
+                <!-- The Modal -->
+                <div class="modal fade" id="tgModal">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Tennis Game</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <p><img src="images/screenshots/tennis.png" alt="tennis game screenshot" class="img-thumbnail"></p>
+                        <p>One of the classic games, early 1970’s arcade-style.</p>
+                        <p>Both the game and an arcade cabinet are drawn using HTML5 Canvas.</p>
+                        <div class="tags">
+                          <p><span class="badge badge-secondary">HTML</span> <span class="badge badge-secondary">Canvas</span> <span class="badge badge-secondary">JavaScript</span></p>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <a target="_blank" href="projects/classic_games/tennis_with_game_machine/index.html" class="btn btn-secondary view-project">View Website</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- <div class="col-sm-6 project">
                 <a target="_blank" href="projects/physics_memorizer/index.html">
