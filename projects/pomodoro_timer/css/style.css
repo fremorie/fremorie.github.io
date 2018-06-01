@@ -84,6 +84,7 @@ button {
   width: 10vh;
   font-size: 2vh;
   cursor: pointer;
+  padding: 0px;
 }
 
 button:hover {
@@ -110,7 +111,7 @@ button:hover {
 }
 
 .tomato-buttons {
-  width: 25vh;
+  width: 100%;
   display: block;
   margin: 0 auto;
   margin-top: 2vh;
@@ -119,11 +120,13 @@ button:hover {
 
 .control-button {
   width: 5vh;
+  text-align: center;
 }
 
 .material-icons {
   font-size: 3vh !important;
   vertical-align: middle !important;
+  margin: 0 auto !important;
 }
 
 .settings {
@@ -189,6 +192,7 @@ button:hover {
     left: 0;
     right: 0;
     margin-top: 1vh;
+    font-size: 2vh;
 }
 
 .show {
@@ -209,7 +213,19 @@ button:hover {
   background-color: green;
   position: absolute;
   text-align: center;
+  line-height: 3vh;
 }
+
+.close .material-icons {
+  font-size: 3vh;
+  line-height: 3vh !important;
+  text-align: center !important;
+  height: 3vh !important;
+  width: 3vh !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
 
 .pomodoros-done {
   height: 14vh;
@@ -220,11 +236,4 @@ button:hover {
 .pomodoros-done img {
   height: 7vh;
   width: 6vh;
-}
-
-.dropdown-content .material-icons {
-  font-size: 2vh !important;
-  text-align: center !important;
-  float: left !important;
-
 }
