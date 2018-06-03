@@ -14,8 +14,15 @@ var player1Score = 0;
 var player2Score = 0;
 const WINNING_SCORE = 10;
 var showingWinScreen = false;
+var showingStartScreen = true;
 
 function handleMouseClick() {
+  if (showingStartScreen) {
+    player1Score = 0;
+    player2Score = 0;
+    showingWinScreen = false;
+    showingStartScreen = false;
+  }
   if (showingWinScreen) {
     player1Score = 0;
     player2Score = 0;
@@ -27,6 +34,7 @@ function startGame() {
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
   var framesPerSecond = 100;
+  canvasContext.fillText('START', canvas.width/2, canvas.height/4);
   setInterval(function() {
     moveEverything();
     drawEverything();
@@ -103,6 +111,11 @@ function drawEverything() {
       canvasContext.fillText('LOSE', canvas.width/2, canvas.height/4);
     }
     canvasContext.fillText('Click to continue', canvas.width/2, canvas.height/2);
+    return;
+  }
+  if (showingStartScreen) {
+    canvasContext.fillStyle = 'white';
+    canvasContext.fillText('START GAME', canvas.width/2, canvas.height/4);
     return;
   }
   drawNet();
