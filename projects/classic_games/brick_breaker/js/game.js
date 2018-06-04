@@ -36,7 +36,7 @@ var ballY = BRICK_ROWS * BRICK_H + 20;
 var brickGrid = new Array(BRICK_ROWS * BRICK_COLS);
 console.log(brickGrid);
 
-window.onload = function() {
+function startGame() {
   resetBricks();
   canvas = document.getElementById('gameCanvas');
   ctx = canvas.getContext('2d');
@@ -118,7 +118,7 @@ function drawCircle(centerX, centerY, radius, color) {
 
 function drawEverything() {
   // draw background
-  drawRect(0, 0, canvas.width, canvas.height, 'black');
+  drawRect(0, 0, canvas.width, canvas.height, colors.blackBlue);
   drawBricks();
   // draw ball
   drawCircle(ballX, ballY, BALL_RADIUS, 'white');
