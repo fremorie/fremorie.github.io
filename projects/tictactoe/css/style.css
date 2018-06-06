@@ -9,8 +9,9 @@
 }
 
 h1 {
-  font-family: 'Crafty Girls', cursive;
-  color: #ff9f66;
+  font-weight: normal;
+  font-family: 'Cabin Sketch', cursive;
+  color: #cc7f51;
   font-size: 60px;
   text-shadow:
    -1px -1px 0 #33637f,
@@ -53,8 +54,9 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    font-family: 'Crafty Girls', cursive;
+    font-family: 'Gaegu', cursive;
     font-size: 40px;
+    border-radius: 10px;
 }
 
 /* The Close Button */
@@ -67,7 +69,7 @@ body {
 }
 
 button {
-  font-family: 'Crafty Girls', cursive;
+  font-family: 'Gaegu', cursive;;
   color: #ff9f66;
   background-color: #66c6ff;
   text-shadow:
@@ -78,6 +80,7 @@ button {
   font-size: 30px;
   border: 2px solid #33637f;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 
