@@ -70,7 +70,33 @@
             <h3>About</h3>
             <i class="material-icons">account_circle</i>
           </div>
-          <div class="col-sm-9 block-content">
+          <div class="col-sm-9 p-sm-4 block-content">
+            <div class="col-xl-10">
+              <p><strong>Hi! My name is Daria, and I'm looking for an entry-level Front-End Developer position.</strong></p>
+              <p>I graduated from the Moscow Institute of Physics and Technology in 2017 and have 2 years of experience in Machine Learning.
+              I decided to change my career path and spent last 8 months studying front-end development. I feel ready to start working on real projects!</p>
+              <span id="showMore" data-toggle="collapse" data-target="#readMore" onclick="toggleVisibility(this)">Show more</span>
+              <div id="readMore" class="collapse">
+                <p>After graduating from university I started to have second thoughts about the career path I've chosen.
+                   I've spent 2 years working in Data Science, but suddenly I wasn't sure whether Machine Learning was the right field for me.
+                   So I decided to take a break to figure out what is it I want to devote my life to.</p>
+                <p>I love programming and math, but I love art as well. I believe creating something beautiful to be one of the greatest pleasures in the world.
+                  Drawing and oil painting were always my favorite hobbies.
+                  Art and beauty were the things that I missed while working as a Data Scientist.
+                  One day I was sitting at work and suddenly realized that I've spent half an hour trying to find the best matching colors for a graph...</p>
+                <p>Front-End Development seemed to be the perfect combination of technology and creativity, so I decided to give it a try. And couldn't stop!</p>
+                <p>I started my self-education path by completing online courses on Coursera, Udemy, Udacity and Codecademy. My deskbook was (and still is) "Eloquent JavaScript" by Marijn Haverbeke.
+                I also completed several chapters of "Hands-on Intro to Game Programming" by Chris DeLeon.<br>
+                After becoming a little confident with the technology stack, I started to create my own little projects.</p>
+                <p>The website that inspired me most is the <a href="https://ncase.me/trust/" target="_blank">Evolution of Trust</a> by Nicky Case. One day I hope to be able to create something
+                as beautiful and intriguing.<br>
+                Currently I'm mastering responsive design with the course on
+                  <a href="https://courses.edx.org/courses/course-v1:Microsoft+DEV218x+1T2018a/course/" target="_blank">Edx</a>
+                  and learning about programming natural simulations on
+                  <a href="https://www.khanacademy.org/computing/computer-programming/programming-natural-simulations" target="_blank">Khan Academy</a>.</p>
+                <span id="showLess" data-toggle="collapse" data-target="#readMore" onclick="toggleVisibility(this)">Show less</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row block" id="projects">
@@ -78,7 +104,7 @@
             <h3>My Projects</h3>
             <i class="material-icons">build</i>
           </div>
-          <div class="col-sm-9 p-sm-4 block-content">
+          <div class="col-sm-9 p-4 block-content">
             <div class="row">
               <!-- PHYSICS MEMORIZER-->
               <div class="col-md-6 project">
@@ -248,7 +274,63 @@
             <i class="material-icons">business_center</i>
           </div>
           <div class="col-sm-9 p-sm-4 block-content">
-            <p><a target="_blank" href="files/cv"></a></p>
+            <p>You can view my full CV <a target="_blank" href="files/cv.pdf">here</a>.</p>
+            <div class="media p-3">
+              <a href="https://bookmate.com/" target="_blank"><img src="images/icons/bookmate.png" class="align-self-start mr-3" style="width:100px"></a>
+              <div class="media-body">
+                <h4>Bookmate</h4>
+                <h5>Junior Data Scientist</h5>
+                <p class="card-text">September 2016 - August 2017</p>
+                <p><span class="badge badge-secondary">Python</span> <span class="badge badge-secondary">TensorFlow</span> <span class="badge badge-secondary">MySQL</span></p>
+              </div>
+            </div>
+            <div class="media border border-left-0 border-right-0 border-bottom-0 p-3">
+              <a href="https://retailrocket.ru/" target="_blank"><img src="images/icons/retail_rocket.png" class="align-self-start mr-3" style="width:100px"></a>
+              <div class="media-body">
+                <h4>Retail Rocket</h4>
+                <h5>Junior Data Analyst</h5>
+                <p class="card-text">May 2016 - September 2016</p>
+                <p><span class="badge badge-secondary">Scala</span> <span class="badge badge-secondary">Spark</span> <span class="badge badge-secondary">Hadoop</span></p>
+              </div>
+            </div>
+            <div class="media border border-left-0 border-right-0 border-bottom-0 p-3">
+              <a href="http://adsniper.ru/" target="_blank"><img src="images/icons/adsniper.png" class="align-self-start mr-3" style="width:100px"></a>
+              <div class="media-body">
+                <h4>AdSniper</h4>
+                <h5>Junior Researcher</h5>
+                <p class="card-text">October 2015 - May 2016</p>
+                <p><span class="badge badge-secondary">Python</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row block" id="skills">
+          <div class="col-sm-3 p-sm-4 block-header">
+            <h3>Skills</h3>
+            <i class="material-icons">videogame_asset</i>
+          </div>
+          <div class="col-sm-9 p-4 block-content">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>Languages I speak</h4>
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/html.png" class="align-self-start mr-3">HTML</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/css.png" class="align-self-start mr-3">CSS</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/js.png" class="align-self-start mr-3">JavaScript</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/python.png" class="align-self-start mr-3">Python</li>
+                  <!-- <li class="list-group-item list-group-item-action"><img src="images/icons/scala.png" class="align-self-start mr-3" style="width:50px">Scala</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/bash.png" class="align-self-start mr-3" style="width:50px">Bash</li> -->
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h4>Technologies I use</h4>
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/git.png" class="align-self-start mr-3">Git</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/bootstrap.png" class="align-self-start mr-3">Bootstrap</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/linux.png" class="align-self-start mr-3">Linux</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row block" id="education">
@@ -263,7 +345,7 @@
                 <h4>System Analysis and Control</h4>
                 <h5>Moscow Institute of Physics and Technology</h5>
                 <h6>Department of Aerophysics and Space Research</h6>
-                <p>2015 - 2017<br>Master's degree</p>
+                <p class="card-text">2015 - 2017<br>Master's degree</p>
               </div>
             </div>
             <div class="media border border-left-0 border-right-0 border-bottom-0 p-3">
@@ -282,9 +364,13 @@
             <h3>Contacts</h3>
             <i class="material-icons">local_post_office</i>
           </div>
-          <div class="col-sm-9 p-sm-4 block-content">
+          <div class="col-sm-9 p-4 block-content">
             <h5>darya.borisyak@gmail.com</h5>
-            <a target="_blank" href="https://www.linkedin.com/in/daria-borisyak/"><img src="images/icons/linkedin.png" style="height:30px"></a>
+            <div class="social-links">
+              <a target="_blank" href="https://www.linkedin.com/in/daria-borisyak/"><img src="images/icons/linkedin.png" style="height:30px"></a>
+              <a target="_blank" href="https://github.com/fremorie"><img src="images/icons/github.png" style="height:30px"></a>
+              <a target="_blank" href="https://codepen.io/fremorie/"><img src="images/icons/codepen.png" style="height:30px"></a>
+            </div>
           </div>
         </div>
       </div>
