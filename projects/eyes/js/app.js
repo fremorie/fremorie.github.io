@@ -93,6 +93,8 @@ function resize() {
   if (wh > 200) {
     eyeRadius = 100;
     delta = 10;
+    leftEye = new Eye(eyeRadius, -eyeRadius - delta, 0, -eyeRadius, 0);
+    rightEye = new Eye(eyeRadius, eyeRadius, 0, eyeRadius, 0);
   } else {
     eyeRadius = wh/4;
     delta = eyeRadius/40;
