@@ -1,13 +1,15 @@
 var canvas;
 var wh, ww;
 var ctx;
-var mousePosition = {
-  x: 0,
-  y: 0
-};
+var mousePosition = 0;
 
 var eyeRadius = 100;
 var delta = 10;
+
+function drawBackground() {
+  ctx.fillStyle = 'black';
+  ctx.fillRect(-canvas.width/2,-canvas.height/2, canvas.width, canvas.height);
+}
 
 var Eye = function(eyeRadius, centerX, centerY, irisCenterX, irisCenterY) {
   this.eyeRadius = eyeRadius;
@@ -41,8 +43,8 @@ Eye.prototype.draw = function(ctx) {
 }
 
 Eye.prototype.move = function(ctx, mousePosition) {
-  var relativeMousePositionX = mousePosition.x - this.centerX;
-  var relativeMousePositionY = mousePosition.y - this.centerY;
+  var relativeMousePositionX = mousePosition.x;
+  var relativeMousePositionY = mousePosition.y;
   var deltaX = relativeMousePositionX - this.irisCenterX;
   var deltaY = relativeMousePositionY - this.irisCenterY;
 
@@ -93,8 +95,6 @@ function resize() {
   if (wh > 200) {
     eyeRadius = 100;
     delta = 10;
-    leftEye = new Eye(eyeRadius, -eyeRadius - delta, 0, -eyeRadius, 0);
-    rightEye = new Eye(eyeRadius, eyeRadius, 0, eyeRadius, 0);
   } else {
     eyeRadius = wh/4;
     delta = eyeRadius/40;
@@ -120,7 +120,6 @@ window.onload = function() {
   })
 }
 
-
 function setCanvasParameters() {
   canvas = document.getElementById('canvas');
   ww = window.innerWidth;
@@ -129,9 +128,4 @@ function setCanvasParameters() {
   canvas.height = wh;
   ctx = canvas.getContext('2d');
   ctx.translate(canvas.width/2, canvas.height/2);
-}
-
-function drawBackground() {
-  ctx.fillStyle = 'black';
-  ctx.fillRect(-canvas.width/2,-canvas.height/2, canvas.width, canvas.height);
 }
