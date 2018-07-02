@@ -151,3 +151,7 @@ li img {
 .material-icons {
   font-size: 2rem;
 }
+
+#about p {
+  text-align: justify;
+}

@@ -24,22 +24,13 @@ var winningCombinations = [
   [3, 14, 25], [7, 14, 21]
 ]
 
-
-function checkWinning() {
-  if (winning(grid, 'X')) {
-
-  }
-}
-
 function winning(board, player){
   var winningComb = 0;
-  console.log('searching for combination...');
   winningCombinations.forEach(function(combination) {
     if (grid[combination[0]-1] == player &&
         grid[combination[1]-1] == player &&
         grid[combination[2]-1] == player) {
           winningComb = combination;
-          console.log(winningComb);
           return;
         }
   });

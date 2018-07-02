@@ -5,19 +5,20 @@ var humanPlayerMove = true;
 var playerXDrawing = true;
 
 var upperContainer, middleContainer;
+var disabledCards = [];
 
 window.onload = function() {
   upperContainer = document.querySelector('#upper');
   middleContainer = document.querySelector('#middle');
-  console.log('hey!');
   containers = document.getElementsByClassName('container');
   cards = document.getElementsByClassName('card');
 
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', playerMove, false);
+  }
+
   for (var i = 0; i < containers.length; i++) {
     containers[i].addEventListener('click', showContainer);
-  }
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', drawX, false);
   }
   document.addEventListener('click', closeContainerIfClickedOutside);
 }
@@ -70,30 +71,111 @@ function showContainer() {
 }
 
 function drawX() {
+  var iconDiv = document.createElement('div');
+  var icon = document.createElement('i');
+  icon.classList.add('fas');
+  icon.classList.add('fa-times');
+  iconDiv.appendChild(icon);
+  return iconDiv;
+}
+
+function drawO() {
+  var iconDiv = document.createElement('div');
+  var icon = document.createElement('i');
+  icon.classList.add('far');
+  icon.classList.add('fa-circle');
+  iconDiv.appendChild(icon);
+  return iconDiv;
+}
+
+function disableCard(card) {
+  disabledCards.push(card.id);
+}
+
+function playerMove() {
   var container = this.parentElement;
   if (container.classList.contains('container-origin')) {
-    var id = parseInt(this.id);
-    var icon = document.createElement('i');
-    if (playerXDrawing) {
-      icon.classList.add('fas');
-      icon.classList.add('fa-times');
-      playerXDrawing = false;
-      grid[id-1] = 'X'
-    } else {
-      icon.classList.add('far');
-      icon.classList.add('fa-circle');
-      playerXDrawing = true;
-      grid[id-1] = 'O'
+    if (!disabledCards.includes(this.id)) {
+      var id = parseInt(this.id);
+      if (playerXDrawing) {
+        var iconDiv = drawX();
+        playerXDrawing = false;
+        grid[id-1] = 'X'
+      } else {
+        var iconDiv = drawO();
+        playerXDrawing = true;
+        grid[id-1] = 'O'
+      }
+      iconDiv.classList.add('icon');
+      this.appendChild(iconDiv);
+      disableCard(this);
     }
-    console.log(grid);
-    var iconDiv = document.createElement('div');
-    iconDiv.classList.add('icon');
-    iconDiv.appendChild(icon);
-    this.appendChild(iconDiv);
     setTimeout(function() {
       upperContainer.classList.remove('container-up');
       middleContainer.classList.remove('container-up');
     }, 500);
     checkWinning();
     }
+}
+
+function restartGame() {
+  for (var i = 0; i < cards.length; i++) {
+    // remove green background
+    cards[i].classList.remove('winning');
+    // remove all 'X's and 'O's
+    while (cards[i].firstChild) {
+    cards[i].removeChild(cards[i].firstChild);
+      }
+  };
+  // reset grid
+  grid = Array.from(Array(27).keys()).map(x => x+1);
+  // reset winning popup
+  var popupContent = document.querySelector('#result .winningMessage i');
+  popupContent.remove();
+  // X goes first (idk why... after all, it's called 'krestiki-noliki', not 'noliki-krestiki')
+  playerXDrawing = true;
+  disabledCards = [];
+}
+
+function checkWinning() {
+  if (winning(grid, 'X')) {
+    showPopup('X');
+  } else if (winning(grid, 'O')) {
+    showPopup('O');
+  }
+}
+
+function showPopup(player) {
+  setTimeout(function() {
+    var popup = document.getElementById('win-popup');
+    var span = document.getElementsByClassName("close")[0];
+    var popupContent = document.getElementById('result');
+    var button = document.getElementById('playAgain');
+    // draw X or O depending on who's won
+    if (player == 'X') {
+      var iconDiv = drawX();
+    } else if (player == 'O') {
+      var iconDiv = drawO();
+    }
+    iconDiv.classList.add('winningMessage');
+    // insert X or O before 'player won'
+    popupContent.insertAdjacentElement('afterbegin', iconDiv);
+    // make popup visible
+    popup.style.display = "block";
+    button.onclick = function() {
+      popup.style.display = "none";
+      restartGame();
+    }
+    span.onclick = function() {
+        popup.style.display = "none";
+        restartGame();
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+            restartGame();
+        }
+    }
+  }, 1000);
 }
