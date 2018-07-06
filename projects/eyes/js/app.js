@@ -3,7 +3,7 @@ var wh, ww;
 var ctx;
 var mousePosition = 0;
 
-var eyeRadius = 100;
+var eyeRadius = 50;
 var delta = 10;
 
 function drawBackground() {
