@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  /*background-color: black;*/
+}
+
+#map {
+  margin: 0 auto;
+}
+
+/*#gameCanvas {
+  position: absolute;
+  border: 2px solid orange;
+}*/
