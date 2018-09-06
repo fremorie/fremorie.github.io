@@ -75,8 +75,6 @@ function updatePomodoroState(state) {
   }
 }
 
-console.log(pomodoroTimes.work());
-
 function timer(seconds) {
   start = new Date().getTime();
   return setInterval(function() {
