@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbaba7f1-ef59-4ae3-8eb8-5ed4140de78f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/fremorie.github.io.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icons/bash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icons/gitlab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icons/node.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icons/react.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icons/redux.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/icons/sass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/screenshots/direction_game.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
