@@ -74,6 +74,21 @@
         </div>
       </div>
       <div class="content">
+
+        <div class="row block" id="about">
+          <div class="col-sm-3 p-sm-4 block-header">
+            <h3>About</h3>
+            <i class="material-icons">build</i>
+          </div>
+          <!-- just some comment -->
+          <div class="col-sm-9 p-sm-4 block-content">
+            <div class="row">
+              <h5>Hi! My name is Daria, and I'm looking for a job opportunity in education.</h5>
+              <p>I'm passionate about interactive courses and beautiful animations that help to understand difficult concepts.</p>
+            </div>
+          </div>
+        </div>
+
         <div class="row block" id="projects">
           <div class="col-sm-3 p-sm-4 block-header">
             <h3>My Projects</h3>
@@ -82,6 +97,36 @@
           <!-- just some comment -->
           <div class="col-sm-9 p-sm-4 block-content">
             <div class="row">
+              <!-- DIRECTION GAME -->
+              <div class="col-md-6 project">
+                <img src="images/screenshots/direction_game.jpg" alt="direction game screenshot" class="img-thumbnail" data-toggle="modal" data-target="#dgModal">
+                <a target="_blank" href="projects/physics_memorizer/">Direction Game</a>
+                <!-- The Modal -->
+                <div class="modal fade" id="dgModal">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Direction Game</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <p><img src="images/screenshots/direction_game.jpg" alt="direction game screenshot" class="img-thumbnail"></p>
+                        <p>A game to improve attention skills. The purpose is to determine the central fish direction as fast as you can!</p>
+                        <p><a href="https://github.com/fremorie/DirectionGame">Source Code Repository</a></p>
+                        <div class="tags">
+                          <p><span class="badge badge-secondary">React</span> <span class="badge badge-secondary">Redux</span> <span class="badge badge-secondary">CSS Animations</span></p>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <a target="_blank" href="projects/direction_game/" class="btn btn-secondary view-project">View Website</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- PHYSICS MEMORIZER-->
               <div class="col-md-6 project">
                 <img src="images/screenshots/physics_memorizer.png" alt="physics memorizer screenshot" class="img-thumbnail" data-toggle="modal" data-target="#pmModal">
@@ -110,40 +155,6 @@
                       <!-- Modal footer -->
                       <div class="modal-footer">
                         <a target="_blank" href="projects/physics_memorizer/" class="btn btn-secondary view-project">View Website</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- POMODORO TIMER-->
-              <div class="col-md-6 project">
-                <img src="images/screenshots/pomodoro.png" alt="pomodoro timer screenshot" class="img-thumbnail" data-toggle="modal" data-target="#ptModal">
-                <a target="_blank" href="projects/pomodoro_timer/">Pomodoro Timer</a>
-                <!-- The Modal -->
-                <div class="modal fade" id="ptModal">
-                  <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                      <!-- Modal Header -->
-                      <div class="modal-header">
-                        <h4 class="modal-title">Pomodoro Timer</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      </div>
-                      <!-- Modal body -->
-                      <div class="modal-body">
-                        <p><img src="images/screenshots/pomodoro.png" alt="pomodoro timer screenshot" class="img-thumbnail"></p>
-                        <p>A simple, easy-to-use pomodoro timer.</p>
-                        <p>This website allows a user to set custom time intervals and sends notifications (if allowed) when an interval ends.
-                          When a pomodoro is "eaten" (a 25-minute interval of work has ended), a little tomato appears at the bottom of the screen.
-                          This allows you to see how many 25-minute sessions of work you have currently done.</p>
-                        <div class="tags">
-                          <p><span class="badge badge-secondary">HTML</span>
-                            <span class="badge badge-secondary">CSS</span>
-                            <span class="badge badge-secondary">JavaScript</span></p>
-                        </div>
-                      </div>
-                      <!-- Modal footer -->
-                      <div class="modal-footer">
-                        <a target="_blank" href="projects/pomodoro_timer/" class="btn btn-secondary view-project">View Website</a>
                       </div>
                     </div>
                   </div>
@@ -273,6 +284,40 @@
               </div>
             </div>
             <div class="row">
+              <!-- POMODORO TIMER-->
+              <div class="col-md-6 project">
+                <img src="images/screenshots/pomodoro.png" alt="pomodoro timer screenshot" class="img-thumbnail" data-toggle="modal" data-target="#ptModal">
+                <a target="_blank" href="projects/pomodoro_timer/">Pomodoro Timer</a>
+                <!-- The Modal -->
+                <div class="modal fade" id="ptModal">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Pomodoro Timer</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <p><img src="images/screenshots/pomodoro.png" alt="pomodoro timer screenshot" class="img-thumbnail"></p>
+                        <p>A simple, easy-to-use pomodoro timer.</p>
+                        <p>This website allows a user to set custom time intervals and sends notifications (if allowed) when an interval ends.
+                          When a pomodoro is "eaten" (a 25-minute interval of work has ended), a little tomato appears at the bottom of the screen.
+                          This allows you to see how many 25-minute sessions of work you have currently done.</p>
+                        <div class="tags">
+                          <p><span class="badge badge-secondary">HTML</span>
+                            <span class="badge badge-secondary">CSS</span>
+                            <span class="badge badge-secondary">JavaScript</span></p>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <a target="_blank" href="projects/pomodoro_timer/" class="btn btn-secondary view-project">View Website</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- EYES-->
               <div class="col-md-6 project">
                 <img src="images/screenshots/eyes.png" alt="eyes screenshot" class="img-thumbnail" data-toggle="modal" data-target="#eyesModal">
@@ -316,9 +361,18 @@
             <div class="media p-3">
               <a href="https://yandex.ru/search/images" target="_blank"><img src="images/icons/yandex.png" class="align-self-start mr-3" style="width:100px"></a>
               <div class="media-body">
+                <h4>Yandex.Market</h4>
+                <h5>Frontend Developer</h5>
+                <p class="card-text">February 2019 - Present</p>
+                <p><span class="badge badge-secondary">React</span> <span class="badge badge-secondary">Redux</span> <span class="badge badge-secondary">Node.js</span></p>
+              </div>
+            </div>
+            <div class="media p-3">
+              <a href="https://yandex.ru/search/images" target="_blank"><img src="images/icons/yandex.png" class="align-self-start mr-3" style="width:100px"></a>
+              <div class="media-body">
                 <h4>Yandex</h4>
                 <h5>Frontend Developer - Intern</h5>
-                <p class="card-text">November 2018 - Present</p>
+                <p class="card-text">November 2018 - February 2019</p>
                 <p><span class="badge badge-secondary">JavaScript</span> <span class="badge badge-secondary">BEM</span> <span class="badge badge-secondary">Node.js</span></p>
               </div>
             </div>
@@ -361,19 +415,18 @@
               <div class="col-md-6">
                 <h4>Languages I speak</h4>
                 <ul class="list-group">
-                  <li class="list-group-item list-group-item-action"><img src="images/icons/html.png" class="align-self-start mr-3">HTML</li>
-                  <li class="list-group-item list-group-item-action"><img src="images/icons/css.png" class="align-self-start mr-3">CSS</li>
                   <li class="list-group-item list-group-item-action"><img src="images/icons/js.png" class="align-self-start mr-3">JavaScript</li>
                   <li class="list-group-item list-group-item-action"><img src="images/icons/python.png" class="align-self-start mr-3">Python</li>
-                  <!-- <li class="list-group-item list-group-item-action"><img src="images/icons/scala.png" class="align-self-start mr-3" style="width:50px">Scala</li>
-                  <li class="list-group-item list-group-item-action"><img src="images/icons/bash.png" class="align-self-start mr-3" style="width:50px">Bash</li> -->
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/bash.png" class="align-self-start mr-3" style="width:50px">Bash</li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <h4>Technologies I use</h4>
                 <ul class="list-group">
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/react.png" class="align-self-start mr-3">React</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/redux.png" class="align-self-start mr-3">Redux</li>
+                  <li class="list-group-item list-group-item-action"><img src="images/icons/node.png" class="align-self-start mr-3">Node.js</li>
                   <li class="list-group-item list-group-item-action"><img src="images/icons/git.png" class="align-self-start mr-3">Git</li>
-                  <li class="list-group-item list-group-item-action"><img src="images/icons/bootstrap.png" class="align-self-start mr-3">Bootstrap</li>
                   <li class="list-group-item list-group-item-action"><img src="images/icons/linux.png" class="align-self-start mr-3">Linux</li>
                 </ul>
               </div>
@@ -414,9 +467,10 @@
           <div class="col-sm-9 p-4 block-content">
             <h5>darya.borisyak@gmail.com</h5>
             <div class="social-links">
-              <a target="_blank" href="https://www.linkedin.com/in/daria-borisyak/"><img src="images/icons/linkedin.png" style="height:30px"></a>
               <a target="_blank" href="https://github.com/fremorie"><img src="images/icons/github.png" style="height:30px"></a>
+              <a target="_blank" href="https://gitlab.com/fremorie"><img src="images/icons/gitlab.png" style="height:30px"></a>
               <a target="_blank" href="https://codepen.io/fremorie/"><img src="images/icons/codepen.png" style="height:30px"></a>
+              <a target="_blank" href="https://www.linkedin.com/in/daria-borisyak/"><img src="images/icons/linkedin.png" style="height:30px"></a>
             </div>
           </div>
         </div>
