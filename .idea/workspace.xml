@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbaba7f1-ef59-4ae3-8eb8-5ed4140de78f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/PlowTruck/grader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/PlowTruck/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/PlowTruck/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/PlowTruck/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/PlowTruck/snowplow.svg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +25,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/projects" />
       <recent name="$PROJECT_DIR$/projects/test-tasks/netology" />
       <recent name="$PROJECT_DIR$/files" />
       <recent name="$PROJECT_DIR$/images/icons" />
