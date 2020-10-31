@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbaba7f1-ef59-4ae3-8eb8-5ed4140de78f" name="Default Changelist" comment="" />
+    <list default="true" id="fbaba7f1-ef59-4ae3-8eb8-5ed4140de78f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/projects/fractals/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/fractals/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +19,11 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/files" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/projects" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/projects/test-tasks/netology" />
       <recent name="$PROJECT_DIR$/files" />
       <recent name="$PROJECT_DIR$/images/icons" />
       <recent name="$PROJECT_DIR$/images/screenshots" />
@@ -47,6 +52,11 @@
       <option name="presentableId" value="Default" />
       <updated>1600082779291</updated>
       <workItem from="1600082780486" duration="2433000" />
+      <workItem from="1600553576282" duration="670000" />
+      <workItem from="1600617583464" duration="3000" />
+      <workItem from="1600626855423" duration="175000" />
+      <workItem from="1602682566100" duration="11000" />
+      <workItem from="1602682579977" duration="1000000" />
     </task>
     <servers />
   </component>

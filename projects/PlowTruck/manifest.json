@@ -1,0 +1,59 @@
+{
+  "short_name": "Plow Truck",
+  "name": "Plow Truck",
+  "description": "",
+  "maintainer": {
+    "name": "Daria Borisyak",
+    "email": "darya.borisyak@gmail.com"
+  },
+  "version": "0.0.2",
+  "sandbox": "allow-scripts allow-same-origin allow-forms",
+  "macros": [],
+  "actionTypes": [
+    "SET_COMPLETE",
+    "SET_HEIGHT",
+    "SET_ANSWER",
+    "GET_SESSION_CONFIGURATION",
+    "GET_STORED_VALUES",
+    "SET_STORED_VALUES"
+  ],
+  "configurationExamples": [
+    {
+      "name": "Example: Plow Truck Level 0",
+      "description": "",
+      "configuration": {
+        "level": 0
+      },
+      "graderConfiguration": {
+        "isCompleted": true
+      }
+    }
+  ],
+  "authorizations": {
+    "storedValues": {
+      "isPuzzlePreviouslyCompleted-0": {
+        "prefix": "PlowTruck0",
+        "scope": "COURSE"
+      },
+      "isPuzzlePreviouslyCompleted-1": {
+        "prefix": "PlowTruck1",
+        "scope": "COURSE"
+      },
+      "isPuzzlePreviouslyCompleted-2": {
+        "prefix": "PlowTruck2",
+        "scope": "COURSE"
+      },
+      "isPuzzlePreviouslyCompleted-3": {
+        "prefix": "PlowTruck3",
+        "scope": "COURSE"
+      }
+    }
+  },
+  "accessibility": {
+    "mobileCompatibility": {
+      "supportsTouch": true,
+      "minHeightPx": 0,
+      "minWidthPx": 0
+    }
+  }
+}
