@@ -7,8 +7,9 @@ export default function Title() {
       <Text3D
         font="/fonts/limelight/Limelight_Regular.json"
         color="salmon"
-        position-y={4}
-        position-x={-8}
+        position-y={0}
+        position-x={0}
+        scale={0.3}
       >
         Daria Borisiak
         <meshStandardMaterial color={colorPalettes[0][3]} />
@@ -16,9 +17,9 @@ export default function Title() {
       <Text3D
         font="/fonts/limelight/Limelight_Regular.json"
         color="salmon"
-        position-y={2.7}
+        position-y={20}
         lineHeight={0.5}
-        position-x={-8}
+        position-x={0}
       >
         Frontend developer
         <meshStandardMaterial color={colorPalettes[0][2]} />

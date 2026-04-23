@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbaba7f1-ef59-4ae3-8eb8-5ed4140de78f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/fonts/limelight/Limelight_Regular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/limelight/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/limelight/limelight-v21-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Section.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Title.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/colorPalettes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppCanvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppCanvas.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Experience.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Experience.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +70,7 @@
       <workItem from="1602682566100" duration="11000" />
       <workItem from="1602682579977" duration="1000000" />
       <workItem from="1612698343877" duration="1989000" />
-      <workItem from="1776949914712" duration="10753000" />
+      <workItem from="1776949914712" duration="12614000" />
     </task>
     <servers />
   </component>
