@@ -1,41 +1,144 @@
-import { useRef } from 'react';
-import {
-  OrbitControls,
-  Text3D,
-  Float,
-  MeshReflectorMaterial,
-} from '@react-three/drei';
-import Title from './Title';
+import { useRef, useEffect, useLayoutEffect } from 'react';
+import { useFrame, useThree } from '@react-three/fiber';
+import gsap from 'gsap';
 
 export default function Experience() {
-  const cubeRef = useRef(null);
-  const groupRef = useRef(null);
+  const { camera } = useThree();
+
+  const cameraGroup = useRef(null);
+  const mesh1 = useRef(null);
+  const mesh2 = useRef(null);
+  const mesh3 = useRef(null);
+
+  const scroll = useRef(0);
+  const currentSection = useRef(0);
+  const cursor = useRef({ x: 0, y: 0 });
+
+  const objectsDistance = 4;
+
+  const meshes = [mesh1, mesh2, mesh3];
+
+  useLayoutEffect(() => {
+    meshes.forEach((ref) => {
+      const mesh = ref.current;
+
+      // set initial state BEFORE paint
+      mesh.position.y -= 2;
+      mesh.material.transparent = true;
+      mesh.material.opacity = 0;
+    });
+
+    // then animate
+    meshes.forEach((ref, i) => {
+      const mesh = ref.current;
+
+      gsap.to(mesh.position, {
+        y: mesh.position.y + 2,
+        duration: 1.5,
+        delay: i * 0.2,
+        ease: 'power3.out',
+      });
+
+      gsap.to(mesh.material, {
+        opacity: 1,
+        duration: 1.2,
+        delay: i * 0.2,
+      });
+    });
+  }, []);
+
+  /**
+   * Scroll
+   */
+  useEffect(() => {
+    const handleScroll = () => {
+      scroll.current = window.scrollY;
+
+      const newSection = Math.round(scroll.current / window.innerHeight);
+
+      if (newSection !== currentSection.current) {
+        currentSection.current = newSection;
+
+        const mesh = meshes[newSection]?.current;
+        if (!mesh) return;
+
+        gsap.to(mesh.rotation, {
+          duration: 1.5,
+          ease: 'power2.inOut',
+          x: '+=6',
+          y: '+=3',
+          z: '+=1.5',
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  /**
+   * Cursor
+   */
+  useEffect(() => {
+    const handleMouse = (e) => {
+      cursor.current.x = e.clientX / window.innerWidth - 0.5;
+      cursor.current.y = e.clientY / window.innerHeight - 0.5;
+    };
+
+    window.addEventListener('mousemove', handleMouse);
+    return () => window.removeEventListener('mousemove', handleMouse);
+  }, []);
+
+  /**
+   * Animation loop
+   */
+  useFrame((state, delta) => {
+    // Camera scroll
+    camera.position.y =
+      (-scroll.current / window.innerHeight) * objectsDistance;
+
+    // Parallax
+    const parallaxX = cursor.current.x * 0.5;
+    const parallaxY = -cursor.current.y * 0.5;
+
+    cameraGroup.current.position.x +=
+      (parallaxX - cameraGroup.current.position.x) * 5 * delta;
+
+    cameraGroup.current.position.y +=
+      (parallaxY - cameraGroup.current.position.y) * 5 * delta;
+
+    // Mesh rotation
+    meshes.forEach((meshRef) => {
+      if (!meshRef.current) return;
+      meshRef.current.rotation.x += delta * 0.1;
+      meshRef.current.rotation.y += delta * 0.12;
+    });
+  });
 
   return (
     <>
-      <OrbitControls />
-
-      <directionalLight position={[1, 2, 3]} intensity={4.5} />
-      <ambientLight intensity={1.5} />
-
-      <group ref={groupRef}>
-        <mesh position-x={-2}>
-          <sphereGeometry args={[1, 32, 32]} />
-          <meshStandardMaterial color="#FF7444" />
-        </mesh>
-
-        <mesh ref={cubeRef} rotation-y={Math.PI / 4} position-x={2} scale={1.5}>
-          <boxGeometry scale={1.5} />
-          <meshStandardMaterial color="#B7BDF7" />
-        </mesh>
+      <group ref={cameraGroup}>
+        <perspectiveCamera />
       </group>
 
-      <mesh rotation-x={-Math.PI / 2} position-y={-1} scale={10}>
-        <planeGeometry />
-        <MeshReflectorMaterial resolution={512} />
+      {/* Lights */}
+      <directionalLight position={[1, 1, 0]} intensity={3} />
+
+      {/* Meshes */}
+      <mesh ref={mesh1} position={[2, 0, 0]}>
+        <torusGeometry args={[1, 0.4, 16, 60]} />
+        <meshToonMaterial color="#ffeded" transparent />
       </mesh>
 
-      <Title />
+      <mesh ref={mesh2} position={[-2, -objectsDistance, 0]}>
+        <coneGeometry args={[1, 2, 32]} />
+        <meshToonMaterial color="#ffeded" transparent />
+      </mesh>
+
+      <mesh ref={mesh3} position={[2, -objectsDistance * 2, 0]}>
+        <torusKnotGeometry args={[0.8, 0.35, 100, 16]} />
+        <meshToonMaterial color="#ffeded" transparent />
+      </mesh>
     </>
   );
 }

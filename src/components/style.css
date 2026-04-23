@@ -1,11 +1,19 @@
+@font-face {
+  font-family: 'Limelight';
+  src: url('/fonts/limelight/limelight-v21-latin-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Limelight', sans-serif;
 }
 
 html,
 body {
-  background: #576A8F;
+  background: #576a8f;
 }
 
 .webgl {
@@ -13,8 +21,6 @@ body {
   top: 0;
   left: 0;
   outline: none;
-  width: 100%;
-  height: 100%;
 }
 
 #root {
@@ -27,10 +33,9 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
-  font-family: 'Cabin', sans-serif;
   color: #ffeded;
   text-transform: uppercase;
-  font-size: 7vmin;
+  font-size: 20px;
   padding-left: 10%;
   padding-right: 10%;
 }
