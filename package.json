@@ -1,0 +1,42 @@
+{
+  "name": "fremorie.github.io",
+  "version": "2.0.0",
+  "description": "Personal website",
+  "homepage": "https://fremorie.github.io",
+  "bugs": {
+    "url": "https://github.com/fremorie/fremorie.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fremorie/fremorie.github.io.git"
+  },
+  "license": "MIT",
+  "author": "Daria Borisiak",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint src",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "three": "^0.174.0"
+  }
+}
