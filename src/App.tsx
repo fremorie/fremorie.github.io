@@ -1,11 +1,15 @@
 import { AppCanvas } from './components/AppCanvas';
+import Section from "./components/Section";
 
 function App() {
   return (
-    <>
-      <h1>Hello, world!</h1>
-      <AppCanvas />
-    </>
+      <>
+        <AppCanvas />
+        <Section title={"About me"} />
+        <Section title={"My portfolio"} />
+        <Section title={"My experience"} />
+        <Section title={"Contact me"} />
+      </>
   );
 }
 

@@ -2,7 +2,6 @@ import react from '@vitejs/plugin-react'
 import { transformWithEsbuild } from 'vite'
 
 export default {
-    publicDir: '../public/',
     plugins:
     [
         react(),
