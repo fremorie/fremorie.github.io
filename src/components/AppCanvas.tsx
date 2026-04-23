@@ -6,6 +6,13 @@ import Experience from './Experience';
 export function AppCanvas() {
   return (
     <Canvas
+        style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+        }}
       dpr={[1, 2]} // Clamp pixel ratio
       gl={{
         antialias: true,
@@ -18,6 +25,7 @@ export function AppCanvas() {
         far: 200,
         position: [3, 2, 6],
       }}
+      className="webgl"
     >
       <Experience />
     </Canvas>
