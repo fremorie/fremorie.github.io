@@ -1,21 +1,8 @@
 import { useRef } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
 
 export default function Experience() {
   const cubeRef = useRef(null);
   const groupRef = useRef(null);
-
-  const { camera, gl } = useThree();
-
-  useFrame((state, delta) => {
-    cubeRef.current.rotation.y += delta * 5;
-    groupRef.current.rotation.y += delta / 2;
-
-    const angle = state.clock.elapsedTime;
-    state.camera.position.x = Math.sin(angle) * 8;
-    state.camera.position.z = Math.cos(angle) * 8;
-    state.camera.lookAt(0, 0, 0);
-  });
 
   return (
     <>
