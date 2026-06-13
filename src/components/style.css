@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Limelight';
+  src: url('/fonts/limelight/limelight-v21-latin-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Limelight', sans-serif;
+}
+
+html,
+body {
+  background: #576a8f;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  color: #ffeded;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+section:nth-child(odd) {
+  justify-content: flex-end;
+}
