@@ -1,8 +1,10 @@
 import * as THREE from 'three';
-import './style.css';
 import { Canvas } from '@react-three/fiber';
+
 import Experience from './Experience';
-import Title from "./Title";
+import { Environment } from './Environment';
+import { CameraRig } from './CameraRig';
+import './style.css';
 
 export function AppCanvas() {
   return (
@@ -18,11 +20,14 @@ export function AppCanvas() {
         toneMapping: THREE.ACESFilmicToneMapping,
         outputColorSpace: THREE.SRGBColorSpace,
       }}
-      camera={{ fov: 35, position: [0, 0, 6] }}
+      camera={{ fov: 35, position: [-0.2, 10.0, 16.2] }}
       className="webgl"
+      shadows
     >
       <Experience />
-        {/*<Title />*/}
+      <Environment />
+      <CameraRig />
+      {/*<OrbitControls />*/}
     </Canvas>
   );
 }
