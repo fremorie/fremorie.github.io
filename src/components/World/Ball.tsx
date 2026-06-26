@@ -1,5 +1,6 @@
 import { RigidBody, type RapierRigidBody } from '@react-three/rapier';
-import { useRef } from 'react';
+import { useCursor } from '@react-three/drei';
+import { useRef, useState } from 'react';
 
 import { random } from '../../utils/random';
 
@@ -12,8 +13,10 @@ type Props = {
 export function Ball({ positionX, size, color }: Props) {
   const body = useRef<RapierRigidBody>(null);
 
+  const [hovered, setHovered] = useState(false);
+  useCursor(hovered, 'pointer', 'auto');
+
   const handleClick = () => {
-    console.log('applying lcick', body.current);
     if (!body.current) return;
 
     body.current.applyImpulse(
@@ -29,6 +32,8 @@ export function Ball({ positionX, size, color }: Props) {
         position={[positionX, size, 2.5]}
         castShadow
         onClick={handleClick}
+        onPointerOver={() => setHovered(true)}
+        onPointerOut={() => setHovered(false)}
       >
         <sphereGeometry />
         <meshStandardMaterial roughness={1} color={color} />
