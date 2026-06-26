@@ -7,7 +7,7 @@ export default {
         react(),
         {
             name: 'load+transform-js-files-as-jsx',
-            async transform(code, id)
+            async transform(code: string, id: string)
             {
                 if (!id.match(/src\/.*\.js$/))
                     return null
@@ -26,7 +26,7 @@ export default {
     },
     build:
     {
-        outDir: '../dist',
+        outDir: 'dist',
         emptyOutDir: true,
         sourcemap: true
     },
