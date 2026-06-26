@@ -5,6 +5,7 @@ import Experience from './Experience';
 import { Environment } from './Environment';
 import { CameraRig } from './CameraRig';
 import './style.css';
+import { Postprocessing } from './Postprocessing';
 
 export function AppCanvas() {
   return (
@@ -14,20 +15,20 @@ export function AppCanvas() {
         top: 0,
         left: 0,
       }}
-      dpr={[1, 2]} // Clamp pixel ratio
+      dpr={[1, 2]}
       gl={{
         antialias: true,
         toneMapping: THREE.ACESFilmicToneMapping,
         outputColorSpace: THREE.SRGBColorSpace,
       }}
-      camera={{ fov: 35, position: [-0.2, 10.0, 16.2] }}
+      camera={{ fov: 35, position: [-0.2, 15.0, 12.2] }}
       className="webgl"
-      shadows
+      shadows="variance"
     >
       <Experience />
       <Environment />
       <CameraRig />
-      {/*<OrbitControls />*/}
+      <Postprocessing />
     </Canvas>
   );
 }

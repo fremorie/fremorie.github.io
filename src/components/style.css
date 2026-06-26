@@ -13,7 +13,7 @@
 
 html,
 body {
-  background: #576a8f;
+  background: #fff8de;
 }
 
 .webgl {
@@ -29,9 +29,9 @@ body {
 }
 
 .nav-link {
-  color: #576a8f;
+  color: #37445c;
   text-decoration: none;
-  border-bottom: 2px solid #576a8f;
+  border-bottom: 2px solid #37445c;
   padding-bottom: 2px;
   transition:
     color 0.2s ease,
@@ -39,8 +39,28 @@ body {
 }
 
 .nav-link:hover {
-  color: #2f3e5c;
-  border-color: #2f3e5c;
+  color: #576a8f;
+  border-color: #576a8f;
+}
+
+.projects-button {
+  display: inline-block;
+  color: #fff8de;
+  background: #576a8f;
+  font-family: 'Limelight', sans-serif;
+  font-size: 40px;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 16px 56px;
+  border-radius: 999px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.projects-button:hover {
+  background: #2f3e5c;
+  transform: scale(1.04);
 }
 
 .section {
