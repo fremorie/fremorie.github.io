@@ -17,7 +17,7 @@ export function Ball({ positionX, size, color }: Props) {
     if (!body.current) return;
 
     body.current.applyImpulse(
-      { x: random() * 6, y: Math.random(), z: random() * 6 },
+      { x: random() * 6, y: Math.random() * 2, z: random() * 6 },
       true,
     );
   };

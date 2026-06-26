@@ -45,6 +45,7 @@ export function Content() {
             bevelThickness={0.02}
             bevelSize={0.015}
             castShadow
+            receiveShadow
           >
             Frontend developer
             <meshStandardMaterial color={INK} />
@@ -52,7 +53,7 @@ export function Content() {
         </Center>
       </group>
 
-      {/*<group rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.9, 0]}>*/}
+      {/*<group rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 2.5]}>*/}
       {/*    <Html transform distanceFactor={6}>*/}
       {/*        /!* TODO: point this at the real projects destination *!/*/}
       {/*        <a href="#projects" className="projects-button">*/}
@@ -61,7 +62,7 @@ export function Content() {
       {/*    </Html>*/}
       {/*</group>*/}
 
-      <group rotation={[-Math.PI / 2, 0, 0]} position={[0, -4.8, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 3]}>
         <Html transform position={[0, -0.8, 0]} distanceFactor={6}>
           <nav style={navStyle}>
             {LINKS.map((link) => (

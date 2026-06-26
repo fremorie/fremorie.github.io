@@ -4,8 +4,8 @@ import { Canvas } from '@react-three/fiber';
 import Experience from './Experience';
 import { Environment } from './Environment';
 import { CameraRig } from './CameraRig';
-import './style.css';
 import { Postprocessing } from './Postprocessing';
+import './style.css';
 
 export function AppCanvas() {
   return (
