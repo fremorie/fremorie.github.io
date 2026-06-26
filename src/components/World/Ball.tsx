@@ -1,5 +1,6 @@
-import { RigidBody } from '@react-three/rapier';
+import { RigidBody, type RapierRigidBody } from '@react-three/rapier';
 import { useRef } from 'react';
+
 import { random } from '../../utils/random';
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
 };
 
 export function Ball({ positionX, size, color }: Props) {
-  const body = useRef(null);
+  const body = useRef<RapierRigidBody>(null);
 
   const handleClick = () => {
     console.log('applying lcick', body.current);
