@@ -22,6 +22,10 @@ export function AppCanvas() {
         outputColorSpace: THREE.SRGBColorSpace,
       }}
       camera={{ fov: 35, position: [-0.2, 15.0, 12.2] }}
+      // Compute the pointer from viewport-relative client coords instead of the
+      // default offsetX/Y, which are relative to whatever element is hovered.
+      // Without this, hovering the <Html> nav links skews the CameraRig tilt.
+      eventPrefix="client"
       className="webgl"
       shadows="variance"
     >
