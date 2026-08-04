@@ -1,33 +1,11 @@
-import react from '@vitejs/plugin-react'
-import { transformWithEsbuild } from 'vite'
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
-export default {
-    plugins:
-    [
-        react(),
-        {
-            name: 'load+transform-js-files-as-jsx',
-            async transform(code: string, id: string)
-            {
-                if (!id.match(/src\/.*\.js$/))
-                    return null
-
-                return transformWithEsbuild(code, id, {
-                    loader: 'jsx',
-                    jsx: 'automatic',
-                });
-            },
-        },
-    ],
-    server:
-    {
-        host: true,
-        open: !('SANDBOX_URL' in process.env || 'CODESANDBOX_HOST' in process.env) // Open if it's not a CodeSandbox
-    },
-    build:
-    {
-        outDir: 'dist',
-        emptyOutDir: true,
-        sourcemap: true
-    },
-}
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    sourcemap: true,
+  },
+});

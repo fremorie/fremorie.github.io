@@ -1,0 +1,20 @@
+.prose {
+  columns: 2;
+  column-gap: clamp(32px, 5vw, 72px);
+
+  orphans: 2;
+  widows: 2;
+}
+.prose p {
+  break-inside: avoid;
+}
+.prose p + p {
+  margin-top: var(--space-16);
+}
+
+@media (max-width: 820px) {
+  .prose {
+    columns: 1;
+    max-width: 62ch;
+  }
+}

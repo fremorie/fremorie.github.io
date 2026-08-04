@@ -1,0 +1,50 @@
+.link {
+  text-decoration: none;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+  transition:
+    color 0.15s,
+    text-decoration-color 0.15s,
+    border-color 0.15s;
+}
+
+.inline {
+  color: var(--teal-text);
+}
+.inline:hover {
+  color: var(--coral-text);
+  text-decoration: underline;
+}
+
+.quiet {
+  color: inherit;
+}
+.quiet:hover {
+  color: var(--coral-text);
+  text-decoration: underline;
+}
+
+.navigation {
+  color: var(--ink-muted);
+  padding-block: 3px;
+  border-bottom: 2px solid transparent;
+}
+.navigation:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink-faint);
+}
+
+.navigation[aria-current] {
+  color: var(--coral-text);
+  border-bottom-color: var(--coral);
+}
+
+.footer {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-faint);
+}
+.footer:hover {
+  color: var(--coral-text);
+  text-decoration-color: var(--coral);
+}

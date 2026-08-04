@@ -1,0 +1,109 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--cream) 86%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16) var(--space-24);
+  padding-block: 11px;
+}
+
+.mark {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-display-3xs);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.navigation {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: var(--space-4) 20px;
+  margin-inline: auto;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono-s);
+}
+
+@media (max-width: 880px) {
+  .navigation {
+    display: none;
+  }
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-left: auto;
+}
+
+.language {
+  display: flex;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono-xs);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.language button {
+  border: 0;
+  background: transparent;
+  color: var(--ink-faint);
+  padding: 5px 10px;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: 0.08em;
+}
+.language button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.theme {
+  display: grid;
+  place-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  padding: 0;
+}
+.theme:hover {
+  color: var(--ink);
+  border-color: var(--ink-faint);
+}
+.theme svg {
+  width: 15px;
+  height: 15px;
+}
+
+.sun {
+  display: none;
+}
+
+:root[data-theme='dark'] .sun {
+  display: block;
+}
+:root[data-theme='dark'] .moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .sun {
+    display: block;
+  }
+  :root:not([data-theme='light']) .moon {
+    display: none;
+  }
+}
