@@ -1,12 +1,16 @@
 .more {
   list-style: none;
   margin-top: clamp(40px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
+  column-gap: var(--space-32);
 }
 
 .more li {
   display: grid;
-  grid-template-columns: minmax(0, 208px) minmax(0, 1fr);
-  gap: 5px var(--space-32);
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  row-gap: 5px;
   padding: 18px 0;
   align-items: baseline;
 }
@@ -15,7 +19,7 @@
 }
 
 @media (max-width: 700px) {
-  .more li {
+  .more {
     grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -82,25 +82,21 @@ const ENGLISH = {
   'link.live': 'Live',
   'link.source': 'Source',
   'link.challenge': 'The challenge',
-  'link.pullRequest': 'The pull request',
-
   'more.bacteria.name': 'Cells need food',
   'more.bacteria.description':
     'A gamified bioreactor simulation based on a real bacterial growth model, created for the [Long Night of Science] in Berlin.',
   'more.plowTruck.name': 'Plow Truck',
   'more.plowTruck.description':
     'A playable route-planning puzzle exploring graph algorithms, created for [Mathematical Thinking in Computer Science], a course available on Coursera.',
+  'more.drei.name': 'pmndrs/drei · PR #2748',
+  'more.drei.description':
+    "Added stencil buffer support so masks work through transmissive surfaces — previously they were ignored silently. Discovered while building Terrarium's glass, fixed upstream rather than worked around.",
   'more.dateFns.name': 'date-fns · PR #3990',
   'more.dateFns.description':
     "A localized date format that omits the year while keeping each locale's own ordering rules.",
   'more.karatsuba.name': 'karatsuba',
   'more.karatsuba.description':
     'A published package for fast multiplication of big integers using the Karatsuba algorithm.',
-
-  'openSource.drei.kind': 'pmndrs/drei · PR #2748, open',
-  'openSource.drei.name': 'MeshTransmissionMaterial',
-  'openSource.drei.description':
-    "Added stencil buffer support so masks work through transmissive surfaces — previously they were ignored silently. Discovered while building Terrarium's glass, fixed upstream rather than worked around.",
 
   'chart.independent': 'Independent',
   'chart.wolt': 'Wolt',
@@ -293,8 +289,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'link.live': 'Live',
   'link.source': 'Quellcode',
   'link.challenge': 'Challenge',
-  'link.pullRequest': 'Pull Request',
-
   'more.bacteria.name': 'Cells Need Food',
 
   'more.bacteria.description':
@@ -305,6 +299,11 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'more.plowTruck.description':
     'Ein spielbares Routenplanungs-Puzzle zu Graphenalgorithmen, entwickelt für „[Mathematical Thinking in Computer Science]“, einen Kurs auf Coursera.',
 
+  'more.drei.name': 'pmndrs/drei · PR #2748',
+
+  'more.drei.description':
+    'Unterstützung für den Stencil-Buffer ergänzt, damit Masken auch durch transmissive Oberflächen funktionieren. Zuvor wurden sie stillschweigend ignoriert. Beim Bau des Terrariums entdeckt und direkt upstream behoben, statt einen Workaround einzubauen.',
+
   'more.dateFns.name': 'date-fns · PR #3990',
 
   'more.dateFns.description':
@@ -314,13 +313,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
 
   'more.karatsuba.description':
     'Ein veröffentlichtes Paket zur schnellen Multiplikation großer Ganzzahlen mit dem Karatsuba-Algorithmus.',
-
-  'openSource.drei.kind': 'pmndrs/drei · PR #2748, offen',
-
-  'openSource.drei.name': 'MeshTransmissionMaterial',
-
-  'openSource.drei.description':
-    'Unterstützung für den Stencil-Buffer ergänzt, damit Masken auch durch transmissive Oberflächen funktionieren. Zuvor wurden sie stillschweigend ignoriert. Beim Bau des Terrariums entdeckt und direkt upstream behoben, statt einen Workaround einzubauen.',
 
   'chart.independent': 'Selbstständig',
   'chart.wolt': 'Wolt',
