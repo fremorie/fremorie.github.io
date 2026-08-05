@@ -33,7 +33,6 @@ const ENGLISH = {
   'ui.sections': 'Sections',
   'ui.language': 'Language',
   'ui.switchTheme': 'Switch theme',
-  'ui.companies': 'Companies worked at',
 
   'hero.role': 'Frontend engineer building',
   'hero.roleAccent': 'interactive experiences',
@@ -110,14 +109,6 @@ const ENGLISH = {
   'chart.yandex': 'Yandex',
   'chart.bookmate': 'Bookmate',
   'chart.retailRocket': 'Retail Rocket',
-
-  'chart.duration.independent': '5 mo',
-  'chart.duration.wolt': '2 yr 7 mo',
-  'chart.duration.vimcar': '2 yr 4 mo',
-  'chart.duration.coursera': '11 mo',
-  'chart.duration.yandex': '2 yr 3 mo',
-  'chart.duration.bookmate': '11 mo',
-  'chart.duration.retailRocket': '4 mo',
 
   'chart.span': 'frontend — 7 yr 9 mo',
 
@@ -240,7 +231,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'ui.sections': 'Abschnitte',
   'ui.language': 'Sprache',
   'ui.switchTheme': 'Theme wechseln',
-  'ui.companies': 'Arbeitgeber',
 
   'hero.role': 'Frontend Engineer für',
   'hero.roleAccent': 'interaktive Anwendungen',
@@ -339,14 +329,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'chart.yandex': 'Yandex',
   'chart.bookmate': 'Bookmate',
   'chart.retailRocket': 'Retail Rocket',
-
-  'chart.duration.independent': '5 Mon.',
-  'chart.duration.wolt': '2 J. 7 Mon.',
-  'chart.duration.vimcar': '2 J. 4 Mon.',
-  'chart.duration.coursera': '11 Mon.',
-  'chart.duration.yandex': '2 J. 3 Mon.',
-  'chart.duration.bookmate': '11 Mon.',
-  'chart.duration.retailRocket': '4 Mon.',
 
   'chart.span': 'Frontend — 7 J. 9 Mon.',
 

@@ -1,0 +1,139 @@
+.chart {
+  --name-column: 152px;
+  display: grid;
+  gap: var(--space-8);
+  margin-bottom: var(--space-56);
+}
+
+.row,
+.axis,
+.spanRow {
+  display: grid;
+  grid-template-columns: var(--name-column) minmax(0, 1fr);
+  gap: 0 18px;
+  align-items: center;
+}
+
+.axis {
+  margin-bottom: 6px;
+}
+
+.axisLine {
+  grid-column: 2;
+  position: relative;
+  height: 22px;
+  border-bottom: 2px solid var(--ink);
+}
+.tick {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 7px;
+  background: var(--ink-faint);
+}
+.tickYear {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.name {
+  text-align: right;
+  overflow-wrap: break-word;
+}
+
+.plot {
+  position: relative;
+  height: 30px;
+  background: linear-gradient(var(--border), var(--border)) center / 100% 2px
+    no-repeat;
+}
+.bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: var(--ink);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 0 2px var(--cream);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 24px;
+}
+.barEarly {
+  background: var(--periwinkle);
+}
+
+.row:has(.bar:hover) .bar,
+.row:has(.bar:focus-visible) .bar {
+  background: var(--coral);
+}
+.row:has(.bar:hover) .name,
+.row:has(.bar:focus-visible) .name {
+  color: var(--coral-text);
+  font-weight: var(--font-weight-bold);
+}
+
+.spanRow {
+  margin-top: 14px;
+}
+.span {
+  grid-column: 2;
+  position: relative;
+  height: 35px;
+}
+
+.spanLine {
+  position: absolute;
+  top: 8px;
+  left: 26.77%;
+  right: 0;
+  height: 2px;
+  background: var(--coral);
+}
+.spanLine::before,
+.spanLine::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 2px;
+  height: 12px;
+  background: var(--coral);
+}
+.spanLine::before {
+  left: 0;
+}
+.spanLine::after {
+  right: 0;
+}
+
+.spanText {
+  position: absolute;
+  top: 19px;
+  left: 63.385%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .chart {
+    --name-column: 104px;
+  }
+  .chart .row,
+  .chart .axis,
+  .chart .spanRow {
+    gap: 0 10px;
+  }
+  .chart .name {
+    font-size: var(--font-size-mono-xs);
+  }
+}
