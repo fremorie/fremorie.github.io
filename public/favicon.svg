@@ -1,11 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <style>
     .ground { fill: #FFF8DE }
-    .ring { fill: none; stroke: #F18B4F; stroke-width: 9 }
+    .letter { fill: none; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round }
+    .d { stroke: #F18B4F }
+    .b { stroke: #2C2F55 }
     @media (prefers-color-scheme: dark) {
       .ground { fill: #2E2A33 }
+      .b { stroke: #B7BDF7 }
     }
   </style>
   <rect class="ground" width="64" height="64" rx="14" />
-  <circle class="ring" cx="32" cy="32" r="17" />
+  <path class="letter d" d="M11 49V15h6a15 17 0 0 1 0 34z" />
+  <path class="letter b" d="M36 15v34M36 15h1a16 8.5 0 0 1 0 17h-1M36 32h1a16 8.5 0 0 1 0 17h-1" />
 </svg>
