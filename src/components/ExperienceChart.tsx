@@ -29,12 +29,6 @@ const ROWS: {
     width: '21.26%',
   },
   {
-    nameKey: 'chart.puzzles',
-    role: 'role-puzzles',
-    left: '40.94%',
-    width: '8.66%',
-  },
-  {
     nameKey: 'chart.yandex',
     role: 'role-yandex-market',
     left: '26.77%',

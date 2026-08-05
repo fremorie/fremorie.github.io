@@ -101,7 +101,6 @@ const ENGLISH = {
   'chart.independent': 'Independent',
   'chart.wolt': 'Wolt',
   'chart.vimcar': 'Vimcar',
-  'chart.puzzles': 'Freelance',
   'chart.yandex': 'Yandex',
   'chart.bookmate': 'Bookmate',
   'chart.retailRocket': 'Retail Rocket',
@@ -109,7 +108,6 @@ const ENGLISH = {
   'chart.span': 'Frontend — 7 yr 9 mo',
 
   'role.present': 'present',
-  'role.qualifier.freelance': '(freelance)',
   'role.qualifier.intern': '(intern)',
 
   'role.independent.title': 'Frontend engineer: WebGL & real-time graphics',
@@ -131,12 +129,6 @@ const ENGLISH = {
   'role.vimcar.description':
     'Prototyped a micro-frontend architecture using Module Federation and presented the approach to the frontend team, kick-starting the gradual extraction of pages from the monolith. Built features for the Geo module using the Google Maps API and improved performance through list virtualization.',
   'role.vimcar.stack': 'React · MobX · RxJS · Cypress · Webpack · TypeScript',
-
-  'role.puzzles.title': 'Frontend developer',
-  'role.puzzles.organisation': 'Interactive Puzzles for a Coursera course',
-  'role.puzzles.description':
-    'Built interactive educational puzzles for [Mathematical Thinking in Computer Science], a course available on Coursera.',
-  'role.puzzles.stack': 'React · MobX · TypeScript · GSAP · Webpack',
 
   'role.yandexMarket.title': 'Frontend developer',
   'role.yandexMarket.organisation': 'Yandex.Market · Moscow',
@@ -317,7 +309,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'chart.independent': 'Selbstständig',
   'chart.wolt': 'Wolt',
   'chart.vimcar': 'Vimcar',
-  'chart.puzzles': 'Freiberuflich',
   'chart.yandex': 'Yandex',
   'chart.bookmate': 'Bookmate',
   'chart.retailRocket': 'Retail Rocket',
@@ -325,7 +316,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'chart.span': 'Frontend — 7 J. 9 Mon.',
 
   'role.present': 'heute',
-  'role.qualifier.freelance': '(freiberuflich)',
   'role.qualifier.intern': '(Praktikum)',
 
   'role.independent.title': 'Frontend Engineer: WebGL & Echtzeitgrafik',
@@ -356,15 +346,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
     'Eine Micro-Frontend-Architektur mit Module Federation prototypisiert und dem Frontend-Team vorgestellt. Dadurch wurde die schrittweise Herauslösung einzelner Seiten aus dem Monolithen angestoßen. Features für das Geo-Modul mit der Google Maps API entwickelt und die Performance durch Listenvirtualisierung verbessert.',
 
   'role.vimcar.stack': 'React · MobX · RxJS · Cypress · Webpack · TypeScript',
-
-  'role.puzzles.title': 'Frontend Developer',
-
-  'role.puzzles.organisation': 'Interactive Puzzles für einen Coursera-Kurs',
-
-  'role.puzzles.description':
-    'Interaktive Lernrätsel für „[Mathematical Thinking in Computer Science]“ entwickelt, einen Kurs auf Coursera.',
-
-  'role.puzzles.stack': 'React · MobX · TypeScript · GSAP · Webpack',
 
   'role.yandexMarket.title': 'Frontend Developer',
 
