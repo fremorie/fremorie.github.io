@@ -170,8 +170,7 @@ const ENGLISH = {
   'education.msc': 'M.Sc. System Analysis and Control',
   'education.bsc': 'B.Sc. Applied Mathematics and Physics',
   'education.certificates': 'Certificates',
-  'education.verify': 'verify',
-  'education.pdf': 'PDF',
+  'education.verify': 'Verify',
 
   'certificate.threejsJourney.name': 'Three.js Journey',
   'certificate.threejsJourney.where': 'Bruno Simon',
@@ -412,8 +411,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'education.certificates': 'Zertifikate',
 
   'education.verify': 'Verifizieren',
-
-  'education.pdf': 'PDF',
 
   'certificate.threejsJourney.name': 'Three.js Journey',
 

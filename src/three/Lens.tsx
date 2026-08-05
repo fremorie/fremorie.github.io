@@ -144,8 +144,9 @@ export function Lens({
         <torusGeometry args={[radius, tube, 10, 96]} />
         <meshBasicMaterial
           color={rim}
+          toneMapped={false}
           transparent
-          opacity={0.9}
+          opacity={1}
           depthWrite={false}
         />
       </mesh>

@@ -68,7 +68,11 @@ const PROJECTS: Project[] = [
       },
       { href: 'https://github.com/fremorie/shaders', labelKey: 'link.source' },
     ],
-    shot: { src: '/projects/shader-02.webp', altKey: 'project.shaders.alt' },
+    shot: {
+      src: '/projects/shader.webp',
+      altKey: 'project.shaders.alt',
+      under: '/projects/shader-wire.webp',
+    },
   },
   {
     kindKey: 'project.gravity.kind',

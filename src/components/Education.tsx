@@ -14,42 +14,36 @@ const CERTIFICATES: {
   when: string;
   nameKey: TranslationKey;
   whereKey: TranslationKey;
-  referenceKey: TranslationKey;
 }[] = [
   {
     href: 'https://threejs-journey.com/certificate/view/52336',
     when: '05/2026',
     nameKey: 'certificate.threejsJourney.name',
     whereKey: 'certificate.threejsJourney.where',
-    referenceKey: 'education.verify',
   },
   {
     href: 'https://static.frontendmasters.com/ud/c/7747b5c4fe/DKXPcZaQOr/canvas-webgl.pdf',
     when: '01/2026',
     nameKey: 'certificate.canvasWebgl.name',
     whereKey: 'certificate.canvasWebgl.where',
-    referenceKey: 'education.pdf',
   },
   {
     href: 'https://static.frontendmasters.com/ud/c/7747b5c4fe/nAZdQNLdlu/redux-mobx.pdf',
     when: '12/2025',
     nameKey: 'certificate.reduxMobx.name',
     whereKey: 'certificate.reduxMobx.where',
-    referenceKey: 'education.pdf',
   },
   {
     href: 'https://static.frontendmasters.com/ud/c/7747b5c4fe/pApqiQbIWA/fullstack-v3.pdf',
     when: '05/2025',
     nameKey: 'certificate.fullstack.name',
     whereKey: 'certificate.fullstack.where',
-    referenceKey: 'education.pdf',
   },
   {
     href: 'https://www.coursera.org/account/accomplishments/verify/2LGH6GKDX6S6',
     when: '02/2023',
     nameKey: 'certificate.algorithms.name',
     whereKey: 'certificate.algorithms.where',
-    referenceKey: 'education.verify',
   },
 ];
 
@@ -89,7 +83,6 @@ export function Education() {
               {i18n.t(degree.nameKey)}
             </Heading>
           </div>
-          <span></span>
         </article>
       ))}
 
@@ -111,7 +104,12 @@ export function Education() {
               {i18n.t(certificate.whereKey)}
             </Text>
           </div>
-          <Label>{i18n.t(certificate.referenceKey)}</Label>
+          <Label>
+            <Link variant="quiet" href={certificate.href}>
+              {i18n.t('education.verify')}
+              <span className="sr-only"> {i18n.t(certificate.nameKey)}</span>
+            </Link>
+          </Label>
         </article>
       ))}
     </Band>

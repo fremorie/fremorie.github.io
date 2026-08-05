@@ -44,8 +44,8 @@ const SHAPES = [
   },
   {
     id: 'pyramid',
-    matcap: 'brass' as MatcapName,
-    at: [0.62, 0.52] as const,
+    matcap: 'lilac' as MatcapName,
+    at: [0.78, 0.76] as const,
     z: -0.3,
     size: 0.12,
     spin: [0.5, -0.2] as const,
