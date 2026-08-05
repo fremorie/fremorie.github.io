@@ -92,11 +92,13 @@ const MORE: MoreItem[] = [
     href: 'https://github.com/fremorie/bacteria',
     nameKey: 'more.bacteria.name',
     descriptionKey: 'more.bacteria.description',
+    descriptionHref: 'https://www.langenachtderwissenschaften.de/',
   },
   {
     href: 'https://discrete-math-puzzles.github.io/puzzles/plow-truck/index.html',
     nameKey: 'more.plowTruck.name',
     descriptionKey: 'more.plowTruck.description',
+    descriptionHref: 'https://www.coursera.org/learn/what-is-a-proof',
   },
 ];
 

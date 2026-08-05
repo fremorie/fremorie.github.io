@@ -1,7 +1,7 @@
 import { lazy, Suspense, useCallback, useState } from 'react';
 
 import { useI18n } from '../i18n/language';
-import { Heading, Label, Text, cx } from '../typography';
+import { Heading, Label, Link, Text, cx } from '../typography';
 import { Shell } from './Shell';
 import styles from './Hero.module.css';
 
@@ -36,21 +36,27 @@ export function Hero() {
             {i18n.t('hero.stack')}
           </Label>
           <div className={styles.actions}>
-            <a
+            <Link
+              variant="none"
               className={cx(styles.button, styles.solid)}
               href="mailto:daria.borisiak@gmail.com"
             >
               {i18n.t('ui.contact')}
-            </a>
-            <a className={styles.button} href="https://github.com/fremorie">
+            </Link>
+            <Link
+              variant="none"
+              className={styles.button}
+              href="https://github.com/fremorie"
+            >
               GitHub
-            </a>
-            <a
+            </Link>
+            <Link
+              variant="none"
               className={styles.button}
               href="https://www.linkedin.com/in/daria-borisyak/"
             >
               LinkedIn
-            </a>
+            </Link>
           </div>
         </div>
         <div

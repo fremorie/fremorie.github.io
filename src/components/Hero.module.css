@@ -104,6 +104,8 @@
   border-radius: var(--radius-pill);
   border: 2px solid var(--ink);
   text-decoration: none;
+}
+.actions .button {
   transition:
     transform 0.16s,
     background 0.16s,

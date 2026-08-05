@@ -1,6 +1,6 @@
 import type { TranslationKey } from '../i18n/dictionary';
 import { useI18n } from '../i18n/language';
-import { Heading, Label, Text, cx } from '../typography';
+import { Heading, Label, Text, cx, embedLink } from '../typography';
 import { Band } from './Band';
 import { ExperienceChart } from './ExperienceChart';
 import styles from './Experience.module.css';
@@ -14,6 +14,7 @@ const ROLES: {
   qualifierKey?: TranslationKey;
   organisationKey: TranslationKey;
   descriptionKey: TranslationKey;
+  descriptionHref?: string;
   stackKey: TranslationKey;
   brief?: boolean;
 }[] = [
@@ -45,14 +46,15 @@ const ROLES: {
     stackKey: 'role.vimcar.stack',
   },
   {
-    id: 'role-coursera',
+    id: 'role-puzzles',
     from: '05/2020 —',
     to: '04/2021',
-    titleKey: 'role.coursera.title',
-    qualifierKey: 'role.qualifier.partTime',
-    organisationKey: 'role.coursera.organisation',
-    descriptionKey: 'role.coursera.description',
-    stackKey: 'role.coursera.stack',
+    titleKey: 'role.puzzles.title',
+    qualifierKey: 'role.qualifier.freelance',
+    organisationKey: 'role.puzzles.organisation',
+    descriptionKey: 'role.puzzles.description',
+    descriptionHref: 'https://www.coursera.org/learn/what-is-a-proof',
+    stackKey: 'role.puzzles.stack',
     brief: true,
   },
   {
@@ -126,7 +128,7 @@ export function Experience() {
               {i18n.t(role.organisationKey)}
             </Label>
             <Text size="s" tone="muted" className={styles.description}>
-              {i18n.t(role.descriptionKey)}
+              {embedLink(i18n.t(role.descriptionKey), role.descriptionHref)}
             </Text>
             <Label as="p" size="s" loose className={styles.stack}>
               {i18n.t(role.stackKey)}

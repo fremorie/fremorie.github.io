@@ -12,4 +12,5 @@ export {
   type LabelTone,
 } from './Label';
 export { Link, type LinkProps, type LinkVariant } from './Link';
+export { embedLink } from './embedLink';
 export { cx } from './cx';

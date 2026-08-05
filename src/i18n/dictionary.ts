@@ -86,10 +86,10 @@ const ENGLISH = {
 
   'more.bacteria.name': 'Cells need food',
   'more.bacteria.description':
-    'A gamified bioreactor simulation based on a real bacterial growth model, created for the Long Night of Science in Berlin.',
+    'A gamified bioreactor simulation based on a real bacterial growth model, created for the [Long Night of Science] in Berlin.',
   'more.plowTruck.name': 'Plow Truck',
   'more.plowTruck.description':
-    'A playable route-planning puzzle exploring graph algorithms, created for a Coursera discrete mathematics specialization.',
+    'A playable route-planning puzzle exploring graph algorithms, created for [Mathematical Thinking in Computer Science], a course available on Coursera.',
   'more.dateFns.name': 'date-fns · PR #3990',
   'more.dateFns.description':
     "A localized date format that omits the year while keeping each locale's own ordering rules.",
@@ -105,15 +105,15 @@ const ENGLISH = {
   'chart.independent': 'Independent',
   'chart.wolt': 'Wolt',
   'chart.vimcar': 'Vimcar',
-  'chart.coursera': 'Coursera',
+  'chart.puzzles': 'Freelance',
   'chart.yandex': 'Yandex',
   'chart.bookmate': 'Bookmate',
   'chart.retailRocket': 'Retail Rocket',
 
-  'chart.span': 'frontend — 7 yr 9 mo',
+  'chart.span': 'Frontend — 7 yr 9 mo',
 
   'role.present': 'present',
-  'role.qualifier.partTime': '(part-time)',
+  'role.qualifier.freelance': '(freelance)',
   'role.qualifier.intern': '(intern)',
 
   'role.independent.title': 'Frontend engineer: WebGL & real-time graphics',
@@ -136,11 +136,11 @@ const ENGLISH = {
     'Prototyped a micro-frontend architecture using Module Federation and presented the approach to the frontend team, kick-starting the gradual extraction of pages from the monolith. Built features for the Geo module using the Google Maps API and improved performance through list virtualization.',
   'role.vimcar.stack': 'React · MobX · RxJS · Cypress · Webpack · TypeScript',
 
-  'role.coursera.title': 'Frontend developer',
-  'role.coursera.organisation': 'Interactive Puzzles · Coursera',
-  'role.coursera.description':
-    'Built interactive puzzles for Mathematical Thinking in Computer Science.',
-  'role.coursera.stack': 'React · MobX · TypeScript · GSAP · Webpack',
+  'role.puzzles.title': 'Frontend developer',
+  'role.puzzles.organisation': 'Interactive Puzzles for a Coursera course',
+  'role.puzzles.description':
+    'Built interactive educational puzzles for [Mathematical Thinking in Computer Science], a course available on Coursera.',
+  'role.puzzles.stack': 'React · MobX · TypeScript · GSAP · Webpack',
 
   'role.yandexMarket.title': 'Frontend developer',
   'role.yandexMarket.organisation': 'Yandex.Market · Moscow',
@@ -298,12 +298,12 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'more.bacteria.name': 'Cells Need Food',
 
   'more.bacteria.description':
-    'Eine spielerische Bioreaktor-Simulation auf Basis eines realen Modells für Bakterienwachstum, entwickelt für die Lange Nacht der Wissenschaften in Berlin.',
+    'Eine spielerische Bioreaktor-Simulation auf Basis eines realen Modells für Bakterienwachstum, entwickelt für die [Lange Nacht der Wissenschaften] in Berlin.',
 
   'more.plowTruck.name': 'Plow Truck',
 
   'more.plowTruck.description':
-    'Ein spielbares Routenplanungs-Puzzle zu Graphenalgorithmen, entwickelt im Rahmen einer Coursera-Spezialisierung in diskreter Mathematik.',
+    'Ein spielbares Routenplanungs-Puzzle zu Graphenalgorithmen, entwickelt für „[Mathematical Thinking in Computer Science]“, einen Kurs auf Coursera.',
 
   'more.dateFns.name': 'date-fns · PR #3990',
 
@@ -325,7 +325,7 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'chart.independent': 'Selbstständig',
   'chart.wolt': 'Wolt',
   'chart.vimcar': 'Vimcar',
-  'chart.coursera': 'Coursera',
+  'chart.puzzles': 'Freiberuflich',
   'chart.yandex': 'Yandex',
   'chart.bookmate': 'Bookmate',
   'chart.retailRocket': 'Retail Rocket',
@@ -333,7 +333,7 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'chart.span': 'Frontend — 7 J. 9 Mon.',
 
   'role.present': 'heute',
-  'role.qualifier.partTime': '(Teilzeit)',
+  'role.qualifier.freelance': '(freiberuflich)',
   'role.qualifier.intern': '(Praktikum)',
 
   'role.independent.title': 'Frontend Engineer: WebGL & Echtzeitgrafik',
@@ -365,14 +365,14 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
 
   'role.vimcar.stack': 'React · MobX · RxJS · Cypress · Webpack · TypeScript',
 
-  'role.coursera.title': 'Frontend Developer',
+  'role.puzzles.title': 'Frontend Developer',
 
-  'role.coursera.organisation': 'Interactive Puzzles · Coursera',
+  'role.puzzles.organisation': 'Interactive Puzzles für einen Coursera-Kurs',
 
-  'role.coursera.description':
-    'Interaktive Rätsel für den Coursera-Kurs „Mathematical Thinking in Computer Science“ entwickelt.',
+  'role.puzzles.description':
+    'Interaktive Lernrätsel für „[Mathematical Thinking in Computer Science]“ entwickelt, einen Kurs auf Coursera.',
 
-  'role.coursera.stack': 'React · MobX · TypeScript · GSAP · Webpack',
+  'role.puzzles.stack': 'React · MobX · TypeScript · GSAP · Webpack',
 
   'role.yandexMarket.title': 'Frontend Developer',
 

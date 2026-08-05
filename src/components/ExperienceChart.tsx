@@ -29,8 +29,8 @@ const ROWS: {
     width: '21.26%',
   },
   {
-    nameKey: 'chart.coursera',
-    role: 'role-coursera',
+    nameKey: 'chart.puzzles',
+    role: 'role-puzzles',
     left: '40.94%',
     width: '8.66%',
   },

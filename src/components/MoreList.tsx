@@ -1,12 +1,13 @@
 import type { TranslationKey } from '../i18n/dictionary';
 import { useI18n } from '../i18n/language';
-import { Heading, Link, Text } from '../typography';
+import { Heading, Link, Text, embedLink } from '../typography';
 import styles from './MoreList.module.css';
 
 export type MoreItem = {
   href: string;
   nameKey: TranslationKey;
   descriptionKey: TranslationKey;
+  descriptionHref?: string;
 };
 
 export function MoreList({ items }: { items: MoreItem[] }) {
@@ -22,7 +23,7 @@ export function MoreList({ items }: { items: MoreItem[] }) {
             </Link>
           </Heading>
           <Text as="span" size="s" tone="muted" measured={false}>
-            {i18n.t(item.descriptionKey)}
+            {embedLink(i18n.t(item.descriptionKey), item.descriptionHref)}
           </Text>
         </li>
       ))}
