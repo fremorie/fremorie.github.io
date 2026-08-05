@@ -1,9 +1,5 @@
 .prose {
-  columns: 2;
-  column-gap: clamp(32px, 5vw, 72px);
-
-  orphans: 2;
-  widows: 2;
+  columns: 1;
 }
 .prose p {
   break-inside: avoid;

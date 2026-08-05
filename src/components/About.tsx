@@ -9,6 +9,7 @@ const PARAGRAPHS: TranslationKey[] = [
   'about.paragraph2',
   'about.paragraph3',
   'about.paragraph4',
+  'about.paragraph5',
 ];
 
 export function About() {

@@ -38,37 +38,39 @@ const ENGLISH = {
   'hero.role': 'Frontend engineer building',
   'hero.roleAccent': 'interactive experiences',
   'hero.lede':
-    "Almost eight years building production web and mobile applications. Since March I've focused full time on WebGL and real-time graphics, and I'm looking for frontend or graphics roles where I can build engaging, interactive products.",
+    "Frontend engineer with eight years of production experience. Since March 2026, I've been focused on WebGL and real-time graphics, building interactive experiences with Three.js and custom shaders.",
   'hero.location': 'Bremen · Open to Hamburg or remote',
   'hero.stack': 'Three.js · WebGL · GLSL · React · React Native · TypeScript',
 
   'about.paragraph1':
-    'I’ve spent the last eight years building and shipping web and mobile products, creating interfaces and systems used in production.',
+    "For most of my career, I've built production web and mobile applications, working across product features, architecture, and developer tooling.",
   'about.paragraph2':
-    'Over time, I became increasingly interested in the technical side of interaction: animation, graphics, and the way things are rendered on the screen. My background in applied mathematics and physics from MIPT gave me a strong foundation for exploring shaders, geometry, and rendering more deeply. In March 2026, I decided to make that exploration my main focus and started working with real-time graphics full time.',
+    'Over time, I found myself increasingly drawn to the technology behind interactive experiences: animation, rendering, shaders, and real-time graphics. My background in Applied Mathematics and Physics at the Moscow Institute of Physics and Technology gave me a solid foundation for diving deeper into geometry, rendering, and shader programming.',
   'about.paragraph3':
-    'Since then, I’ve been building with WebGL every day — experimenting with shaders, creating interactive scenes, and contributing fixes upstream to the libraries I use.',
+    "In March 2026, I shifted my full-time focus to WebGL and real-time graphics. Since then, I've been building with Three.js every day, developing custom shaders, exploring rendering techniques, creating interactive scenes, and contributing improvements upstream to the libraries I rely on.",
   'about.paragraph4':
-    'I’m looking for a role where I can combine both sides: years of production engineering experience and a growing focus on interactive graphics.',
+    "What I enjoy most is building software that's both technically challenging and immediately tangible—where mathematics, graphics programming, and user interaction come together.",
+  'about.paragraph5':
+    "I'm now looking for a role where I can combine eight years of production engineering experience with a growing specialization in interactive graphics.",
 
   'project.terrarium.kind': 'Three.js Journey challenge',
   'project.terrarium.name': 'Terrarium',
   'project.terrarium.description':
-    'A tiny spring sealed inside a glass bottle — with a lens that reveals the same world in winter. Built for the Stylized Nature challenge, using stencil masking through transmissive glass.',
+    'A tiny spring sealed inside a glass bottle — with a lens that reveals the same world in winter. Created for the Three.js Journey Stylized Nature challenge, using stencil masking through transmissive glass.',
   'project.terrarium.alt':
     'A low-poly spring scene sealed in a glass bottle; a circular lens reveals the same scene in winter.',
 
   'project.wind.kind': 'In progress',
   'project.wind.name': 'Wind',
   'project.wind.description':
-    'A quiet bicycle ride through an endless procedural landscape. Terrain streams as you move, with instanced vegetation, custom materials and shaders.',
+    'A quiet bicycle ride through an endless procedural landscape. Procedural terrain streams endlessly as you move, with instanced vegetation, custom materials and shaders.',
   'project.wind.alt':
     'A bicycle in tall grass beside a turquoise lake, wind turbines on the horizon.',
 
   'project.shaders.kind': 'Sketchbook',
   'project.shaders.name': 'Shader studies',
   'project.shaders.description':
-    'A collection of shader experiments, material studies and procedural textures, with custom Blender models built to showcase them.',
+    'A collection of shader sketches, procedural textures and material studies, with custom Blender models built to showcase them.',
   'project.shaders.alt': 'A shader study from the sketchbook.',
 
   'project.gravity.kind': 'Physics sandbox',
@@ -99,7 +101,7 @@ const ENGLISH = {
   'openSource.drei.kind': 'pmndrs/drei · PR #2748, open',
   'openSource.drei.name': 'MeshTransmissionMaterial',
   'openSource.drei.description':
-    "Added stencil buffer support so masks work through transmissive surfaces — previously they were ignored silently. Found while building Terrarium's glass, fixed upstream rather than worked around.",
+    "Added stencil buffer support so masks work through transmissive surfaces — previously they were ignored silently. Discovered while building Terrarium's glass, fixed upstream rather than worked around.",
 
   'chart.independent': 'Independent',
   'chart.wolt': 'Wolt',
@@ -126,21 +128,21 @@ const ENGLISH = {
   'role.independent.title': 'Frontend engineer: WebGL & real-time graphics',
   'role.independent.organisation': 'Independent · Bremen',
   'role.independent.description':
-    "Focused on real-time graphics for the web, building interactive experiences with WebGL, Three.js and React Three Fiber. Explored procedural terrain, physics simulations and custom shaders, and contributed stencil buffer support upstream to drei's MeshTransmissionMaterial.",
+    "Building interactive graphics for the web with WebGL, Three.js and React Three Fiber. Current work includes procedural terrain generation, physics simulations, custom GLSL shaders and graphics tooling. Contributed stencil buffer support upstream to drei's MeshTransmissionMaterial.",
   'role.independent.stack':
     'Three.js · WebGL · GLSL · React Three Fiber · Rapier · Blender · TypeScript · Vite',
 
   'role.wolt.title': 'Software engineer',
   'role.wolt.organisation': 'Wolt · Berlin',
   'role.wolt.description':
-    'Owned complex web and mobile features end to end, from technical design to production release. Collaborated with backend teams on APIs, authored technical RFCs, improved localization workflows in the Courier app, and participated in technical interviews.',
+    'Delivered complex web and mobile features from technical design through production release. Collaborated with backend teams on APIs, authored technical RFCs, improved localization workflows in the Courier app, and helped interview frontend candidates.',
   'role.wolt.stack':
     'React · React Native · TypeScript · TanStack Query · XState · Playwright · Vite',
 
   'role.vimcar.title': 'Software engineer',
   'role.vimcar.organisation': 'Vimcar · Berlin',
   'role.vimcar.description':
-    'Prototyped a micro-frontend architecture using Module Federation and presented the approach to the frontend team, helping kick off the gradual extraction of pages from the monolith. Built features for the Geo module using the Google Maps API and improved performance through list virtualization.',
+    'Prototyped a micro-frontend architecture using Module Federation and presented the approach to the frontend team, kick-starting the gradual extraction of pages from the monolith. Built features for the Geo module using the Google Maps API and improved performance through list virtualization.',
   'role.vimcar.stack': 'React · MobX · RxJS · Cypress · Webpack · TypeScript',
 
   'role.coursera.title': 'Frontend developer',
@@ -165,7 +167,7 @@ const ENGLISH = {
   'role.earlier.title': 'Earlier: data analysis',
   'role.earlier.organisation': 'Bookmate · Retail Rocket · Moscow',
   'role.earlier.description':
-    'Applied machine learning techniques to book recommendations and grocery cross-sell analysis.',
+    'Worked on book recommendation systems and grocery cross-sell prediction using machine learning.',
   'role.earlier.stack':
     'Python · scikit-learn · word2vec · Scala · Spark MLlib',
 
@@ -244,22 +246,24 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'hero.roleAccent': 'interaktive Anwendungen',
 
   'hero.lede':
-    'Fast acht Jahre Erfahrung in der Entwicklung produktiver Web- und Mobile-Anwendungen. Seit März arbeite ich in Vollzeit mit WebGL und Echtzeitgrafik und suche eine Frontend- oder Grafikentwicklungsposition, in der ich interaktive Produkte entwickeln kann.',
+    'Seit acht Jahren entwickle ich produktive Web- und Mobile-Anwendungen. Seit März 2026 liegt mein voller Fokus auf WebGL und Echtzeitgrafik. Ich suche eine Frontend- oder Grafikrolle, in der ich interaktive, visuell überzeugende Produkte entwickeln kann.',
 
   'hero.location': 'Bremen · Offen für Hamburg oder Remote',
   'hero.stack': 'Three.js · WebGL · GLSL · React · React Native · TypeScript',
 
   'about.paragraph1':
-    'Die letzten acht Jahre habe ich Web- und Mobile-Produkte entwickelt und ausgeliefert – Oberflächen und Systeme, die täglich im Produktiveinsatz sind.',
+    'Den größten Teil meiner bisherigen Laufbahn habe ich Web- und Mobile-Anwendungen für den produktiven Einsatz entwickelt – von neuen Produktfunktionen über Architekturentscheidungen bis hin zu Developer-Tooling.',
 
   'about.paragraph2':
-    'Mit der Zeit hat mich die technische Seite von Interaktion immer mehr interessiert: Animation, Computergrafik und Rendering. Mein Studium der angewandten Mathematik und Physik am MIPT hat mir eine solide Grundlage gegeben, um Shader, Geometrie und Rendering besser zu verstehen. Im März 2026 habe ich beschlossen, mich vollständig auf Echtzeitgrafik zu konzentrieren.',
+    'Mit der Zeit hat mich immer stärker die Technik hinter interaktiven Benutzeroberflächen fasziniert: Animationen, Rendering, Shader und Echtzeitgrafik. Mein Studium der Angewandten Mathematik und Physik am Moskauer Institut für Physik und Technologie (MIPT) hat mir dabei eine solide Grundlage gegeben, um mich intensiver mit Geometrie, Rendering und Shader-Programmierung auseinanderzusetzen.',
 
   'about.paragraph3':
-    'Seitdem arbeite ich täglich mit WebGL – ich experimentiere mit Shadern, entwickle interaktive Szenen und trage Fixes zu den Bibliotheken bei, die ich verwende.',
+    'Seit März 2026 konzentriere ich mich vollständig auf WebGL und Echtzeitgrafik. Seitdem arbeite ich täglich mit Three.js, entwickle eigene Shader, beschäftige mich mit Rendering-Techniken, baue interaktive Szenen und trage Verbesserungen zu den Open-Source-Bibliotheken bei, die ich selbst verwende.',
 
   'about.paragraph4':
-    'Ich suche eine Position, in der ich beides verbinden kann: langjährige Erfahrung in der Softwareentwicklung und meinen Schwerpunkt auf interaktiver Computergrafik.',
+    'Besonders reizt mich Software, bei der anspruchsvolle Technik unmittelbar sichtbar wird – dort, wo Mathematik, Computergrafik und Interaktion zusammenkommen.',
+  'about.paragraph5':
+    'Heute suche ich eine Position, in der ich meine langjährige Erfahrung in der Entwicklung von Produktionssoftware mit meinem Schwerpunkt auf interaktiver Grafik verbinden kann.',
 
   'project.terrarium.kind': 'Three.js Journey Challenge',
   'project.terrarium.name': 'Terrarium',
