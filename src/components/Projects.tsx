@@ -59,11 +59,11 @@ const PROJECTS: Project[] = [
     kindKey: 'project.shaders.kind',
     tint: 'teal',
     nameKey: 'project.shaders.name',
-    href: 'https://dariaborisiak.com/shaders/wavy-spiral',
+    href: 'https://dariaborisiak.com/shaders/',
     descriptionKey: 'project.shaders.description',
     links: [
       {
-        href: 'https://dariaborisiak.com/shaders/wavy-spiral',
+        href: 'https://dariaborisiak.com/shaders/',
         labelKey: 'link.live',
       },
       { href: 'https://github.com/fremorie/shaders', labelKey: 'link.source' },

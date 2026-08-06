@@ -11,7 +11,8 @@
     />
 
     <link rel="canonical" href="https://dariaborisiak.com/" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#FFF8DE" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#2E2A33" media="(prefers-color-scheme: dark)" />
@@ -77,7 +78,39 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="fallback" style="max-width: 68ch; padding: 4rem 1.5rem">
+        <h1>Daria Borisiak</h1>
+        <p>Frontend engineer building interactive experiences</p>
+        <p>
+          Frontend engineer with eight years of production experience. Since March 2026, I&rsquo;ve
+          been focused on WebGL and real-time graphics, building interactive experiences with
+          Three.js and custom shaders.
+        </p>
+        <p>Bremen &middot; Open to Hamburg or remote</p>
+        <p>
+          Three.js &middot; WebGL &middot; GLSL &middot; React &middot; React Native &middot;
+          TypeScript
+        </p>
+        <h2>About</h2>
+        <h2>Projects</h2>
+        <h2>Open source</h2>
+        <h2>Experience</h2>
+        <h2>Skills</h2>
+        <h2>Education</h2>
+        <p>
+          <a href="https://github.com/fremorie">GitHub</a>
+          <a href="https://www.linkedin.com/in/daria-borisyak/">LinkedIn</a>
+          <a href="mailto:daria.borisiak@gmail.com">daria.borisiak@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var f = document.getElementById('fallback');
+        if (f) f.remove();
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
