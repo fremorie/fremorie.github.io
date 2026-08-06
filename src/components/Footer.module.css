@@ -7,6 +7,10 @@
   padding-block: clamp(48px, 7vw, 80px);
 }
 
+.shell .signOff {
+  font-size: min(var(--font-size-display-xl), 6.5vw);
+}
+
 .email {
   color: var(--coral-text);
 }

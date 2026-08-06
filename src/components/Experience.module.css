@@ -11,6 +11,9 @@
 .when {
   padding-top: 6px;
 }
+.when span {
+  display: block;
+}
 
 .qualifier {
   color: var(--ink-faint);
@@ -44,5 +47,8 @@
   }
   .when {
     padding-top: 0;
+  }
+  .when span {
+    display: inline;
   }
 }

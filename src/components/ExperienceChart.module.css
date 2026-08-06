@@ -126,7 +126,7 @@
 
 @media (max-width: 620px) {
   .chart {
-    --name-column: 104px;
+    --name-column: 90px;
   }
   .chart .row,
   .chart .axis,
@@ -135,5 +135,6 @@
   }
   .chart .name {
     font-size: var(--font-size-mono-xs);
+    text-align: left;
   }
 }

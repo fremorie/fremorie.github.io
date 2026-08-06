@@ -95,9 +95,8 @@ export function Experience() {
           key={role.titleKey + role.from}
         >
           <Label as="p" size="s" tabular className={styles.when}>
-            {role.from}
-            <br />
-            {role.toKey ? i18n.t(role.toKey) : role.to}
+            <span>{role.from}</span>{' '}
+            <span>{role.toKey ? i18n.t(role.toKey) : role.to}</span>
           </Label>
           <div>
             <Heading level={3} size={role.brief ? '2xs' : 'xs'}>

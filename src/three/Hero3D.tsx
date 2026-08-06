@@ -20,6 +20,8 @@ const MATCAPS = {
 
 type MatcapName = keyof typeof MATCAPS;
 
+const LENS_HOME: [number, number] = [-0.3, 0.1];
+
 function centred(geometry: THREE.BufferGeometry): THREE.BufferGeometry {
   geometry.computeBoundingBox();
   const centre = new THREE.Vector3();
@@ -133,6 +135,8 @@ function Scene({ onReady }: { onReady?: () => void }) {
     [],
   );
 
+  const touch = useMemo(() => !window.matchMedia('(hover: hover)').matches, []);
+
   useEffect(() => {
     const frame = requestAnimationFrame(() => onReady?.());
     return () => cancelAnimationFrame(frame);
@@ -183,8 +187,9 @@ function Scene({ onReady }: { onReady?: () => void }) {
         radius={lensRadius}
         follow
         frozen={frozen}
+        touch={touch}
         rim={ACCENT}
-        home={[0, 0]}
+        home={LENS_HOME}
       />
       <group ref={float}>
         <group rotation={[0.42, 0, 0.28]} scale={scale}>

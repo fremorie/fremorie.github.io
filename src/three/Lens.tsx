@@ -9,10 +9,13 @@ const GONE = 0.0001;
 
 const RING_PX = 4;
 
+const GRAB_PX = 24;
+
 type Props = {
   radius: number;
   follow: boolean;
   frozen: boolean;
+  touch: boolean;
   rim: string;
 
   home?: [number, number];
@@ -22,6 +25,7 @@ export function Lens({
   radius,
   follow,
   frozen,
+  touch,
   rim,
   home = [-0.55, 0.35],
 }: Props) {
@@ -38,39 +42,58 @@ export function Lens({
   const { viewport, camera, size, gl } = useThree();
   const canvas = gl.domElement;
 
-  const toLensPlane = useCallback(
-    (event: PointerEvent) => {
-      const rect = gl.domElement.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
-      const plane = viewport.getCurrentViewport(camera, [0, 0, LENS_Z]);
-      return { x: (x * plane.width) / 2, y: (y * plane.height) / 2 };
-    },
-    [gl, viewport, camera],
+  const plane = useMemo(
+    () => viewport.getCurrentViewport(camera, [0, 0, LENS_Z]),
+    [viewport, camera],
   );
 
-  const reachPx = useMemo(
-    () =>
-      (radius * size.width) /
-        viewport.getCurrentViewport(camera, [0, 0, LENS_Z]).width +
-      RING_PX / 2,
-    [radius, viewport, camera, size.width],
+  const toLensPlane = useCallback(
+    (event: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
+      return { x: (x * plane.width) / 2, y: (y * plane.height) / 2 };
+    },
+    [canvas, plane],
   );
 
   const tube = useMemo(
-    () =>
-      ((RING_PX / 2) *
-        viewport.getCurrentViewport(camera, [0, 0, LENS_Z]).width) /
-      size.width,
-    [viewport, camera, size.width],
+    () => ((RING_PX / 2) * plane.width) / size.width,
+    [plane, size.width],
   );
 
-  const openness = useRef(frozen ? 1 : 0);
-  const scale = useRef(frozen ? 1 : GONE);
+  const reachPx = useMemo(
+    () => (radius * size.width) / plane.width + RING_PX / 2,
+    [radius, plane, size.width],
+  );
+
+  const grabRadius = useMemo(
+    () => Math.max(radius, (GRAB_PX * plane.width) / size.width),
+    [radius, plane, size.width],
+  );
+
+  const parked = frozen || touch;
+
+  const openness = useRef(parked ? 1 : 0);
+  const scale = useRef(parked ? 1 : GONE);
   const snapToCursor = useRef(false);
+  const grabOffset = useRef<{ x: number; y: number } | null>(null);
+
+  const clamp = useCallback(
+    (x: number, y: number) => {
+      const edge = radius + tube;
+      const limitX = Math.max(0, plane.width / 2 - edge);
+      const limitY = Math.max(0, plane.height / 2 - edge);
+      return {
+        x: Math.min(limitX, Math.max(-limitX, x)),
+        y: Math.min(limitY, Math.max(-limitY, y)),
+      };
+    },
+    [radius, tube, plane],
+  );
 
   useEffect(() => {
-    if (frozen) return;
+    if (frozen || touch) return;
 
     const track = (event: PointerEvent) => {
       if (!follow) return;
@@ -111,7 +134,55 @@ export function Lens({
       canvas.removeEventListener('pointermove', move);
       canvas.removeEventListener('pointerleave', leave);
     };
-  }, [canvas, frozen, follow, target, toLensPlane, reachPx]);
+  }, [canvas, frozen, touch, follow, target, toLensPlane, reachPx]);
+
+  useEffect(() => {
+    if (frozen || !touch) return;
+
+    const down = (event: PointerEvent) => {
+      const here = group.current?.position ?? target;
+      const { x, y } = toLensPlane(event);
+      if (Math.hypot(x - here.x, y - here.y) > grabRadius) return;
+
+      grabOffset.current = { x: here.x - x, y: here.y - y };
+      canvas.setPointerCapture(event.pointerId);
+    };
+
+    const move = (event: PointerEvent) => {
+      const offset = grabOffset.current;
+      if (!offset) return;
+
+      const { x, y } = toLensPlane(event);
+      const next = clamp(x + offset.x, y + offset.y);
+      target.set(next.x, next.y, LENS_Z);
+      snapToCursor.current = true;
+    };
+
+    const up = (event: PointerEvent) => {
+      if (!grabOffset.current) return;
+      grabOffset.current = null;
+      if (canvas.hasPointerCapture(event.pointerId)) {
+        canvas.releasePointerCapture(event.pointerId);
+      }
+    };
+
+    const hold = (event: TouchEvent) => {
+      if (grabOffset.current) event.preventDefault();
+    };
+
+    canvas.addEventListener('pointerdown', down);
+    canvas.addEventListener('pointermove', move);
+    canvas.addEventListener('pointerup', up);
+    canvas.addEventListener('pointercancel', up);
+    canvas.addEventListener('touchmove', hold, { passive: false });
+    return () => {
+      canvas.removeEventListener('pointerdown', down);
+      canvas.removeEventListener('pointermove', move);
+      canvas.removeEventListener('pointerup', up);
+      canvas.removeEventListener('pointercancel', up);
+      canvas.removeEventListener('touchmove', hold);
+    };
+  }, [canvas, frozen, touch, target, toLensPlane, grabRadius, clamp]);
 
   useFrame((_, delta) => {
     if (!group.current) return;

@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <Shell className={styles.shell}>
-        <Heading as="p" size="xl">
+        <Heading as="p" size="xl" className={styles.signOff}>
           {i18n.t('footer.signOff')}
           <br />
           <Link

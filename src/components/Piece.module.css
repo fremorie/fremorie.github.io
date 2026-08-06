@@ -57,7 +57,8 @@
 }
 
 @media (max-width: 800px) {
-  .piece {
+  .piece,
+  .piece:nth-child(even) {
     grid-template-columns: minmax(0, 1fr);
   }
   .piece:nth-child(even) > :first-child {

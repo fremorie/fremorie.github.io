@@ -43,20 +43,22 @@ export function Hero() {
             >
               {i18n.t('ui.contact')}
             </Link>
-            <Link
-              variant="none"
-              className={styles.button}
-              href="https://github.com/fremorie"
-            >
-              GitHub
-            </Link>
-            <Link
-              variant="none"
-              className={styles.button}
-              href="https://www.linkedin.com/in/daria-borisyak/"
-            >
-              LinkedIn
-            </Link>
+            <span className={styles.profiles}>
+              <Link
+                variant="none"
+                className={styles.button}
+                href="https://github.com/fremorie"
+              >
+                GitHub
+              </Link>
+              <Link
+                variant="none"
+                className={styles.button}
+                href="https://www.linkedin.com/in/daria-borisyak/"
+              >
+                LinkedIn
+              </Link>
+            </span>
           </div>
         </div>
         <div
