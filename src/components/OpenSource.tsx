@@ -12,11 +12,6 @@ const MORE: MoreItem[] = [
     nameKey: 'more.dateFns.name',
     descriptionKey: 'more.dateFns.description',
   },
-  {
-    href: 'https://www.npmjs.com/package/@fremorie/karatsuba-multiplication',
-    nameKey: 'more.karatsuba.name',
-    descriptionKey: 'more.karatsuba.description',
-  },
 ];
 
 export function OpenSource() {

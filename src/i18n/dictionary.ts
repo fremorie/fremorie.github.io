@@ -21,7 +21,7 @@ const ENGLISH = {
   'section.skills': 'Skills',
   'section.education': 'Education',
 
-  'note.about': 'Why the switch',
+  'note.about': 'A little about my work',
   'note.projects': 'Real-time graphics · 2026',
   'note.openSource': 'Contributions upstream',
   'note.experience': '2016 – 2026, to scale',
@@ -37,20 +37,19 @@ const ENGLISH = {
   'hero.role': 'Frontend engineer building',
   'hero.roleAccent': 'interactive experiences',
   'hero.lede':
-    "Frontend engineer with eight years of production experience. Since March 2026, I've been focused on WebGL and real-time graphics, building interactive experiences with Three.js and custom shaders.",
+    'I build web and mobile applications with React and TypeScript. I\u00A0also work with Three.js, WebGL, shaders, and 3D graphics, with a particular interest in interactive interfaces and visual experiences.',
   'hero.location': 'Bremen · Open to Hamburg or remote',
   'hero.stack': 'Three.js · WebGL · GLSL · React · React Native · TypeScript',
 
-  'about.paragraph1':
-    "For most of my career, I've built production web and mobile applications, working across product features, architecture, and developer tooling.",
+  'about.paragraph1': 'Hi, I’m Daria.',
   'about.paragraph2':
-    'Over time, I found myself increasingly drawn to the technology behind interactive experiences: animation, rendering, shaders, and real-time graphics. My background in Applied Mathematics and Physics at the Moscow Institute of Physics and Technology gave me a solid foundation for diving deeper into geometry, rendering, and shader programming.',
+    'I’m a frontend engineer who likes making things that move, react, and generally do more than just sit on a page. I’ve spent most of my career building web and mobile applications, mostly with React and TypeScript. I still really enjoy the frontend side of things: taking an idea and turning it into something people can actually use and interact with.',
   'about.paragraph3':
-    "In March 2026, I shifted my full-time focus to WebGL and real-time graphics. Since then, I've been building with Three.js every day, developing custom shaders, exploring rendering techniques, creating interactive scenes, and contributing improvements upstream to the libraries I rely on.",
+    'Lately, I’ve been getting deeper into Three.js, WebGL, shaders, and 3D graphics. I got into graphics mostly out of curiosity. I wanted to understand what happens beyond the usual layers of UI and application code, and how things like geometry, lighting, materials, and animation actually end up on the screen.',
   'about.paragraph4':
-    "What I enjoy most is building software that's both technically challenging and immediately tangible—where mathematics, graphics programming, and user interaction come together.",
+    'Most of the things on this site are experiments: trying an idea, figuring out how something works, or just seeing if I can make something look nice in a browser. Sometimes they turn into proper little projects, and sometimes they’re just a few hours spent messing around with an idea. I like starting with something vague and gradually turning it into something I can actually see and play with.',
   'about.paragraph5':
-    "I'm now looking for a role where I can combine eight years of production engineering experience with a growing specialization in interactive graphics.",
+    'I’m particularly interested in the overlap between programming, math, and visual design. That might mean writing a shader, figuring out how to make a 3D scene run smoothly in a browser, or building a small interaction around an otherwise simple idea. I like when the technical side of a project is visible in the final result — when you can poke at something on the screen and get a sense of what’s going on underneath.',
 
   'project.terrarium.kind': 'Three.js Journey challenge',
   'project.terrarium.name': 'Terrarium',
@@ -94,9 +93,6 @@ const ENGLISH = {
   'more.dateFns.name': 'date-fns · PR #3990',
   'more.dateFns.description':
     "A localized date format that omits the year while keeping each locale's own ordering rules.",
-  'more.karatsuba.name': 'karatsuba',
-  'more.karatsuba.description':
-    'A published package for fast multiplication of big integers using the Karatsuba algorithm.',
 
   'chart.independent': 'Independent',
   'chart.wolt': 'Wolt',
@@ -127,7 +123,7 @@ const ENGLISH = {
   'role.vimcar.title': 'Software engineer',
   'role.vimcar.organisation': 'Vimcar · Berlin',
   'role.vimcar.description':
-    'Prototyped a micro-frontend architecture using Module Federation and presented the approach to the frontend team, kick-starting the gradual extraction of pages from the monolith. Built features for the Geo module using the Google Maps API and improved performance through list virtualization.',
+    'Built features for the Geo module using the Google Maps API and improved performance through list virtualization.',
   'role.vimcar.stack': 'React · MobX · RxJS · Cypress · Webpack · TypeScript',
 
   'role.yandexMarket.title': 'Frontend developer',
@@ -206,7 +202,7 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'section.skills': 'Skills',
   'section.education': 'Studium',
 
-  'note.about': 'Warum der Wechsel',
+  'note.about': 'Ein wenig über meine Arbeit',
   'note.projects': 'Echtzeitgrafik · 2026',
   'note.openSource': 'Beiträge zu Open-Source-Projekten',
   'note.experience': '2016 – 2026',
@@ -223,24 +219,20 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'hero.roleAccent': 'interaktive Anwendungen',
 
   'hero.lede':
-    'Seit acht Jahren entwickle ich produktive Web- und Mobile-Anwendungen. Seit März 2026 liegt mein voller Fokus auf WebGL und Echtzeitgrafik. Ich suche eine Frontend- oder Grafikrolle, in der ich interaktive, visuell überzeugende Produkte entwickeln kann.',
+    'Ich entwickle Web- und Mobile-Anwendungen mit React und TypeScript. Außerdem arbeite ich mit Three.js, WebGL, Shadern und 3D-Grafik und interessiere mich besonders für interaktive Interfaces und visuelle Erlebnisse.',
 
   'hero.location': 'Bremen · Offen für Hamburg oder Remote',
   'hero.stack': 'Three.js · WebGL · GLSL · React · React Native · TypeScript',
 
-  'about.paragraph1':
-    'Den größten Teil meiner bisherigen Laufbahn habe ich Web- und Mobile-Anwendungen für den produktiven Einsatz entwickelt – von neuen Produktfunktionen über Architekturentscheidungen bis hin zu Developer-Tooling.',
-
+  'about.paragraph1': 'Hi, ich bin Daria.',
   'about.paragraph2':
-    'Mit der Zeit hat mich immer stärker die Technik hinter interaktiven Benutzeroberflächen fasziniert: Animationen, Rendering, Shader und Echtzeitgrafik. Mein Studium der Angewandten Mathematik und Physik am Moskauer Institut für Physik und Technologie (MIPT) hat mir dabei eine solide Grundlage gegeben, um mich intensiver mit Geometrie, Rendering und Shader-Programmierung auseinanderzusetzen.',
-
+    'Ich bin Frontend-Entwicklerin und mag es, Dinge zu bauen, die sich bewegen, auf Eingaben reagieren und generell mehr können, als einfach nur auf einer Seite herumzustehen. Die meiste Zeit meiner Karriere habe ich Web- und Mobile-Anwendungen gebaut, hauptsächlich mit React und TypeScript. Die Frontend-Seite macht mir nach wie vor viel Spaß: eine Idee zu nehmen und daraus etwas zu machen, das Menschen tatsächlich benutzen und mit dem sie interagieren können.',
   'about.paragraph3':
-    'Seit März 2026 konzentriere ich mich vollständig auf WebGL und Echtzeitgrafik. Seitdem arbeite ich täglich mit Three.js, entwickle eigene Shader, beschäftige mich mit Rendering-Techniken, baue interaktive Szenen und trage Verbesserungen zu den Open-Source-Bibliotheken bei, die ich selbst verwende.',
-
+    'In letzter Zeit beschäftige ich mich zunehmend mit Three.js, WebGL, Shadern und 3D-Grafik. Zu Grafik bin ich vor allem aus Neugier gekommen. Ich wollte verstehen, was hinter den üblichen Schichten von UI und Anwendungscode passiert und wie Dinge wie Geometrie, Beleuchtung, Materialien und Animationen letztendlich auf dem Bildschirm landen.',
   'about.paragraph4':
-    'Besonders reizt mich Software, bei der anspruchsvolle Technik unmittelbar sichtbar wird – dort, wo Mathematik, Computergrafik und Interaktion zusammenkommen.',
+    'Die meisten Dinge auf dieser Website sind Experimente: eine Idee ausprobieren, herausfinden, wie etwas funktioniert, oder einfach schauen, ob ich etwas Schönes im Browser bauen kann. Manchmal werden daraus richtige kleine Projekte, manchmal sind es einfach ein paar Stunden, in denen ich mit einer Idee herumspiele. Ich mag es, mit etwas Vagem anzufangen und es nach und nach in etwas zu verwandeln, das ich tatsächlich sehen und ausprobieren kann.',
   'about.paragraph5':
-    'Heute suche ich eine Position, in der ich meine langjährige Erfahrung in der Entwicklung von Produktionssoftware mit meinem Schwerpunkt auf interaktiver Grafik verbinden kann.',
+    'Besonders interessant finde ich die Schnittstelle zwischen Programmierung, Mathematik und visueller Gestaltung. Das kann bedeuten, einen Shader zu schreiben, herauszufinden, wie eine 3D-Szene im Browser flüssig läuft, oder eine kleine Interaktion um eine eigentlich einfache Idee herum zu bauen. Ich mag es, wenn die technische Seite eines Projekts im Ergebnis sichtbar bleibt – wenn man etwas auf dem Bildschirm ausprobieren kann und dabei ein Gefühl dafür bekommt, was darunter passiert.',
 
   'project.terrarium.kind': 'Three.js Journey Challenge',
   'project.terrarium.name': 'Terrarium',
@@ -300,11 +292,6 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'more.dateFns.description':
     'Ein lokalisiertes Datumsformat, das das Jahr weglässt und dabei die Datumsreihenfolge der jeweiligen Sprache beibehält.',
 
-  'more.karatsuba.name': 'karatsuba',
-
-  'more.karatsuba.description':
-    'Ein veröffentlichtes Paket zur schnellen Multiplikation großer Ganzzahlen mit dem Karatsuba-Algorithmus.',
-
   'chart.independent': 'Selbstständig',
   'chart.wolt': 'Wolt',
   'chart.vimcar': 'Vimcar',
@@ -342,7 +329,7 @@ const GERMAN: Partial<Record<TranslationKey, string>> = {
   'role.vimcar.organisation': 'Vimcar · Berlin',
 
   'role.vimcar.description':
-    'Eine Micro-Frontend-Architektur mit Module Federation prototypisiert und dem Frontend-Team vorgestellt. Dadurch wurde die schrittweise Herauslösung einzelner Seiten aus dem Monolithen angestoßen. Features für das Geo-Modul mit der Google Maps API entwickelt und die Performance durch Listenvirtualisierung verbessert.',
+    'Features für das Geo-Modul mit der Google Maps API entwickelt und die Performance durch Listenvirtualisierung verbessert.',
 
   'role.vimcar.stack': 'React · MobX · RxJS · Cypress · Webpack · TypeScript',
 
