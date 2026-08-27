@@ -1,0 +1,393 @@
+:root {
+  --bg: #f6f2e8;
+  --surface: #fbf8f0;
+  --surface-alt: #eceadb;
+  --ink: #2c2822;
+  --ink-soft: #6e6455;
+  --accent: #6a7a45;
+  --line: #e4dcc9;
+
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --hand: 'Caveat', 'Segoe Script', cursive;
+
+  --page: 68rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #201d18;
+    --surface: #26221c;
+    --surface-alt: #2c2921;
+    --ink: #efe8d9;
+    --ink-soft: #a89c88;
+    --accent: #aabc74;
+    --line: #383227;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.page {
+  width: 100%;
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* header */
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 0 0;
+}
+
+.logo {
+  font-family: var(--hand);
+  font-size: 1.65rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(1.1rem, 3vw, 2.25rem);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.nav a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--ink);
+}
+
+.nav .out::after {
+  content: ' ↗';
+  font-size: 0.85em;
+}
+
+/* hero */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.5rem, 7vw, 4.5rem) 0 clamp(2rem, 4vw, 3rem);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-variation-settings:
+    'SOFT' 20,
+    'WONK' 0,
+    'opsz' 96;
+  font-size: clamp(2.4rem, 4.6vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.hand-note {
+  font-family: var(--hand);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-top: 1.5rem;
+}
+
+.doodle {
+  width: 100%;
+  height: auto;
+  margin-bottom: -0.5rem;
+}
+
+/* projects */
+
+.projects {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.project.flip {
+  grid-template-columns: 1fr 1.9fr;
+}
+
+.project .media {
+  display: flex;
+  overflow: hidden;
+}
+
+.project .shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+}
+
+.shot.zoom {
+  scale: 1.16;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  height: 100%;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.about-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.75rem, 3.2vw, 2.75rem);
+}
+
+.project.tinted .about-project {
+  background: var(--surface-alt);
+}
+
+.year {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.project h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-variation-settings:
+    'SOFT' 20,
+    'opsz' 48;
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  margin: 0.4rem 0 0.7rem;
+}
+
+.project p {
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: 0.95rem;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.links a .arrow {
+  display: inline-block;
+  margin-left: 0.35em;
+  transition: transform 0.2s ease;
+}
+
+.links a:hover .arrow {
+  transform: translateX(4px);
+}
+
+.links .quiet {
+  color: var(--ink-soft);
+}
+
+.links .quiet:hover {
+  color: var(--ink);
+}
+
+/* about */
+
+.about {
+  max-width: 44rem;
+  padding: clamp(4rem, 9vw, 6.5rem) 0 0;
+}
+
+.about h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-variation-settings:
+    'SOFT' 20,
+    'opsz' 48;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  text-wrap: pretty;
+}
+
+.about a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* footer */
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0 3rem;
+}
+
+.footer .hand-note {
+  margin: 0;
+  max-width: 18rem;
+  line-height: 1.35;
+}
+
+.footer nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.footer nav a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer nav a:hover {
+  color: var(--ink);
+}
+
+/* responsive */
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 0.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .doodle {
+    width: calc(100% + var(--gutter));
+    max-width: none;
+    margin: 0.75rem calc(var(--gutter) * -1) -0.5rem 0;
+  }
+
+  .project,
+  .project.flip {
+    grid-template-columns: 1fr;
+  }
+
+  .project .media {
+    order: -1;
+  }
+
+  .project .media {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .project .shot {
+    aspect-ratio: 3 / 2;
+  }
+
+  .shot.zoom {
+    scale: 1.16;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+  }
+
+  .shot.zoom {
+    scale: 1.16;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
