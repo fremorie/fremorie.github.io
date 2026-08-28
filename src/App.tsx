@@ -12,24 +12,24 @@ type Project = {
 
 const SHADERS = [
   {
-    src: '/projects/shaders/sakura.webp',
-    alt: 'A low-poly cherry tree in blossom.',
+    src: '/projects/shaders/trees.webp',
+    alt: 'Three stylized trees on a grassy plane.',
   },
   {
     src: '/projects/shaders/spiral.webp',
     alt: 'A turquoise and violet spiral shader.',
   },
   {
-    src: '/projects/shaders/stencil.webp',
-    alt: 'A knot inside a cube, masked with the stencil buffer.',
-  },
-  {
-    src: '/projects/shaders/bottle.webp',
-    alt: 'A glass bottle holding a tiny tree.',
+    src: '/projects/shaders/distance-field.webp',
+    alt: 'A soft grayscale distance field.',
   },
   {
     src: '/projects/shaders/warped-spiral.webp',
     alt: 'A warped square spiral in pink and cyan.',
+  },
+  {
+    src: '/projects/shaders/warped-sphere.webp',
+    alt: 'A sphere warped into stacked rings, lit in violet.',
   },
   {
     src: '/projects/shaders/pulsating-spiral.webp',
@@ -38,24 +38,6 @@ const SHADERS = [
 ];
 
 const PROJECTS: Project[] = [
-  {
-    name: 'Wind',
-    year: '2026',
-    description: 'A bicycle ride through an endless landscape.',
-    links: [
-      { href: 'https://fremorie.github.io/wind/', label: 'Explore project' },
-      { href: 'https://github.com/fremorie/wind', label: 'Source' },
-    ],
-    media: (
-      <img
-        className="shot"
-        src="/projects/wind.webp"
-        alt="A bicycle in tall grass on a green hillside, wind turbines on the horizon."
-        width={1600}
-        height={1000}
-      />
-    ),
-  },
   {
     name: 'Terrarium',
     year: '2026',
@@ -82,7 +64,7 @@ const PROJECTS: Project[] = [
   {
     name: 'Shader studies',
     year: '2026',
-    description: 'Things I made while learning shaders.',
+    description: 'Experiments in GLSL and real-time graphics.',
     flip: true,
     tinted: true,
     links: [
@@ -102,6 +84,24 @@ const PROJECTS: Project[] = [
           />
         ))}
       </div>
+    ),
+  },
+  {
+    name: 'Sunday ride',
+    year: '2026',
+    description: 'A bicycle ride through an endless landscape.',
+    links: [
+      { href: 'https://fremorie.github.io/wind/', label: 'Explore project' },
+      { href: 'https://github.com/fremorie/wind', label: 'Source' },
+    ],
+    media: (
+      <img
+        className="shot"
+        src="/projects/wind.webp"
+        alt="A bicycle resting in tall grass beside a river, wind turbines on the horizon."
+        width={1600}
+        height={1000}
+      />
     ),
   },
   {
@@ -175,7 +175,7 @@ export function App() {
         </a>
         <nav className="nav">
           <a href="#about">About</a>
-          <a href="/cv">CV</a>
+          <a href="https://dariaborisiak.com/cv">CV</a>
           <a className="out" href="https://github.com/fremorie">
             GitHub
           </a>
@@ -185,7 +185,7 @@ export function App() {
       <main>
         <div className="hero">
           <div>
-            <h1>Things I’ve made for the internet.</h1>
+            <h1>Projects,&nbsp;experiments, and other things.</h1>
             <p className="hand-note">♡ thanks for stopping by</p>
           </div>
           <img
@@ -206,18 +206,17 @@ export function App() {
         <section className="about" id="about">
           <h2>About</h2>
           <p>
-            I’m Daria, a frontend engineer in Bremen. Lately most of my evenings
-            have gone into Three.js, WebGL and shaders — mostly out of curiosity
-            about what happens between a bit of maths and a picture on the
-            screen.
+            Hi! I’m Daria, a frontend engineer in Bremen. These days, I spend
+            most of my time building things with Three.js, WebGL and shaders.
           </p>
           <p>
-            Almost everything here started as an experiment. Some of them turned
-            into small projects, some are just a few hours of poking at an idea.
+            Most of what you see here started with a question, an idea, or
+            something I wanted to try. Some experiments turned into projects.
+            Others stayed experiments.
           </p>
           <p>
             If you were looking for the work version of me, that lives on my{' '}
-            <a href="/cv">CV</a>.
+            <a href="https://dariaborisiak.com/cv">CV</a>.
           </p>
         </section>
       </main>
