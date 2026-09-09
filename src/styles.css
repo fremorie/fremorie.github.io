@@ -1,7 +1,6 @@
 :root {
   --bg: #f6f2e8;
   --surface: #fbf8f0;
-  --surface-alt: #eceadb;
   --ink: #2c2822;
   --ink-soft: #6e6455;
   --accent: #6a7a45;
@@ -19,7 +18,6 @@
   :root {
     --bg: #201d18;
     --surface: #26221c;
-    --surface-alt: #2c2921;
     --ink: #efe8d9;
     --ink-soft: #a89c88;
     --accent: #aabc74;
@@ -190,10 +188,6 @@ a {
   aspect-ratio: 16 / 10;
 }
 
-.shot.zoom {
-  scale: 1.16;
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -214,10 +208,6 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: clamp(1.75rem, 3.2vw, 2.75rem);
-}
-
-.project.tinted .about-project {
-  background: var(--surface-alt);
 }
 
 .year {
@@ -369,10 +359,6 @@ a {
     aspect-ratio: 3 / 2;
   }
 
-  .shot.zoom {
-    scale: 1.16;
-  }
-
   .gallery {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -381,10 +367,6 @@ a {
 @media (max-width: 520px) {
   .hero h1 {
     font-size: clamp(2.1rem, 10vw, 3rem);
-  }
-
-  .shot.zoom {
-    scale: 1.16;
   }
 
   .gallery {

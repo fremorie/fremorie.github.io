@@ -6,8 +6,6 @@ type Project = {
   description: string;
   links: Link[];
   media: React.ReactNode;
-  flip?: boolean;
-  tinted?: boolean;
 };
 
 const SHADERS = [
@@ -42,7 +40,6 @@ const PROJECTS: Project[] = [
     name: 'Terrarium',
     year: '2026',
     description: 'A tiny spring inside a glass bottle.',
-    flip: true,
     links: [
       {
         href: 'https://fremorie.github.io/terrarium/',
@@ -65,8 +62,6 @@ const PROJECTS: Project[] = [
     name: 'Shader studies',
     year: '2026',
     description: 'Experiments in GLSL and real-time graphics.',
-    flip: true,
-    tinted: true,
     links: [
       { href: 'https://dariaborisiak.com/shaders/', label: 'Explore gallery' },
       { href: 'https://github.com/fremorie/shaders', label: 'Source' },
@@ -105,20 +100,20 @@ const PROJECTS: Project[] = [
     ),
   },
   {
-    name: 'Gravity',
+    name: 'Monsters',
     year: '2026',
-    description: 'A little physics playground.',
+    description: 'Two monsters whose eyes follow you around.',
     links: [
-      { href: 'https://fremorie.github.io/gravity/', label: 'Explore project' },
-      { href: 'https://github.com/fremorie/gravity', label: 'Source' },
+      { href: 'https://dariaborisiak.com/monsters/', label: 'Explore project' },
+      { href: 'https://github.com/fremorie/monsters', label: 'Source' },
     ],
     media: (
       <img
-        className="shot zoom"
-        src="/projects/gravity.webp"
-        alt="Orange and cream shapes scattered across a dark plane."
+        className="shot"
+        src="/projects/monsters.webp"
+        alt="Two soft black blob monsters with big eyes on a warm beige floor."
         width={1600}
-        height={1000}
+        height={1153}
         loading="lazy"
       />
     ),
@@ -132,8 +127,7 @@ function Piece({
   links,
   media,
   flip,
-  tinted,
-}: Project) {
+}: Project & { flip: boolean }) {
   const text = (
     <div className="about-project">
       <span className="year">{year}</span>
@@ -157,9 +151,7 @@ function Piece({
   const shot = <div className="media">{media}</div>;
 
   return (
-    <article
-      className={`project${flip ? ' flip' : ''}${tinted ? ' tinted' : ''}`}
-    >
+    <article className={`project${flip ? ' flip' : ''}`}>
       {flip ? text : shot}
       {flip ? shot : text}
     </article>
@@ -198,8 +190,8 @@ export function App() {
         </div>
 
         <div className="projects">
-          {PROJECTS.map((project) => (
-            <Piece key={project.name} {...project} />
+          {PROJECTS.map((project, index) => (
+            <Piece key={project.name} {...project} flip={index % 2 === 0} />
           ))}
         </div>
 
