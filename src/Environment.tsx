@@ -1,0 +1,80 @@
+import { useHelper, Environment as EnvMap } from '@react-three/drei';
+import { type RefObject, useEffect, useRef, useState } from 'react';
+import {
+    CameraHelper,
+    DirectionalLightHelper,
+    type Camera,
+    type DirectionalLight,
+    type Object3D,
+} from 'three';
+import { useControls } from 'leva';
+
+import { useDebug } from './hooks/useDebug';
+import {
+    AMBIENT_LIGHT_INTENSITY,
+    BACKGROUND,
+    DIRECTIONAL_LIGHT_INTENSITY,
+    DIRECTIONAL_LIGHT_POSITION,
+    ENVIRONMENT_MAP_INTENSITY,
+} from './constants';
+
+export function Environment() {
+    const debug = useDebug();
+
+    const lightRef = useRef<DirectionalLight>(null);
+    const shadowCameraRef = useRef<Camera>(null);
+    const [hasShadowCamera, setHasShadowCamera] = useState(false);
+
+    const { ambientColor, directionalColor } = useControls('Lights', {
+        ambientColor: '#ffefd2',
+        directionalColor: '#ffe6b4',
+    });
+
+    useEffect(() => {
+        if (!lightRef.current) return;
+
+        shadowCameraRef.current = lightRef.current.shadow.camera;
+        setHasShadowCamera(true);
+    }, []);
+
+    useHelper(
+        debug && (lightRef as RefObject<Object3D>),
+        DirectionalLightHelper,
+        1,
+    );
+    useHelper(
+        debug && hasShadowCamera && (shadowCameraRef as RefObject<Object3D>),
+        CameraHelper,
+    );
+
+    return (
+        <>
+            <directionalLight
+                ref={lightRef}
+                castShadow
+                color={directionalColor}
+                position={DIRECTIONAL_LIGHT_POSITION}
+                intensity={DIRECTIONAL_LIGHT_INTENSITY}
+                shadow-normalBias={0}
+                shadow-camera-left={-22}
+                shadow-camera-right={18}
+                shadow-camera-top={16}
+                shadow-camera-bottom={-16}
+                shadow-camera-near={8}
+                shadow-camera-far={75}
+                shadow-radius={3}
+                shadow-mapSize={[1024, 1024]}
+            />
+            <ambientLight
+                color={ambientColor}
+                intensity={AMBIENT_LIGHT_INTENSITY}
+            />
+            <EnvMap
+                preset="studio"
+                environmentIntensity={ENVIRONMENT_MAP_INTENSITY}
+            />
+            <color attach="background" args={[BACKGROUND]} />
+            <fog attach="fog" args={[BACKGROUND, 75, 170]} />
+        </>
+    );
+}
