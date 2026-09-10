@@ -5,7 +5,6 @@ import { NavBar } from './components/NavBar';
 import { PageTitle } from './components/PageTitle';
 import { PageDescription } from './components/PageDescription';
 import { Panels } from './components/Panels';
-import { StatusPill } from './components/StatusPill';
 import './Page.css';
 
 export function Page() {
@@ -18,43 +17,23 @@ export function Page() {
                     Daria Borisiak
                 </a>
 
-                {/* shares the stage's second column, so the nav starts in line
-                    with the panel content rather than floating mid-page */}
-                <div className="page__topbar-end">
-                    <NavBar
-                        sections={SECTIONS}
-                        active={active}
-                        onSelect={setActive}
-                    />
-
-                    <StatusPill
-                        place="Based in Germany"
-                        note="Open to opportunities"
-                    />
-                </div>
+                {/* sits in the stage's second column, so the nav starts in
+                    line with the panel content rather than floating mid-page */}
+                <NavBar
+                    sections={SECTIONS}
+                    active={active}
+                    onSelect={setActive}
+                />
             </header>
 
             <main className="page__stage">
                 <div className="page__intro">
                     <PageTitle>Hi, I&rsquo;m Daria.</PageTitle>
 
-                    <p className="page__role">
-                        Frontend Engineer · 3D &amp; Interactive Experiences
-                    </p>
-
                     <PageDescription>
-                        Almost eight years building production web and mobile
-                        applications. These days I&rsquo;m focused on WebGL,
-                        real-time graphics and creative coding.
+                        I build things that move in the browser &mdash; mostly
+                        with WebGL, shaders and real-time graphics.
                     </PageDescription>
-
-                    <button
-                        className="page__cta"
-                        type="button"
-                        onClick={() => setActive('projects')}
-                    >
-                        See my projects <span aria-hidden="true">→</span>
-                    </button>
                 </div>
 
                 <Panels sections={SECTIONS} active={active} />

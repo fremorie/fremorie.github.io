@@ -88,7 +88,7 @@ export const SECTIONS: Section[] = [
         label: 'Stack',
         content: (
             <div className="section">
-                <PageTitle as="h2">Stack</PageTitle>
+                <PageTitle as="h2">What I reach for</PageTitle>
                 <dl className="stack">
                     {STACK.map((group) => (
                         <div key={group.name} className="stack__group">
@@ -115,9 +115,6 @@ export const SECTIONS: Section[] = [
                         </li>
                     ))}
                 </ul>
-                <p className="contact__place">
-                    Bremen · open to Hamburg or remote
-                </p>
             </div>
         ),
     },

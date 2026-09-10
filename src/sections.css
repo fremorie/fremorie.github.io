@@ -82,9 +82,3 @@
 .contact__link:hover {
     border-bottom-color: currentcolor;
 }
-
-.contact__place {
-    margin: 0.5rem 0 0;
-    color: var(--ink-soft);
-    font-size: 0.9rem;
-}

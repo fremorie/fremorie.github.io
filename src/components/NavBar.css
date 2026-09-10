@@ -9,7 +9,7 @@
     border: 0;
     border-bottom: 1px solid transparent;
     background: none;
-    color: var(--ink-faint);
+    color: var(--ink-soft);
     font: inherit;
     font-size: clamp(0.85rem, 1vw, 0.95rem);
     cursor: pointer;
@@ -23,4 +23,5 @@
 .nav-bar__item--active {
     border-bottom-color: currentcolor;
     color: var(--ink);
+    font-weight: 600;
 }

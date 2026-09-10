@@ -4,7 +4,7 @@ import { type GLTF } from 'three-stdlib';
 
 import { EyeMaterial } from '../materials/eyeMaterial';
 import { eyeRadiusOf } from '../materials/eyeUniforms';
-import { useBlink } from '../hooks/useBlink';
+import { useEyeLids } from '../hooks/useEyeLids';
 import { useEyeTracking } from '../hooks/useEyeTracking';
 import { usePupilResponse } from '../hooks/usePupilResponse';
 import { bodyMaterial } from '../materials/bodyMaterial';
@@ -25,12 +25,14 @@ type KisaProps = {
     ref?: React.Ref<THREE.Group>;
     /** shrinks her so she takes less of a small screen */
     scale?: number;
+    /** bumped each time something bumps into her */
+    startles?: number;
 };
 
-export function Kisa({ ref, scale = 1 }: KisaProps) {
+export function Kisa({ ref, scale = 1, startles = 0 }: KisaProps) {
     const { nodes } = useGLTF('./KisaLowPoly.glb') as unknown as GLTFResult;
 
-    const { topEyeLidRef, bottomEyeLidRef } = useBlink();
+    const { topEyeLidRef, bottomEyeLidRef } = useEyeLids({ startles });
     const { eyeLeftRef, eyeRightRef } = useEyeTracking();
 
     usePupilResponse([eyeLeftRef, eyeRightRef], { label: 'Kisa pupils' });

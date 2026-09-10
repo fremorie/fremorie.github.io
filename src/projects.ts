@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
         href: 'https://fremorie.github.io/terrarium/',
     },
     {
-        name: 'Wind',
+        name: 'Sunday ride',
         description: 'A bicycle ride through an endless landscape.',
         image: '/projects/wind.webp',
         alt: 'A bicycle resting in tall grass beside a river, wind turbines on the horizon.',
