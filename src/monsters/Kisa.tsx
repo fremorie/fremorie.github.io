@@ -21,7 +21,13 @@ type GLTFResult = GLTF & {
     };
 };
 
-export function Kisa({ ref }: { ref?: React.Ref<THREE.Group> }) {
+type KisaProps = {
+    ref?: React.Ref<THREE.Group>;
+    /** shrinks her so she takes less of a small screen */
+    scale?: number;
+};
+
+export function Kisa({ ref, scale = 1 }: KisaProps) {
     const { nodes } = useGLTF('./KisaLowPoly.glb') as unknown as GLTFResult;
 
     const { topEyeLidRef, bottomEyeLidRef } = useBlink();
@@ -30,7 +36,7 @@ export function Kisa({ ref }: { ref?: React.Ref<THREE.Group> }) {
     usePupilResponse([eyeLeftRef, eyeRightRef], { label: 'Kisa pupils' });
 
     return (
-        <group ref={ref} dispose={null}>
+        <group ref={ref} scale={scale} dispose={null}>
             <mesh
                 castShadow
                 geometry={nodes.Body001.geometry}

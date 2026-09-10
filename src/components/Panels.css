@@ -1,0 +1,49 @@
+.panels {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.panels__track {
+    display: flex;
+    height: 100%;
+    transition: transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.panels__panel {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding-right: 0.4rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: var(--line) transparent;
+    scrollbar-width: thin;
+
+    /* the page sets touch-action: none to keep pinch-zoom off the canvas */
+    touch-action: pan-y;
+}
+
+/* an off-screen panel that can still scroll shows its scrollbar at the edge of
+   the one on screen */
+.panels__panel[inert] {
+    overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .panels__track {
+        transition: none;
+    }
+}
+
+/*
+ * Stacked, the panel scrolls under the band kept clear for Kisa. Fading the
+ * last stretch says the content continues, instead of looking cut off.
+ */
+@media (max-width: 900px) {
+    .panels {
+        mask-image: linear-gradient(
+            to bottom,
+            #000 calc(100% - 2.5rem),
+            transparent
+        );
+    }
+}

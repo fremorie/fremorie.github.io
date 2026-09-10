@@ -1,0 +1,17 @@
+.page-title {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    text-wrap: balance;
+}
+
+.page-title--h1 {
+    font-size: clamp(2.75rem, 6.5vw, 5.25rem);
+}
+
+.page-title--h2 {
+    font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+    letter-spacing: -0.02em;
+}

@@ -74,7 +74,9 @@ export function Environment() {
                 environmentIntensity={ENVIRONMENT_MAP_INTENSITY}
             />
             <color attach="background" args={[BACKGROUND]} />
-            <fog attach="fog" args={[BACKGROUND, 75, 170]} />
+            {/* starts past Kisa (~100 away) so the fog only swallows the far
+                edge of the floor, and doesn't wash the contrast out of her */}
+            <fog attach="fog" args={[BACKGROUND, 130, 260]} />
         </>
     );
 }

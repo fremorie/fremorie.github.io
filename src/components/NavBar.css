@@ -1,0 +1,26 @@
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 2.5vw, 2.75rem);
+}
+
+.nav-bar__item {
+    padding: 0.25rem 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: none;
+    color: var(--ink-faint);
+    font: inherit;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    cursor: pointer;
+    transition: color 180ms ease;
+}
+
+.nav-bar__item:hover {
+    color: var(--ink);
+}
+
+.nav-bar__item--active {
+    border-bottom-color: currentcolor;
+    color: var(--ink);
+}

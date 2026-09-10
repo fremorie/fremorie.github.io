@@ -1,0 +1,120 @@
+.page {
+    /* the topbar and the stage share one column template, so the nav can't
+       drift out of line with the panel content below it */
+    --columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    --column-gap: clamp(1.5rem, 4vw, 4rem);
+
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: grid;
+    padding: var(--gutter);
+    color: var(--ink);
+    font-family: var(--sans);
+    gap: clamp(1rem, 4vh, 3rem);
+    grid-template-rows: auto minmax(0, 1fr);
+}
+
+.page__topbar {
+    display: grid;
+    align-items: center;
+    gap: var(--column-gap);
+    grid-template-columns: var(--columns);
+}
+
+.page__topbar-end {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gutter);
+}
+
+.page__logo {
+    color: var(--ink);
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+}
+
+.page__stage {
+    display: grid;
+    min-height: 0;
+    gap: var(--column-gap);
+    grid-template-columns: var(--columns);
+}
+
+.page__intro {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.page__role {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+    font-weight: 700;
+}
+
+.page__cta {
+    padding: 0.7rem 1.4rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 180ms ease;
+}
+
+.page__cta:hover {
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page__cta {
+        transition: none;
+    }
+
+    .page__cta:hover {
+        transform: none;
+    }
+}
+
+/*
+ * Below this the two columns can't both hold their content, so the intro moves
+ * above the panels. Kisa still sits in the corner and would collide with the
+ * note, so the note steps aside.
+ */
+@media (max-width: 900px) {
+    .page {
+        /* Kisa sits in the bottom-left of the canvas behind the page. In one
+           column the panel content would run straight over her, so the page
+           keeps a band clear at the bottom for her to sit in. */
+        padding-bottom: calc(2rem + 16vh);
+    }
+
+    .page__topbar {
+        gap: 0.75rem;
+        grid-template-columns: 1fr auto;
+    }
+
+    .page__topbar-end {
+        display: contents;
+    }
+
+    .page__topbar-end .nav-bar {
+        order: 3;
+        grid-column: 1 / -1;
+    }
+
+    .page__stage {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+    }
+}

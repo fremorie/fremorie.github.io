@@ -5,6 +5,7 @@ import { Preload } from '@react-three/drei';
 import { Leva } from 'leva';
 
 import { Experience } from './Experience';
+import { Page } from './Page';
 import { useDebug } from './hooks/useDebug';
 import { CAMERA_POSITION, CAMERA_TARGET } from './constants';
 import './App.css';
@@ -49,6 +50,8 @@ function App() {
 
                 {debug && <Perf position="top-left" />}
             </Canvas>
+
+            <Page />
 
             <Leva
                 hidden={!debug}
