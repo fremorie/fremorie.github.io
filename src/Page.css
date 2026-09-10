@@ -1,7 +1,7 @@
 .page {
     /* the topbar and the stage share one column template, so the nav can't
        drift out of line with the panel content below it */
-    --columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    --columns: minmax(0, 0.68fr) minmax(0, 1.32fr);
     --column-gap: clamp(1.5rem, 4vw, 4rem);
 
     position: absolute;

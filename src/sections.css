@@ -4,7 +4,7 @@
 
     /* without a cap the cards grow with the column on ultrawide screens until
        the second row no longer fits on screen */
-    max-width: 56rem;
+    max-width: 68rem;
     gap: clamp(0.9rem, 1.8vw, 1.6rem);
     align-content: start;
     margin: 0;
