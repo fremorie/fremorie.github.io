@@ -6,10 +6,28 @@ body,
     left: 0;
     width: 100%;
     height: 100%;
-    background: ivory;
+    /* Matches BACKGROUND in constants.ts, so the flat backdrop is already
+       there and only Kisa and the light on the floor fade in. */
+    background: #70675f;
 
     /* Stops double-tap zoom and pinch from firing while steering on a phone. */
     touch-action: none;
+}
+
+/* Kisa fades in over the already-painted backdrop once the scene has loaded. */
+.scene {
+    opacity: 0;
+    transition: opacity 800ms ease-out;
+}
+
+.scene--ready {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scene {
+        transition: none;
+    }
 }
 
 .stats {

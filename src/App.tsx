@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useCallback, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Perf } from 'r3f-perf';
 import { Preload } from '@react-three/drei';
@@ -9,12 +9,25 @@ import { useDebug } from './hooks/useDebug';
 import { CAMERA_POSITION, CAMERA_TARGET } from './constants';
 import './App.css';
 
+/**
+ * Sits inside the Suspense boundary, so it can only mount once everything in
+ * the scene has actually loaded.
+ */
+function Ready({ onReady }: { onReady: () => void }) {
+    useEffect(onReady, [onReady]);
+
+    return null;
+}
+
 function App() {
     const debug = useDebug();
+    const [isReady, setIsReady] = useState(false);
+    const handleReady = useCallback(() => setIsReady(true), []);
 
     return (
         <>
             <Canvas
+                className={`scene${isReady ? ' scene--ready' : ''}`}
                 shadows
                 /* the site content covers the canvas, so pointer events have to
                    be read from the page instead of from the canvas itself */
@@ -31,6 +44,7 @@ function App() {
                 <Suspense fallback={null}>
                     <Experience />
                     <Preload all />
+                    <Ready onReady={handleReady} />
                 </Suspense>
 
                 {debug && <Perf position="top-left" />}

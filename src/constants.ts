@@ -1,4 +1,7 @@
-/** Shared by the canvas background and the fog, so the horizon disappears. */
+/**
+ * Shared by the canvas background and the fog, so the horizon disappears.
+ * Kept in step with the page background in App.css.
+ */
 export const BACKGROUND = '#70675f';
 
 /**
