@@ -1,14 +1,19 @@
+import { useRef } from 'react';
+import * as THREE from 'three';
+
 import { Environment } from './Environment';
 import { Kisa } from './monsters/Kisa';
 import { Stage } from './Stage';
-import { useCameraTilt } from './hooks/useCameraTilt';
+import { useCameraRig } from './hooks/useCameraRig';
 
 export function Experience() {
-    useCameraTilt();
+    const kisaRef = useRef<THREE.Group>(null);
+
+    useCameraRig(kisaRef);
 
     return (
         <>
-            <Kisa />
+            <Kisa ref={kisaRef} />
 
             <Stage />
             <Environment />
